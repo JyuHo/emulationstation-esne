@@ -53,6 +53,22 @@ SystemConf::SystemConf()
 		return;
 	
 	mSystemConfFileTmp = mSystemConfFile + ".tmp";
+
+#if ESNE
+	// Batocera always ships batocera.conf; saveSystemConf() refuses to run without an existing file.
+	// ES-NE creates an empty one on first run.
+	if (!Utils::FileSystem::exists(mSystemConfFile))
+	{
+		Utils::FileSystem::createDirectory(Utils::FileSystem::getParent(mSystemConfFile));
+
+		std::ofstream created(mSystemConfFile);
+		if (created)
+			created << "# ES-NE settings\n";
+		else
+			LOG(LogError) << "Unable to create " << mSystemConfFile;
+	}
+#endif
+
 	loadSystemConf();	
 }
 

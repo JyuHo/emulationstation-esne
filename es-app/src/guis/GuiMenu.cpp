@@ -1491,8 +1491,8 @@ void GuiMenu::openSystemSettings()
 		}
 	});
 
-	// Keyboard layout & variant
-#if !WIN32
+	// Keyboard layout & variant (ES-NE: handled by the desktop environment, batocera-keyboard does not exist)
+#if !WIN32 && !ESNE
 
 	std::string curLayout = SystemConf::getInstance()->get("system.kblayout");
 	if (curLayout.empty()) curLayout = "us";
@@ -4831,6 +4831,15 @@ void GuiMenu::openQuitMenu_static(Window *window, bool quickAccessMenu, bool ani
 
 	if (quickAccessMenu)
 		s->addGroup(_("QUIT"));
+
+#if ESNE
+	// ES-NE runs on a regular desktop: leaving EmulationStation without touching the system is the common case
+	s->addEntry(_("QUIT EMULATIONSTATION"), false, [window] {
+		window->pushGui(new GuiMsgBox(window, _("REALLY QUIT?"),
+			_("YES"), [] { Utils::Platform::quitES(Utils::Platform::QuitMode::QUIT); },
+			_("NO"), nullptr));
+	}, "iconQuit");
+#endif
 
 	s->addEntry(_("RESTART SYSTEM"), false, [window] {
 		window->pushGui(new GuiMsgBox(window, _("REALLY RESTART?"),
