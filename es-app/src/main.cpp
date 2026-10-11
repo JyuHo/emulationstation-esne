@@ -341,6 +341,20 @@ int setLocale(char * argv1)
 {
 #if WIN32
 	std::locale::global(std::locale("en-US"));
+#elif ESNE
+	// Batocera's init scripts export LANGUAGE from batocera.conf before starting ES; ES-NE has to apply
+	// the language chosen in the menu (system.language) itself. The .mo files are looked up next to the
+	// executable first (development builds, whatever the working directory), then in the system folder.
+	std::string localeDir = "/usr/share/locale";
+	const std::string exeLocale = Paths::getExePath() + "/locale/lang";
+	if (Utils::FileSystem::exists(exeLocale))
+		localeDir = exeLocale;
+	else if (Utils::FileSystem::exists("./locale/lang"))
+		localeDir = "./locale/lang";
+
+	const std::string language = SystemConf::getInstance()->get("system.language");
+	LOG(LogInfo) << "Locale: language '" << language << "', translations in " << localeDir;
+	EsLocale::init(language, localeDir);
 #else
 	if (Utils::FileSystem::exists("./locale/lang")) // for local builds
 		EsLocale::init("", "./locale/lang");	
