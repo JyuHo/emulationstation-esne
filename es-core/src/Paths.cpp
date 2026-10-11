@@ -15,6 +15,30 @@ Paths* Paths::_instance = nullptr;
 #define SETTINGS_FILENAME "emulationstation.ini"
 #endif
 
+#if ESNE
+#include <cstdlib>
+
+#ifndef ESNE_SHARE_DIR
+#define ESNE_SHARE_DIR "/usr/share/esne"
+#endif
+
+namespace
+{
+	// Returns $name if set and non-empty, otherwise the fallback
+	std::string esneEnv(const char* name, const std::string& fallback)
+	{
+		const char* value = getenv(name);
+		return (value != nullptr && value[0] != '\0') ? std::string(value) : fallback;
+	}
+
+	// XDG base directory: $xdgVar if set, otherwise $HOME/<homeRelative>
+	std::string esneXdg(const char* xdgVar, const std::string& home, const char* homeRelative)
+	{
+		return esneEnv(xdgVar, home + "/" + homeRelative);
+	}
+}
+#endif
+
 
 
 
@@ -71,6 +95,49 @@ Paths::Paths()
 	mUserManualPath = "/usr/share/batocera/doc/notice.pdf";
 	mVersionInfoPath = "/usr/share/batocera/batocera.version";
 	mKodiPath = "/usr/bin/kodi";
+#endif
+
+#if ESNE
+	// ES-NE: standalone Linux, XDG base directories. Every directory can be overridden with
+	// ESNE_CONFIG_DIR / ESNE_DATA_DIR / ESNE_STATE_DIR / ESNE_SHARE_DIR, and then with emulationstation.ini.
+	//   share  (read-only, packaged)  : /usr/share/esne
+	//   config                        : $XDG_CONFIG_HOME/esne  (~/.config/esne)
+	//   data   (roms, bios, saves...) : $XDG_DATA_HOME/esne    (~/.local/share/esne)
+	//   state  (logs)                 : $XDG_STATE_HOME/esne   (~/.local/state/esne)
+	{
+		const std::string home = getHomePath();
+
+		const std::string share = esneEnv("ESNE_SHARE_DIR", ESNE_SHARE_DIR);
+		const std::string config = esneEnv("ESNE_CONFIG_DIR", esneXdg("XDG_CONFIG_HOME", home, ".config") + "/esne");
+		const std::string data = esneEnv("ESNE_DATA_DIR", esneXdg("XDG_DATA_HOME", home, ".local/share") + "/esne");
+		const std::string state = esneEnv("ESNE_STATE_DIR", esneXdg("XDG_STATE_HOME", home, ".local/state") + "/esne");
+
+		mRootPath = data;
+		mEmulationStationPath = share;
+		mUserEmulationStationPath = config;
+
+		mLogPath = state + "/logs";
+		mScreenShotsPath = data + "/screenshots";
+		mSaveStatesPath = data + "/saves";
+		mMusicPath = share + "/music";
+		mUserMusicPath = data + "/music";
+		mThemesPath = share + "/themes";
+		mUserThemesPath = data + "/themes";
+		mKeyboardMappingsPath = share + "/padtokey";
+		mUserKeyboardMappingsPath = config + "/padtokey";
+		mDecorationsPath = share + "/decorations";
+		mUserDecorationsPath = data + "/decorations";
+		mShadersPath = share + "/shaders/configs";
+		mUserShadersPath = data + "/shaders/configs";
+		mTimeZonesPath = "/usr/share/zoneinfo/";
+		mRetroachivementSounds = share + "/sounds/retroachievements";
+		mUserRetroachivementSounds = data + "/sounds/retroachievements";
+
+		mSystemConfFilePath = config + "/esne.conf";
+		mUserManualPath = share + "/doc/notice.pdf";
+		mVersionInfoPath = share + "/esne.version";
+		mKodiPath = "/usr/bin/kodi";
+	}
 #endif
 
 /* EmuElec sample locations.
