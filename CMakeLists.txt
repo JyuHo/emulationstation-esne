@@ -20,6 +20,8 @@ option(BCM "BCM host" OFF)
 
 option(BATOCERA "Set to ON to enable BATOCERA specific code" OFF)
 option(RETROBAT "Set to ON to enable RETROBAT specific code" OFF)
+option(ESNE "Set to ON to build for ES-NE (standalone Linux, XDG paths, no Batocera OS)" OFF)
+set(ESNE_SHARE_DIR "/usr/share/esne" CACHE PATH "ES-NE: read-only data directory (themes, resources, es_systems.cfg)")
 
 option(ENABLE_FILEMANAGER "Set to ON to enable f1 shortcut for filesystem" OFF)
 option(DISABLE_KODI "Set to ON to disable kodi in menu" OFF)
@@ -110,6 +112,15 @@ endif()
 if(RETROBAT)
   MESSAGE("Retrobat build")
   add_definitions(-DRETROBAT)
+endif()
+
+if(ESNE)
+  if(BATOCERA OR RETROBAT OR WIN32)
+    MESSAGE(FATAL_ERROR "ESNE is mutually exclusive with BATOCERA, RETROBAT and WIN32")
+  endif()
+  MESSAGE("ES-NE build (share dir: ${ESNE_SHARE_DIR})")
+  add_definitions(-DESNE)
+  add_definitions(-DESNE_SHARE_DIR="${ESNE_SHARE_DIR}")
 endif()
 
 # disable kodi menu
