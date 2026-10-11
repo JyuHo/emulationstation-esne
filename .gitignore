@@ -53,3 +53,6 @@ CPackSourceConfig.cmake
 /.vs/
 *.sqlite
 .DS_Store
+
+# ES-NE: scraper developer keys (personal, never committed)
+esne-keys.cmake

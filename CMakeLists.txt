@@ -294,6 +294,12 @@ if(CEC)
   endif()
 endif()
 
+# ES-NE: the scrapers' developer keys (SCREENSCRAPER_*, GAMESDB_APIKEY, HFS_DEV_LOGIN, CHEEVOS_DEV_LOGIN) are
+# personal to each project and must never be committed: put them in an untracked "esne-keys.cmake" file.
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/esne-keys.cmake")
+    include("${CMAKE_CURRENT_SOURCE_DIR}/esne-keys.cmake")
+endif()
+
 if(DEFINED SCREENSCRAPER_SOFTNAME)
     add_definitions(-DSCREENSCRAPER_SOFTNAME="${SCREENSCRAPER_SOFTNAME}")
 endif()
