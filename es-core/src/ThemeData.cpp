@@ -1853,12 +1853,14 @@ void ThemeData::processElement(const pugi::xml_node& root, ThemeElement& element
 			break;
 		}
 
+#if !ESNE
 		if (path[0] == '/')
 		{
 			path = Utils::String::replace(path,
 				"/recalbox/share_init/system/.emulationstation/themes",
 				Paths::getUserThemesPath());
 		}
+#endif
 
 		if (path == "none")
 		{

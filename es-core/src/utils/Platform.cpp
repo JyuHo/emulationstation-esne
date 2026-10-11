@@ -682,9 +682,11 @@ namespace Utils
 #if WIN32
 			return "windows";
 #else
+#if !ESNE
 			std::string arch = Utils::FileSystem::readAllText("/usr/share/batocera/batocera.arch");
 			if (!arch.empty())
 				return arch;
+#endif
 
 #if X86
 			return "x86";
