@@ -50,6 +50,10 @@
 #include <arpa/inet.h>
 #endif
 
+#if ESNE
+#include "LinuxApiSystem.h"
+#endif
+
 /*
 #define script_config "batocera-config"; // canupdate, overscan enable, overscan disable, storage 'X', storage current, storage list, forgetBT, getRootPassword, lsoutputs
 #define script_overclock "batocera-overclock"; // list, set X
@@ -87,6 +91,8 @@ ApiSystem *ApiSystem::getInstance()
 	{
 #if WIN32
 		ApiSystem::instance = new Win32ApiSystem();
+#elif ESNE
+		ApiSystem::instance = new LinuxApiSystem();
 #else
 		ApiSystem::instance = new ApiSystem();
 #endif
