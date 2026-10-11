@@ -956,20 +956,10 @@ std::string ApiSystem::getCurrentAudioOutputDevice()
 
 	LOG(LogDebug) << "ApiSystem::getCurrentAudioOutputDevice";
 
-	std::ostringstream oss;
-	oss << "batocera-audio get";
-	FILE *pipe = popen(oss.str().c_str(), "r");
-	char line[1024];
-
-	if (pipe == NULL)
-		return "";	
-
-	if (fgets(line, 1024, pipe)) 
-	{
-		strtok(line, "\n");
-		pclose(pipe);
-		return std::string(line);
-	}
+	// Through the virtual helper (not popen) so that derived classes can translate the command
+	auto res = executeEnumerationScript("batocera-audio get");
+	if (res.size() > 0)
+		return res[0];
 
 	return "";
 }
@@ -981,11 +971,11 @@ bool ApiSystem::setAudioOutputDevice(std::string selected)
 	std::ostringstream oss;
 
 	oss << "batocera-audio set" << " '" << selected << "'";
-	int exitcode = system(oss.str().c_str());
+	bool success = executeScript(oss.str());
 
 	Sound::get(":/checksound.ogg")->play();
 
-	return exitcode == 0;
+	return success;
 }
 
 std::vector<std::string> ApiSystem::getAvailableAudioOutputProfiles()
@@ -1007,20 +997,9 @@ std::string ApiSystem::getCurrentAudioOutputProfile()
 
 	LOG(LogDebug) << "ApiSystem::getCurrentAudioOutputProfile";
 
-	std::ostringstream oss;
-	oss << "batocera-audio get-profile";
-	FILE *pipe = popen(oss.str().c_str(), "r");
-	char line[1024];
-
-	if (pipe == NULL)
-		return "";	
-
-	if (fgets(line, 1024, pipe)) 
-	{
-		strtok(line, "\n");
-		pclose(pipe);
-		return std::string(line);
-	}
+	auto res = executeEnumerationScript("batocera-audio get-profile");
+	if (res.size() > 0)
+		return res[0];
 
 	return "";
 }
@@ -1032,11 +1011,11 @@ bool ApiSystem::setAudioOutputProfile(std::string selected)
 	std::ostringstream oss;
 
 	oss << "batocera-audio set-profile" << " '" << selected << "'";
-	int exitcode = system(oss.str().c_str());
+	bool success = executeScript(oss.str());
 	
 	Sound::get(":/checksound.ogg")->play();
 
-	return exitcode == 0;
+	return success;
 }
 
 std::string ApiSystem::getUpdateUrl()
