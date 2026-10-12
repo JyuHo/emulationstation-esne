@@ -79,6 +79,17 @@
 #include "Win32ApiSystem.h"
 #endif
 
+#if ESNE
+// No Batocera wrapper script here: when a setting needs a restart, offer to re-exec EmulationStation right away.
+static void esneAskRestart(Window* window)
+{
+	window->pushGui(new GuiMsgBox(window,
+		_("EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"),
+		_("YES"), [] { Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART); },
+		_("NO"), [window] { window->displayNotificationMessage(_U("\uF011  ") + _("REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION")); }));
+}
+#endif
+
 #define fake_gettext_fade _("fade")
 #define fake_gettext_fastfade _("fast fade")
 #define fake_gettext_slide _("slide")
@@ -685,7 +696,11 @@ void GuiMenu::openMultiScreensSettings()
 	{
 	  if (s->getVariable("exitreboot") && Settings::getInstance()->getBool("ExitOnRebootRequired"))
 	    {
+	      #if ESNE
+	      Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART);
+#else
 	      Utils::Platform::quitES(Utils::Platform::QuitMode::QUIT);
+#endif
 	      return;
 	    }
 	});
@@ -1171,7 +1186,11 @@ void GuiMenu::openDeveloperSettings()
 	s->onFinalize([s, window]
 	{
 		if (s->getVariable("reboot"))
+			#if ESNE
+			esneAskRestart(window);
+#else
 			window->displayNotificationMessage(_U("\uF011  ") + _("REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"));
+#endif
 
 		if (s->getVariable("reloadGames"))
 			ViewController::reloadAllGames(window, false);
@@ -2271,12 +2290,20 @@ void GuiMenu::openSystemSettings()
 	{
 		if (s->getVariable("exitreboot") && Settings::getInstance()->getBool("ExitOnRebootRequired"))
 		{
+#if ESNE
+			Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART);
+#else
 			Utils::Platform::quitES(Utils::Platform::QuitMode::QUIT);
+#endif
 			return;
 		}
 
 		if (s->getVariable("reboot") || s->getVariable("exitreboot"))
+			#if ESNE
+			esneAskRestart(window);
+#else
 			window->displayNotificationMessage(_U("\uF011  ") + _("REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"));
+#endif
 
 		if (s->getVariable("reloadGuiMenu"))
 		{
