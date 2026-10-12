@@ -1,6 +1,9 @@
-# Copy to esne-keys.cmake (ignored by git) and fill in YOUR OWN developer keys, then re-run cmake.
-# ScreenScraper: https://screenscraper.fr  (developer account)
-set(SCREENSCRAPER_SOFTNAME "ES-NE")
-set(SCREENSCRAPER_DEV_LOGIN "devid=YOUR_DEVID&devpassword=YOUR_DEVPASSWORD")
+# Copy to esne-keys.cmake (ignored by git, NEVER commit it) and fill in YOUR OWN developer keys,
+# then re-run cmake ("cmake build") before building. Lines starting with # are not used.
+
+# ScreenScraper: https://screenscraper.fr (developer account)
+# set(SCREENSCRAPER_SOFTNAME "ES-NE")
+# set(SCREENSCRAPER_DEV_LOGIN "devid=YOUR_DEVID&devpassword=YOUR_DEVPASSWORD")
+
 # TheGamesDB: https://thegamesdb.net
 # set(GAMESDB_APIKEY "YOUR_API_KEY")
