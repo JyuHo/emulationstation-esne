@@ -25,6 +25,7 @@
 #include "Paths.h"
 #include <fstream>
 #include <string>
+#include <vector>
 #include "renderers/Renderer.h"
 
 // #define DEVTEST
@@ -196,6 +197,8 @@ namespace Utils
 		{
 #ifdef WIN32 // windows
 			return system("shutdown -s -t 0");
+#elif ESNE
+		return system("systemctl poweroff");
 #else // osx / linux
 		return system("shutdown -P -h now");
 #endif
@@ -205,6 +208,8 @@ namespace Utils
 		{
 #ifdef WIN32 // windows
 			return system("shutdown -r -t 0");
+#elif ESNE
+			return system("systemctl reboot");
 #else // osx / linux
 			return system("shutdown -r now");
 #endif
@@ -248,6 +253,38 @@ namespace Utils
 #endif
 		}
 
+#if ESNE
+		// ESNE has no wrapper script (Batocera's /tmp/restart.please): re-exec the same binary with the same arguments
+		static void restartSelf()
+		{
+			std::vector<std::string> args;
+			std::ifstream cmdline("/proc/self/cmdline", std::ios::binary);
+			std::string arg;
+			while (std::getline(cmdline, arg, '\0'))
+				args.push_back(arg);
+
+			char exe[4096];
+			ssize_t len = readlink("/proc/self/exe", exe, sizeof(exe) - 1);
+			if (len <= 0 || args.empty())
+			{
+				LOG(LogError) << "Unable to restart EmulationStation: cannot find the executable";
+				return;
+			}
+			exe[len] = 0;
+
+			std::vector<char*> argv;
+			for (auto& a : args)
+				argv.push_back(const_cast<char*>(a.c_str()));
+			argv.push_back(nullptr);
+
+			LOG(LogInfo) << "EmulationStation cleanly shutting down (restart).";
+			Log::flush();
+			execv(exe, argv.data());
+
+			LOG(LogError) << "Unable to restart EmulationStation: execv failed";
+		}
+#endif
+
 		void processQuitMode()
 		{
 
@@ -259,18 +296,26 @@ namespace Utils
 
 			case QuitMode::RESTART:
 				LOG(LogInfo) << "Restarting EmulationStation";
+#if ESNE
+				restartSelf();
+#else
 				touch("/tmp/restart.please");
+#endif
 				break;
 			case QuitMode::REBOOT:
 			case QuitMode::FAST_REBOOT:
 				LOG(LogInfo) << "Rebooting system";
+#if !ESNE
 				touch("/tmp/reboot.please");
+#endif
 				runRestartCommand();
 				break;
 			case QuitMode::SHUTDOWN:
 			case QuitMode::FAST_SHUTDOWN:
 				LOG(LogInfo) << "Shutting system down";
+#if !ESNE
 				touch("/tmp/shutdown.please");
+#endif
 				runShutdownCommand();
 				break;
 			}
