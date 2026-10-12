@@ -102,6 +102,10 @@ private:
 
 public:
 	static std::vector<DecorationSetInfo> getDecorationsSets(SystemData* system = nullptr);
+#if ESNE
+	// The Bezel Project: bezels whose title matches the game (other regions/revisions), shown as "thebezelproject:<name>"
+	static std::vector<DecorationSetInfo> getBezelVariants(SystemData* system, FileData* game);
+#endif
 
 	virtual bool hitTest(int x, int y, Transform4x4f& parentTransform, std::vector<GuiComponent*>* pResult = nullptr) override;
 	virtual bool onMouseClick(int button, bool pressed, int x, int y);
