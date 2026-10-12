@@ -6,6 +6,7 @@
 #include <mutex>
 #include <thread>
 #include "utils/Randomizer.h"
+#include "SystemConf.h"
 
 bool Zaparoo::mChecked = false;
 bool Zaparoo::mAvailable = false;
@@ -33,6 +34,17 @@ bool Zaparoo::isZaparooEnabled(long defaultDelay)
 
 	if (mChecked)
 		return mAvailable;
+
+#if ESNE
+	// Zaparoo (NFC cards) is optional on a desktop install: do not probe localhost:7497 (and log a connection error
+	// at every start) unless the user enabled it with zaparoo.enabled=1 in esne.conf.
+	if (SystemConf::getInstance()->get("zaparoo.enabled") != "1")
+	{
+		mAvailable = false;
+		mChecked = true;
+		return false;
+	}
+#endif
 
 	HttpReqOptions options;
 	options.connectTimeout = defaultDelay;
