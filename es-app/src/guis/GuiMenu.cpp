@@ -2356,6 +2356,17 @@ void GuiMenu::openNetplaySettings()
 	mWindow->pushGui(new GuiNetPlaySettings(mWindow));
 }
 
+#if ESNE
+// The Bezel Project sets get readable names in the menus
+static std::string decorationSetLabel(const std::string& name)
+{
+	if (name == "thebezelproject-system") return _("BEZEL SYSTEM");
+	if (name == "thebezelproject") return _("BEZEL BY GAME");
+	if (Utils::String::startsWith(name, "thebezelproject:")) return _("BEZEL") + std::string(": ") + name.substr(16);
+	return name;
+}
+#endif
+
 void GuiMenu::addDecorationSetOptionListComponent(Window* window, GuiSettings* parentWindow, const std::vector<DecorationSetInfo>& sets, const std::string& configName)
 {
 	auto decorations = std::make_shared<OptionListComponent<std::string> >(window, _("DECORATION SET"), false);
@@ -2363,12 +2374,25 @@ void GuiMenu::addDecorationSetOptionListComponent(Window* window, GuiSettings* p
 
 	std::vector<std::string> items = { _("AUTO"), _("NONE") };
 	for (auto set : sets)
+	{
+#if ESNE
+		// global settings: only the system bezel (a bezel "by game" only makes sense for one system)
+		if (configName == "global" && set.name == "thebezelproject")
+			continue;
+#endif
 		items.push_back(set.name);
+	}
 
 	std::string bezel = SystemConf::getInstance()->get(configName + ".bezel");
 
 	for (auto item : items)
-		decorations->add(item, item, (bezel == item) || (bezel == "none" && item == _("NONE")) || (bezel == "" && item == _("AUTO")));
+	{
+		std::string label = item;
+#if ESNE
+		label = decorationSetLabel(item);
+#endif
+		decorations->add(label, item, (bezel == item) || (bezel == "none" && item == _("NONE")) || (bezel == "" && item == _("AUTO")));
+	}
 
 	if (!decorations->hasSelection())
 		decorations->selectFirstItem();
@@ -4995,6 +5019,11 @@ void GuiMenu::createDecorationItemTemplate(Window* window, std::vector<Decoratio
 	else
 		label = Utils::String::toUpper(Utils::String::replace(data, "_", " "));
 
+#if ESNE
+	if (Utils::String::startsWith(data, "thebezelproject"))
+		label = decorationSetLabel(data);
+#endif
+		
 	row.addElement(std::make_shared<TextComponent>(window, label, font, color, ALIGN_LEFT), true);
 
 	std::string imageUrl;
