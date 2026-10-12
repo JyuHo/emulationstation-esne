@@ -4874,6 +4874,7 @@ void GuiMenu::openQuitMenu_static(Window *window, bool quickAccessMenu, bool ani
 			_("NO"), nullptr));
 	}, "iconRestart");
 
+#if !ESNE  // ES-NE: no suspend entry in the quit menu
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::SUSPEND))
 	{
 		s->addEntry(_("SUSPEND SYSTEM"), false, [window, s] {
@@ -4883,17 +4884,21 @@ void GuiMenu::openQuitMenu_static(Window *window, bool quickAccessMenu, bool ani
 		}, "iconFastShutdown");
 	}
 
+#endif
+
 	s->addEntry(_("SHUTDOWN SYSTEM"), false, [window] {
 		window->pushGui(new GuiMsgBox(window, _("REALLY SHUTDOWN?"),
 			_("YES"), [] { Utils::Platform::quitES(Utils::Platform::QuitMode::SHUTDOWN); },
 			_("NO"), nullptr));
 	}, "iconShutdown");
 
+#if !ESNE  // ES-NE: no fast shutdown (it only skips saving metadata)
 	s->addWithDescription(_("FAST SHUTDOWN SYSTEM"),_("Shutdown without saving metadata."), nullptr, [window] {
 		window->pushGui(new GuiMsgBox(window, _("REALLY SHUTDOWN WITHOUT SAVING METADATA?"),
 			_("YES"), [] { Utils::Platform::quitES(Utils::Platform::QuitMode::FAST_SHUTDOWN); },
 			_("NO"), nullptr));
 	}, "iconFastShutdown");
+#endif
 
 #ifdef WIN32
 	if (Settings::getInstance()->getBool("ShowExit"))
