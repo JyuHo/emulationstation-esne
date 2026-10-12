@@ -102,14 +102,14 @@ Paths::Paths()
 	// ESNE_CONFIG_DIR / ESNE_DATA_DIR / ESNE_STATE_DIR / ESNE_SHARE_DIR, and then with emulationstation.ini.
 	//   share  (read-only, packaged)  : /usr/share/esne
 	//   config                        : $XDG_CONFIG_HOME/esne  (~/.config/esne)
-	//   data   (roms, bios, saves...) : $XDG_DATA_HOME/esne    (~/.local/share/esne)
+	//   data   (roms, bios, saves...) : ~/esne  (visible, easy to find and back up)
 	//   state  (logs)                 : $XDG_STATE_HOME/esne   (~/.local/state/esne)
 	{
 		const std::string home = getHomePath();
 
 		const std::string share = esneEnv("ESNE_SHARE_DIR", ESNE_SHARE_DIR);
 		const std::string config = esneEnv("ESNE_CONFIG_DIR", esneXdg("XDG_CONFIG_HOME", home, ".config") + "/esne");
-		const std::string data = esneEnv("ESNE_DATA_DIR", esneXdg("XDG_DATA_HOME", home, ".local/share") + "/esne");
+		const std::string data = esneEnv("ESNE_DATA_DIR", home + "/esne");
 		const std::string state = esneEnv("ESNE_STATE_DIR", esneXdg("XDG_STATE_HOME", home, ".local/state") + "/esne");
 
 		mRootPath = data;
