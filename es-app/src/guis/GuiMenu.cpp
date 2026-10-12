@@ -4919,6 +4919,59 @@ void GuiMenu::openQuitMenu_static(Window *window, bool quickAccessMenu, bool ani
 	window->pushGui(s);
 }
 
+#if ESNE
+// "Zelda (USA) (Rev 1)" -> "zelda": same title whatever the region/revision tags
+static std::string bezelTitle(const std::string& name)
+{
+	std::string result;
+	int depth = 0;
+	for (char c : name)
+	{
+		if (c == '(' || c == '[') { depth++; continue; }
+		if (c == ')' || c == ']') { if (depth > 0) depth--; continue; }
+		if (depth == 0) result += c;
+	}
+	return Utils::String::toLower(Utils::String::trim(result));
+}
+
+std::vector<DecorationSetInfo> GuiMenu::getBezelVariants(SystemData* system, FileData* game)
+{
+	std::vector<DecorationSetInfo> variants;
+	if (system == nullptr || game == nullptr)
+		return variants;
+
+	const std::string wanted = bezelTitle(Utils::FileSystem::getStem(game->getPath()));
+	if (wanted.empty())
+		return variants;
+
+	std::vector<std::string> roots = { Paths::getUserDecorationsPath(), Paths::getDecorationsPath() };
+	for (auto root : roots)
+	{
+		std::string folder = root + "/thebezelproject/games/" + system->getName();
+		if (!Utils::FileSystem::isDirectory(folder))
+			continue;
+
+		for (auto file : Utils::FileSystem::getDirContent(folder))
+		{
+			if (Utils::String::toLower(Utils::FileSystem::getExtension(file)) != ".png")
+				continue;
+
+			std::string stem = Utils::FileSystem::getStem(file);
+			if (bezelTitle(stem) != wanted)
+				continue;
+
+			variants.push_back(DecorationSetInfo("thebezelproject:" + stem, folder, file));
+			if (variants.size() >= 40)
+				break;
+		}
+	}
+
+	std::sort(variants.begin(), variants.end(), [](const DecorationSetInfo& a, const DecorationSetInfo& b) { return a.name < b.name; });
+	variants.erase(std::unique(variants.begin(), variants.end(), [](const DecorationSetInfo& a, const DecorationSetInfo& b) { return a.name == b.name; }), variants.end());
+	return variants;
+}
+#endif
+
 void GuiMenu::createDecorationItemTemplate(Window* window, std::vector<DecorationSetInfo> sets, std::string data, ComponentListRow& row)
 {
 	Vector2f maxSize(Renderer::getScreenWidth() * 0.14, Renderer::getScreenHeight() * 0.14);
@@ -5215,8 +5268,21 @@ void GuiMenu::popSpecificConfigurationGui(Window* mWindow, std::string title, st
 				mWindow->pushGui(decorations_window);
 			});
 #else
+#if ESNE
+			{
+				// for a game, also offer the bezels that share its title (other regions/revisions)
+				auto choices = sets;
+				if (fileData != nullptr)
+				{
+					auto variants = getBezelVariants(systemData, fileData);
+					choices.insert(choices.end(), variants.begin(), variants.end());
+				}
+				addDecorationSetOptionListComponent(mWindow, systemConfiguration, choices, configName);
+			}
+#else
 			addDecorationSetOptionListComponent(mWindow, systemConfiguration, sets, configName);
 #endif
+#endif		
 		}
 	}
 
@@ -5582,6 +5648,15 @@ std::vector<DecorationSetInfo> GuiMenu::getDecorationsSets(SystemData* system)
 					if (Utils::FileSystem::exists(img))
 						info.imageUrl = img;
 				}
+#if ESNE
+				// sets made of per-system images (The Bezel Project): show the system's bezel as preview
+				if (info.imageUrl.empty())
+				{
+					std::string img = folder + "/systems/" + system->getName() + ".png";
+					if (Utils::FileSystem::exists(img))
+						info.imageUrl = img;
+				}
+#endif
 
 				sets.push_back(info);
 			}
