@@ -100,6 +100,13 @@ Scraper* Scraper::getScraper(const std::string name)
 		if (scrap.first == scraper)
 			return scrap.second;
 
+#if ESNE
+	// ES-NE: a scraper without developer key (<config>/keys.conf) is not listed, but the saved choice (default "ScreenScraper")
+	// can still name it: fall back to the first available scraper instead of returning null (callers dereference it).
+	if (!Scraper::scrapers.empty())
+		return Scraper::scrapers.front().second;
+#endif
+
 	return nullptr;
 }
 
