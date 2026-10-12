@@ -1,4 +1,7 @@
 #include "ApiSystem.h"
+#if ESNE
+#include "EsneKeys.h"
+#endif
 #include "Settings.h"
 #include "Log.h"
 #include "HttpReq.h"
@@ -2139,7 +2142,9 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::THEMESDOWNLOADER:
 		return true;
 	case ApiSystem::RETROACHIVEMENTS:
-#ifdef CHEEVOS_DEV_LOGIN
+#if ESNE
+		return !EsneKeys::cheevosDevLogin().empty();
+#elif defined(CHEEVOS_DEV_LOGIN)
 		return true;
 #endif
 		break;

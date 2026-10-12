@@ -5,6 +5,9 @@
 
 #include "scrapers/Scraper.h"
 #include "EmulationStation.h"
+#if ESNE
+#include "EsneKeys.h"
+#endif
 
 #if defined(SCREENSCRAPER_DEV_LOGIN)
 

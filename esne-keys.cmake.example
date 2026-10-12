@@ -1,9 +1,7 @@
-# Copy to esne-keys.cmake (ignored by git, NEVER commit it) and fill in YOUR OWN developer keys,
-# then re-run cmake ("cmake build") before building. Lines starting with # are not used.
+# ES-NE builds (-DESNE=ON) do NOT use this file: the developer keys are read at runtime from ~/.config/esne/keys.conf
+# (see es-core/src/EsneKeys.h; es-genconfig creates a template).
+# Only non-ESNE builds still read an untracked "esne-keys.cmake" (copy this file, NEVER commit it, re-run cmake):
 
-# ScreenScraper: https://screenscraper.fr (developer account)
 # set(SCREENSCRAPER_SOFTNAME "ES-NE")
 # set(SCREENSCRAPER_DEV_LOGIN "devid=YOUR_DEVID&devpassword=YOUR_DEVPASSWORD")
-
-# TheGamesDB: https://thegamesdb.net
 # set(GAMESDB_APIKEY "YOUR_API_KEY")

@@ -14,12 +14,37 @@
 #include <thread>
 #include <SDL_timer.h>
 #include "HfsDBScraper.h"
+#if ESNE
+#include "EsneKeys.h"
+#endif
 #include "IGDBScraper.h"
 #include "utils/Uri.h"
 
 #define OVERQUOTA_RETRY_DELAY 15000
 #define OVERQUOTA_RETRY_COUNT 5
 
+#if ESNE
+// ES-NE: a scraper that needs a developer key (<config>/keys.conf) is only listed when the key is set
+static std::vector<std::pair<std::string, Scraper*>> esneScrapers()
+{
+	std::vector<std::pair<std::string, Scraper*>> list;
+
+	if (!EsneKeys::screenscraperDevLogin().empty())
+		list.push_back({ "ScreenScraper", new ScreenScraperScraper() });
+
+	if (!EsneKeys::gamesDbApiKey().empty())
+		list.push_back({ "TheGamesDB", new TheGamesDBScraper() });
+
+	if (!EsneKeys::hfsDevLogin().empty())
+		list.push_back({ "HfsDB", new HfsDBScraper() });
+
+	list.push_back({ "IGDB", new IGDBScraper() });
+	list.push_back({ "ArcadeDB", new ArcadeDBScraper() });
+	return list;
+}
+
+std::vector<std::pair<std::string, Scraper*>> Scraper::scrapers = esneScrapers();
+#else
 std::vector<std::pair<std::string, Scraper*>> Scraper::scrapers
 {
 #ifdef SCREENSCRAPER_DEV_LOGIN
@@ -37,6 +62,7 @@ std::vector<std::pair<std::string, Scraper*>> Scraper::scrapers
 	{ "IGDB", new IGDBScraper() },
 	{ "ArcadeDB", new ArcadeDBScraper() }
 };
+#endif
 
 std::string Scraper::getScraperName(Scraper* scraper)
 {

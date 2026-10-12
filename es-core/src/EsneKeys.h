@@ -1,0 +1,85 @@
+#pragma once
+
+// ES-NE: developer keys (ScreenScraper, TheGamesDB, HFS, RetroAchievements) are read at startup from
+// <config>/keys.conf (~/.config/esne/keys.conf), one "NAME=value" per line, '#' starts a comment. The file is never part of
+// the package or of git (it is read very early, so problems are reported on stderr, not in the log). Names: SCREENSCRAPER_SOFTNAME, SCREENSCRAPER_DEV_LOGIN (devid=...&devpassword=...),
+// GAMESDB_APIKEY, HFS_DEV_LOGIN (user:password), CHEEVOS_DEV_LOGIN (z=user&y=api key).
+#if ESNE
+
+#include <string>
+#include <map>
+#include <fstream>
+#include <sys/stat.h>
+#include "Paths.h"
+#include <cstdio>
+
+namespace EsneKeys
+{
+	inline std::string trim(const std::string& s)
+	{
+		const char* ws = " \t\r\n";
+		size_t b = s.find_first_not_of(ws);
+		if (b == std::string::npos)
+			return "";
+		size_t e = s.find_last_not_of(ws);
+		return s.substr(b, e - b + 1);
+	}
+
+	inline std::map<std::string, std::string> load(const std::string& file)
+	{
+		std::map<std::string, std::string> keys;
+
+		std::ifstream in(file);
+		if (!in.is_open())
+			return keys;
+
+		struct stat st;
+		if (stat(file.c_str(), &st) == 0 && (st.st_mode & 077) != 0)
+			fprintf(stderr, "ES-NE: %s is readable by other users: run chmod 600 on it\n", file.c_str());
+
+		std::string line;
+		while (std::getline(in, line))
+		{
+			line = trim(line);
+			if (line.empty() || line[0] == '#')
+				continue;
+
+			size_t eq = line.find('=');
+			if (eq == std::string::npos)
+				continue;
+
+			std::string name = trim(line.substr(0, eq));
+			std::string value = trim(line.substr(eq + 1));
+			if (value.size() >= 2 && (value.front() == '"' || value.front() == '\'') && value.back() == value.front())
+				value = value.substr(1, value.size() - 2);
+
+			if (!name.empty() && !value.empty())
+				keys[name] = value;
+		}
+
+		return keys;
+	}
+
+	// Value of a key, empty when it is not set.
+	inline const std::string& get(const std::string& name)
+	{
+		static const std::map<std::string, std::string> keys = load(Paths::getUserEmulationStationPath() + "/keys.conf");
+		static const std::string empty;
+
+		auto it = keys.find(name);
+		return it == keys.end() ? empty : it->second;
+	}
+
+	inline std::string softName()
+	{
+		const std::string& value = get("SCREENSCRAPER_SOFTNAME");
+		return value.empty() ? std::string("ES-NE") : value;
+	}
+
+	inline const std::string& screenscraperDevLogin() { return get("SCREENSCRAPER_DEV_LOGIN"); }
+	inline const std::string& gamesDbApiKey() { return get("GAMESDB_APIKEY"); }
+	inline const std::string& hfsDevLogin() { return get("HFS_DEV_LOGIN"); }
+	inline const std::string& cheevosDevLogin() { return get("CHEEVOS_DEV_LOGIN"); }
+}
+
+#endif
