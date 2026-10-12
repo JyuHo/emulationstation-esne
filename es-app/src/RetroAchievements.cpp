@@ -1,4 +1,7 @@
 #include "RetroAchievements.h"
+#if ESNE
+#include "EsneKeys.h"
+#endif
 #include "HttpReq.h"
 #include "ApiSystem.h"
 #include "SystemConf.h"
@@ -220,6 +223,10 @@ GameInfoAndUserProgress RetroAchievements::getGameInfoAndUserProgress(int gameId
 
 #ifndef CHEEVOS_DEV_LOGIN
 	return ret;
+#endif
+#if ESNE
+	if (EsneKeys::cheevosDevLogin().empty())
+		return ret;
 #endif
 
 	auto options = getHttpOptions();

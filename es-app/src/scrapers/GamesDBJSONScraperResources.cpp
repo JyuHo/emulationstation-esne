@@ -8,6 +8,9 @@
 #include <rapidjson/error/en.h>
 #include "Log.h"
 #include "Paths.h"
+#if ESNE
+#include "EsneKeys.h"
+#endif
 
 #ifdef GAMESDB_APIKEY
 using namespace rapidjson;

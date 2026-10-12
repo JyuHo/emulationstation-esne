@@ -13,6 +13,9 @@
 #include "Genres.h"
 #include "SystemConf.h"
 #include "ApiSystem.h"
+#if ESNE
+#include "EsneKeys.h"
+#endif
 #include "LocaleES.h"
 
 #include <rapidjson/document.h>

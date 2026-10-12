@@ -294,30 +294,39 @@ if(CEC)
   endif()
 endif()
 
-# ES-NE: the scrapers' developer keys (SCREENSCRAPER_*, GAMESDB_APIKEY, HFS_DEV_LOGIN, CHEEVOS_DEV_LOGIN) are
-# personal to each project and must never be committed: put them in an untracked "esne-keys.cmake" file.
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/esne-keys.cmake")
-    include("${CMAKE_CURRENT_SOURCE_DIR}/esne-keys.cmake")
-endif()
+# ES-NE: the scrapers' developer keys are read at runtime from <config>/keys.conf (see es-core/src/EsneKeys.h), so no key is
+# ever compiled in or committed. The macros keep the scrapers compiled in and make them call EsneKeys.
+# Other builds: put the keys in an untracked "esne-keys.cmake" (compile-time keys).
+if(ESNE)
+    add_definitions(-DSCREENSCRAPER_SOFTNAME=EsneKeys::softName\(\))
+    add_definitions(-DSCREENSCRAPER_DEV_LOGIN=EsneKeys::screenscraperDevLogin\(\))
+    add_definitions(-DGAMESDB_APIKEY=EsneKeys::gamesDbApiKey\(\))
+    add_definitions(-DHFS_DEV_LOGIN=EsneKeys::hfsDevLogin\(\))
+    add_definitions(-DCHEEVOS_DEV_LOGIN=EsneKeys::cheevosDevLogin\(\))
+else()
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/esne-keys.cmake")
+        include("${CMAKE_CURRENT_SOURCE_DIR}/esne-keys.cmake")
+    endif()
 
-if(DEFINED SCREENSCRAPER_SOFTNAME)
-    add_definitions(-DSCREENSCRAPER_SOFTNAME="${SCREENSCRAPER_SOFTNAME}")
-endif()
+    if(DEFINED SCREENSCRAPER_SOFTNAME)
+        add_definitions(-DSCREENSCRAPER_SOFTNAME="${SCREENSCRAPER_SOFTNAME}")
+    endif()
 
-if(DEFINED SCREENSCRAPER_DEV_LOGIN)
-    add_definitions(-DSCREENSCRAPER_DEV_LOGIN="${SCREENSCRAPER_DEV_LOGIN}")
-endif()
+    if(DEFINED SCREENSCRAPER_DEV_LOGIN)
+        add_definitions(-DSCREENSCRAPER_DEV_LOGIN="${SCREENSCRAPER_DEV_LOGIN}")
+    endif()
 
-if(DEFINED GAMESDB_APIKEY)
-    add_definitions(-DGAMESDB_APIKEY="${GAMESDB_APIKEY}")
-endif()
+    if(DEFINED GAMESDB_APIKEY)
+        add_definitions(-DGAMESDB_APIKEY="${GAMESDB_APIKEY}")
+    endif()
 
-if(DEFINED CHEEVOS_DEV_LOGIN)
-    add_definitions(-DCHEEVOS_DEV_LOGIN="${CHEEVOS_DEV_LOGIN}")
-endif()
+    if(DEFINED CHEEVOS_DEV_LOGIN)
+        add_definitions(-DCHEEVOS_DEV_LOGIN="${CHEEVOS_DEV_LOGIN}")
+    endif()
 
-if(DEFINED HFS_DEV_LOGIN)
-    add_definitions(-DHFS_DEV_LOGIN="${HFS_DEV_LOGIN}")
+    if(DEFINED HFS_DEV_LOGIN)
+        add_definitions(-DHFS_DEV_LOGIN="${HFS_DEV_LOGIN}")
+    endif()
 endif()
 
 #-------------------------------------------------------------------------------
