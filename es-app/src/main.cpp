@@ -295,6 +295,14 @@ bool verifyHomeFolderExists()
 		}
 	}
 
+#if ESNE
+	// Launch commands redirect the emulator's stdout/stderr into <state>/logs (Platform.cpp): if that folder
+	// does not exist the shell aborts with exit code 1 and the game is never started.
+	const std::string logDir = Paths::getLogPath();
+	if (!logDir.empty() && !Utils::FileSystem::exists(logDir))
+		Utils::FileSystem::createDirectory(logDir);
+#endif
+
 	return true;
 }
 
