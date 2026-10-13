@@ -508,8 +508,8 @@ void CollectionSystemManager::updateCollectionSystem(FileData* file, const Colle
 	else
 	{
 		// we didn't find it here - we need to check if we should add it
-		if (name == "recent" && file->getMetadata(MetaDataId::PlayCount) > "0" && includeFileInAutoCollections(file) ||
-			name == "favorites" && file->getFavorite())
+		if ((name == "recent" && file->getMetadata(MetaDataId::PlayCount) > "0" && includeFileInAutoCollections(file)) ||
+			(name == "favorites" && file->getFavorite()))
 		{
 			auto newGame = new CollectionFileData(file, curSys);
 			rootFolder->addChild(newGame);

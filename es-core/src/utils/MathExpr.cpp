@@ -344,8 +344,6 @@ namespace Utils
 		int parenth = 0;
 		int varcode = 0;
 
-		bool foundVar = false;
-		bool exitOnCloseP = false;
 
 		while (start > 0 && isspace(input[start])) start--;
 

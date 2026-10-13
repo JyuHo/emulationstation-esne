@@ -6,7 +6,15 @@
 #include <exception>
 #include <atomic>
 
-#define LOG(level) if(!Log::enabled() || level > Log::getReportingLevel()) ; else Log(level).stream()
+// LOG(niveau) << ... s'utilise comme une simple expression: contrairement à l'ancienne forme « if (...) ; else ... »,
+// elle ne provoque pas de « dangling else » quand elle est le corps non accolé d'un if.
+class LogVoidify
+{
+public:
+	void operator&(const std::ostream&) const { }
+};
+
+#define LOG(level) (!Log::enabled() || (level) > Log::getReportingLevel()) ? (void)0 : LogVoidify() & Log(level).stream()
 
 #define TRYCATCH(m, x) { try { x; } \
 catch (const std::exception& e) { LOG(LogError) << m << " Exception " << e.what(); Log::flush(); throw e; } \

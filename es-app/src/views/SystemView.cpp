@@ -30,8 +30,8 @@
 #include "components/CarouselComponent.h"
 
 SystemView::SystemView(Window* window) : GuiComponent(window),
-	mViewNeedsReload(true),
-	mSystemInfo(window, _("SYSTEM INFO"), Font::get(FONT_SIZE_SMALL), 0x33333300, ALIGN_CENTER), mYButton("y")
+	mSystemInfo(window, _("SYSTEM INFO"), Font::get(FONT_SIZE_SMALL), 0x33333300, ALIGN_CENTER),
+	mViewNeedsReload(true), mYButton("y")
 {
 	mExtraTransitionSpeed = 500.0f;
 	mExtraTransitionHorizontal = false;
@@ -1149,7 +1149,6 @@ void SystemView::renderExtras(const Transform4x4f& trans, float lower, float upp
 	int min = (int)mExtrasCamOffset;
 	int max = (int)(mExtrasCamOffset + 0.99999f);
 
-	int extrasCenter = (int)mExtrasCamOffset;
 
 	Renderer::pushClipRect(Vector2i::Zero(), Vector2i((int)mSize.x(), (int)mSize.y()));
 

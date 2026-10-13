@@ -29,8 +29,8 @@ namespace Utils
 		struct Value
 		{
 			Value() :type(UNDEFINED), number(0) {};
-			Value(std::string str, ValueType t) :type(t), string(str), number(0) {};
-			Value(std::string str) :type(STRING), string(str), number(0) {};
+			Value(std::string str, ValueType t) :type(t), number(0), string(str) {};
+			Value(std::string str) :type(STRING), number(0), string(str) {};
 			Value(double n) :type(NUMBER), number(n) {};
 			Value& operator=(std::string str) {
 				type = STRING;

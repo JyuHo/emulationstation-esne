@@ -4,8 +4,8 @@
 #define VISIBLE_TIME 1500
 #define FADEOUT_TIME 350
 
-ScrollbarComponent::ScrollbarComponent(Window* window) : GuiComponent(window), mAlignment(SB_ALIGN_NORMAL),
-	mMin(0), mMax(0), mPage(1), mPosition(0), mVisibleTime(0), mFadeOutTime(0), mCornerSize(0.01), mScrollSize(0.008), mColor(0), mVertical(true), mEnabled(false)
+ScrollbarComponent::ScrollbarComponent(Window* window) : GuiComponent(window), mMin(0),
+	mMax(0), mPage(1), mPosition(0), mCornerSize(0.01), mScrollSize(0.008), mVisibleTime(0), mFadeOutTime(0), mColor(0), mAlignment(SB_ALIGN_NORMAL), mVertical(true), mEnabled(false)
 {
 	
 }

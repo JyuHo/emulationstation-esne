@@ -12,13 +12,13 @@ SliderComponent::SliderComponent(Window* window, float min, float max, float inc
 	: GuiComponent(window),
 	mMin(min),
 	mMax(max),
-	mSingleIncrement(increment),
 	mValue(isAuto ? min - increment : (max + min) / 2),
-	mSuffix(suffix),
-	mIsAutoMode(isAuto),
+	mSingleIncrement(increment),
 	mMoveRate(0),
 	mMoveAccumulator(0),
-	mKnob(window)
+	mKnob(window),
+	mSuffix(suffix),
+	mIsAutoMode(isAuto)
 {
 	assert((min - max) != 0);
 

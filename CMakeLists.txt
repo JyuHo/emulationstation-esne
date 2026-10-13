@@ -348,11 +348,13 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     endif()
 
     #set up compiler flags for GCC
+    # -Wno-sign-compare: le code compare partout des index (int) à des tailles (size_t); ces ~230 avertissements de style
+    # ne signalent pas de bug réel et noyaient les vrais. Les autres avertissements restent actifs.
 if (CMAKE_BUILD_TYPE MATCHES Debug)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wno-attributes -O0") #support C++17 for std::, optimize
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wno-attributes -Wno-sign-compare -O0") #support C++17 for std::, optimize
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O0")
 else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wno-attributes -O3") #support C++17 for std::, optimize
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wno-attributes -Wno-sign-compare -O3") #support C++17 for std::, optimize
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O3")  #-s = strip binary
 endif()
 endif()

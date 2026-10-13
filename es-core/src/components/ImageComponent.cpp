@@ -34,9 +34,9 @@ Vector2f ImageComponent::getSize() const
 }
 
 ImageComponent::ImageComponent(Window* window, bool forceLoad, bool dynamic) : GuiComponent(window),
-	mTargetIsMax(false), mTargetIsMin(false), mFlipX(false), mFlipY(false), mTargetSize(0, 0), mColorShift(0xFFFFFFFF),
-	mColorShiftEnd(0xFFFFFFFF), mColorGradientHorizontal(true), mForceLoad(forceLoad), mDynamic(dynamic),
-	mFadeOpacity(0), mFading(false), mRotateByTargetSize(false), mTopLeftCrop(0.0f, 0.0f), mBottomRightCrop(1.0f, 1.0f),
+	mTargetSize(0, 0), mFlipX(false), mFlipY(false), mTargetIsMax(false), mTargetIsMin(false), mColorShift(0xFFFFFFFF),
+	mColorShiftEnd(0xFFFFFFFF), mColorGradientHorizontal(true), mFadeOpacity(0), mFading(false),
+	mForceLoad(forceLoad), mDynamic(dynamic), mRotateByTargetSize(false), mTopLeftCrop(0.0f, 0.0f), mBottomRightCrop(1.0f, 1.0f),
 	mReflection(0.0f, 0.0f), mSharedTexture(true), mCustomShaderEnabled(true)
 {
 	mTextureLoaded = false;
@@ -580,8 +580,8 @@ void ImageComponent::updateColors()
 {
 	float opacity = (getOpacity() * (mFading ? mFadeOpacity / 255.0 : 1.0)) / 255.0;
 
-	const unsigned int color = Renderer::convertColor(mColorShift & 0xFFFFFF00 | (unsigned char)((mColorShift & 0xFF) * opacity));
-	const unsigned int colorEnd = Renderer::convertColor(mColorShiftEnd & 0xFFFFFF00 | (unsigned char)((mColorShiftEnd & 0xFF) * opacity));
+	const unsigned int color = Renderer::convertColor((mColorShift & 0xFFFFFF00) | (unsigned char)((mColorShift & 0xFF) * opacity));
+	const unsigned int colorEnd = Renderer::convertColor((mColorShiftEnd & 0xFFFFFF00) | (unsigned char)((mColorShiftEnd & 0xFF) * opacity));
 	
 	mVertices[0].col = color;
 	mVertices[1].col = mColorGradientHorizontal ? colorEnd : color;
@@ -858,30 +858,30 @@ void ImageComponent::applyTheme(const std::shared_ptr<ThemeData>& theme, const s
 
 		if (elem->has("size"))
 		{
-			auto sz = mSourceBounds.zw() = elem->get<Vector2f>("size");
+			mSourceBounds.zw() = elem->get<Vector2f>("size");
 			setResize(elem->get<Vector2f>("size") * scale);
 		}
 		else if (elem->has("maxSize"))
 		{
-			auto sz = mSourceBounds.zw() = elem->get<Vector2f>("maxSize");
+			mSourceBounds.zw() = elem->get<Vector2f>("maxSize");
 			setMaxSize(elem->get<Vector2f>("maxSize") * scale);
 		}
 		else if (elem->has("minSize"))
 		{
-			auto sz = mSourceBounds.zw() = elem->get<Vector2f>("minSize");
+			mSourceBounds.zw() = elem->get<Vector2f>("minSize");
 			setMinSize(elem->get<Vector2f>("minSize") * scale);
 		}
 
 		if (elem->has("w"))
 		{
-			auto w = mSourceBounds.z() = elem->get<float>("w");
+			mSourceBounds.z() = elem->get<float>("w");
 			mTargetSize = Vector2f(elem->get<float>("w") * scale.x(), mTargetSize.y());
 			resize();
 		}
 
 		if (elem->has("h"))
 		{
-			auto h = mSourceBounds.w() = elem->get<float>("h");
+			mSourceBounds.w() = elem->get<float>("h");
 			mTargetSize = Vector2f(mTargetSize.x(), elem->get<float>("h") * scale.y());
 			resize();
 		}

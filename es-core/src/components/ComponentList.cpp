@@ -366,8 +366,8 @@ void ComponentList::render(const Transform4x4f& parentTrans)
 				{
 					Renderer::setMatrix(trans);
 					Renderer::drawRect(0.0f, mSelectorBarOffset, mSize.x(), rowHeight,
-						selectorColor & 0xFFFFFF00 | (unsigned char)((selectorColor & 0xFF) * opacity),
-						selectorGradientColor & 0xFFFFFF00 | (unsigned char)((selectorGradientColor & 0xFF) * opacity),
+						(selectorColor & 0xFFFFFF00) | (unsigned char)((selectorColor & 0xFF) * opacity),
+						(selectorGradientColor & 0xFFFFFF00) | (unsigned char)((selectorGradientColor & 0xFF) * opacity),
 						selectorGradientHorz);
 				}
 			}
@@ -378,8 +378,8 @@ void ComponentList::render(const Transform4x4f& parentTrans)
 
 				float hotOpacity = 0.1f;
 				Renderer::drawRect(0.0f, y, mSize.x(), rowHeight,
-					selectorColor & 0xFFFFFF00 | (unsigned char)((selectorColor & 0xFF) * opacity * hotOpacity),
-					selectorGradientColor & 0xFFFFFF00 | (unsigned char)((selectorGradientColor & 0xFF) * opacity * hotOpacity),
+					(selectorColor & 0xFFFFFF00) | (unsigned char)((selectorColor & 0xFF) * opacity * hotOpacity),
+					(selectorGradientColor & 0xFFFFFF00) | (unsigned char)((selectorGradientColor & 0xFF) * opacity * hotOpacity),
 					selectorGradientHorz);
 
 			//	Renderer::drawRect(0.0f, y, mSize.x(), rowHeight, 0x00000010, 0x00000010);
@@ -431,9 +431,9 @@ void ComponentList::render(const Transform4x4f& parentTrans)
 				if (y - mCameraOffset + height >= 0)
 				{
 					if (prevIsGroup && menuTheme->Group.separatorColor != separatorColor)
-						Renderer::drawRect(0.0f, y - 2.0f, mSize.x(), 1.0f, menuTheme->Group.separatorColor & 0xFFFFFF00 | (unsigned char)((menuTheme->Group.separatorColor & 0xFF) * opacity));
+						Renderer::drawRect(0.0f, y - 2.0f, mSize.x(), 1.0f, (menuTheme->Group.separatorColor & 0xFFFFFF00) | (unsigned char)((menuTheme->Group.separatorColor & 0xFF) * opacity));
 					else if (separatorColor != 0)
-						Renderer::drawRect(0.0f, y, mSize.x(), 1.0f, separatorColor & 0xFFFFFF00 | (unsigned char)((separatorColor & 0xFF) * opacity));
+						Renderer::drawRect(0.0f, y, mSize.x(), 1.0f, (separatorColor & 0xFFFFFF00) | (unsigned char)((separatorColor & 0xFF) * opacity));
 				}
 
 				y += height; // getRowHeight(mEntries.at(i).data);
@@ -444,7 +444,7 @@ void ComponentList::render(const Transform4x4f& parentTrans)
 			prevIsGroup = mEntries[i].data.group;
 		}
 
-		Renderer::drawRect(0.0f, y, mSize.x(), 1.0f, separatorColor & 0xFFFFFF00 | (unsigned char)((separatorColor & 0xFF) * opacity));
+		Renderer::drawRect(0.0f, y, mSize.x(), 1.0f, (separatorColor & 0xFFFFFF00) | (unsigned char)((separatorColor & 0xFF) * opacity));
 	}
 
 	Renderer::popClipRect();

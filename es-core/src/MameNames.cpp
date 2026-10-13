@@ -333,7 +333,7 @@ static std::string getIndexedName(const std::string& name)
 
 	for (auto c : Utils::String::toLower(name))
 	{
-		if (!inpar && !inblock && (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+		if ((!inpar && !inblock && (c >= 'a' && c <= 'z')) || (c >= '0' && c <= '9'))
 			result += c;
 		else if (c == '(') inpar = true;
 		else if (c == ')') inpar = false;

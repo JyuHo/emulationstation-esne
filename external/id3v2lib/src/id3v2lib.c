@@ -60,8 +60,15 @@ ID3v2_Tag* ID3v2_read_tag(const char* file_name)
         return NULL;
     }
 
-    fread(tag_buffer, buffer_length, 1, file);
+    size_t read_count = fread(tag_buffer, buffer_length, 1, file);
     fclose(file);
+
+    if (read_count != 1)
+    {
+        free(tag_buffer);
+        ID3v2_TagHeader_free(tag_header);
+        return NULL;
+    }
 
     ID3v2_Tag* tag = ID3v2_read_tag_from_buffer(tag_buffer, buffer_length);
 

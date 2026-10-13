@@ -28,8 +28,8 @@
 #include "guis/GuiGameAchievements.h"
 
 ISimpleGameListView::ISimpleGameListView(Window* window, FolderData* root, bool temporary) : IGameListView(window, root),
-	mHeaderText(window), mHeaderImage(window), mBackground(window), mFolderPath(window), mOnExitPopup(nullptr), mLastParentFolderData(nullptr),
-	mYButton("y"), mXButton("x"), mOKButton("OK"), mSelectButton("select")
+	mLastParentFolderData(nullptr), mHeaderText(window), mHeaderImage(window), mBackground(window), mFolderPath(window), mOnExitPopup(nullptr),
+	mOKButton("OK"), mXButton("x"), mYButton("y"), mSelectButton("select")
 {
 	mExtraMode = ThemeData::ExtraImportType::ALL_EXTRAS;
 
@@ -394,7 +394,6 @@ void ISimpleGameListView::launchSelectedGame()
 		return;
 
 	FileData* cursor = getCursor();
-	FolderData* folder = NULL;
 
 	if (mCursorStack.size() && (cursor->getType() == PLACEHOLDER || cursor->getType() == FOLDER) && cursor->getPath() == "..")
 	{
@@ -731,7 +730,6 @@ void ISimpleGameListView::updateThemeExtrasBindings()
 	if (file == nullptr)
 		return;
 
-	auto system = file->getSystem();
 
 	for (auto extra : mThemeExtras)
 		BindingManager::updateBindings(extra, file);

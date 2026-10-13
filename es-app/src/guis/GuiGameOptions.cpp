@@ -418,7 +418,6 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))
 		{
 			auto srcSystem = game->getSourceFileData()->getSystem();
-			auto sysOptions = !mSystem->isGameSystem() ? srcSystem : mSystem;
 
 			if (game->getType() != FOLDER)
 			{

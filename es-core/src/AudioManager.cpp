@@ -32,7 +32,7 @@
 AudioManager* AudioManager::sInstance = NULL;
 std::vector<std::shared_ptr<Sound>> AudioManager::sSoundVector;
 
-AudioManager::AudioManager() : mInitialized(false), mCurrentMusic(nullptr), mMusicVolume(MIX_MAX_VOLUME), mVideoPlaying(false)
+AudioManager::AudioManager() : mCurrentMusic(nullptr), mInitialized(false), mMusicVolume(MIX_MAX_VOLUME), mVideoPlaying(false)
 {
 	init();
 }
@@ -622,7 +622,6 @@ void AudioManager::playSong(const std::string& song)
 		{
 			std::string songTitle(info.title, 30);
 			songTitle = " - " + songTitle.substr(0, 30);
-			if (info.artist != NULL) 
 			{
 				std::string songArtist(info.artist, 30);
 				songTitle += " - " + songArtist.substr(0, 30);

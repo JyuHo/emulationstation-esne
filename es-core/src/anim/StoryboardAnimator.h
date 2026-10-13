@@ -81,7 +81,6 @@ public:
 		{
 			float b = 0;
 			float c = 1;
-			float d = animation->duration;
 
 			float t = _currentTime / (float)animation->duration;
 			if (t > 1)

@@ -85,6 +85,8 @@ class SettingsBinding : public IBindable
 			return Settings::getInstance()->getInt(name);
 		case SettingType::Float:
 			return Settings::getInstance()->getFloat(name);
+		default:
+			break;
 		}
 
 		return BindableProperty::Null;
@@ -143,6 +145,8 @@ void BindingManager::bindValues(IBindable* current, std::string& xp, bool showDe
 		case BindablePropertyType::Float:
 			dataAsString = std::to_string(value.f);
 			dataAsEvaluable = dataAsString;
+			break;
+		default:
 			break;
 		}
 
@@ -335,6 +339,8 @@ void BindingManager::updateBindings(GuiComponent* comp, IBindable* bindable, boo
 			}
 		}
 		break;
+		default:
+			break;
 		}
 	}
 
@@ -395,6 +401,8 @@ std::string BindableProperty::toString()
 		return b ? "true" : "false";
 	case BindablePropertyType::Float:
 		return std::to_string(f);
+	default:
+		break;
 	}
 
 	return "";
@@ -413,6 +421,8 @@ bool BindableProperty::toBoolean()
 		return b;
 	case BindablePropertyType::Float:
 		return f != 0.0;
+	default:
+		break;
 	}
 
 	return false;
@@ -431,6 +441,8 @@ int BindableProperty::toInteger()
 		return b ? 1 : 0;
 	case BindablePropertyType::Float:
 		return (int) f;
+	default:
+		break;
 	}
 
 	return 0;
@@ -449,6 +461,8 @@ int BindableProperty::toFloat()
 		return b ? 1.0f : 0.0f;
 	case BindablePropertyType::Float:
 		return f;
+	default:
+		break;
 	}
 
 	return 0.0f;
@@ -480,6 +494,8 @@ BindableProperty ComponentBinding::getProperty(const std::string& name)
 		return prop.b;
 	case ThemeData::ThemeElement::Property::PropertyType::Float:
 		return prop.f;
+	default:
+		break;
 	}
 
 	return BindableProperty::Null;

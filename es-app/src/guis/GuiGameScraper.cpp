@@ -9,10 +9,10 @@
 #include "LocaleES.h"
 
 GuiGameScraper::GuiGameScraper(Window* window, ScraperSearchParams params, std::function<void(const ScraperSearchResult&)> doneFunc) : GuiComponent(window),
+	mClose(false),
 	mGrid(window, Vector2i(1, 7)),
 	mBox(window, ":/frame.png"),
-	mSearchParams(params),
-	mClose(false)
+	mSearchParams(params)
 {
 	auto theme = ThemeData::getMenuTheme();
 	mBox.setImagePath(theme->Background.path);

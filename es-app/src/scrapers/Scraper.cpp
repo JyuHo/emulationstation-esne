@@ -43,30 +43,38 @@ static std::vector<std::pair<std::string, Scraper*>> esneScrapers()
 	return list;
 }
 
-std::vector<std::pair<std::string, Scraper*>> Scraper::scrapers = esneScrapers();
-#else
-std::vector<std::pair<std::string, Scraper*>> Scraper::scrapers
+std::vector<std::pair<std::string, Scraper*>>& Scraper::scraperList()
 {
-#ifdef SCREENSCRAPER_DEV_LOGIN
-	{ "ScreenScraper", new ScreenScraperScraper() },
-#endif
-
-#ifdef GAMESDB_APIKEY
-	{ "TheGamesDB", new TheGamesDBScraper() },
-#endif
-
-#ifdef HFS_DEV_LOGIN
-	{ "HfsDB", new HfsDBScraper() },
-#endif
-
-	{ "IGDB", new IGDBScraper() },
-	{ "ArcadeDB", new ArcadeDBScraper() }
-};
+	static std::vector<std::pair<std::string, Scraper*>> list = esneScrapers();
+	return list;
+}
+#else
+std::vector<std::pair<std::string, Scraper*>>& Scraper::scraperList()
+{
+	static std::vector<std::pair<std::string, Scraper*>> list
+	{
+	#ifdef SCREENSCRAPER_DEV_LOGIN
+		{ "ScreenScraper", new ScreenScraperScraper() },
+	#endif
+	
+	#ifdef GAMESDB_APIKEY
+		{ "TheGamesDB", new TheGamesDBScraper() },
+	#endif
+	
+	#ifdef HFS_DEV_LOGIN
+		{ "HfsDB", new HfsDBScraper() },
+	#endif
+	
+		{ "IGDB", new IGDBScraper() },
+		{ "ArcadeDB", new ArcadeDBScraper() }
+	};
+	return list;
+}
 #endif
 
 std::string Scraper::getScraperName(Scraper* scraper)
 {
-	for (auto engine : scrapers)
+	for (auto engine : scraperList())
 		if (scraper == engine.second)
 			return engine.first;
 
@@ -75,8 +83,8 @@ std::string Scraper::getScraperName(Scraper* scraper)
 
 int Scraper::getScraperIndex(const std::string& name)
 {
-	for (int i = 0 ; i < scrapers.size() ; i++)
-		if (name == scrapers[i].first)
+	for (int i = 0 ; i < scraperList().size() ; i++)
+		if (name == scraperList()[i].first)
 			return i;
 
 	return -1;
@@ -84,8 +92,8 @@ int Scraper::getScraperIndex(const std::string& name)
 
 std::string Scraper::getScraperNameFromIndex(int index)
 {
-	if (index >= 0 && index < scrapers.size())
-		return scrapers[index].first;
+	if (index >= 0 && index < scraperList().size())
+		return scraperList()[index].first;
 
 	return std::string();
 }
@@ -96,15 +104,15 @@ Scraper* Scraper::getScraper(const std::string name)
 	if(scraper.empty())
 		scraper = Settings::getInstance()->getString("Scraper");
 	
-	for (auto scrap : Scraper::scrapers)
+	for (auto scrap : Scraper::scraperList())
 		if (scrap.first == scraper)
 			return scrap.second;
 
 #if ESNE
 	// ES-NE: a scraper without developer key (<config>/keys.conf) is not listed, but the saved choice (default "ScreenScraper")
 	// can still name it: fall back to the first available scraper instead of returning null (callers dereference it).
-	if (!Scraper::scrapers.empty())
-		return Scraper::scrapers.front().second;
+	if (!Scraper::scraperList().empty())
+		return Scraper::scraperList().front().second;
 #endif
 
 	return nullptr;
@@ -230,7 +238,7 @@ std::unique_ptr<ScraperSearchHandle> Scraper::search(const ScraperSearchParams& 
 std::vector<std::string> Scraper::getScraperList()
 {
 	std::vector<std::string> list;
-	for(auto& it : Scraper::scrapers)
+	for(auto& it : Scraper::scraperList())
 		list.push_back(it.first);
 
 	return list;
@@ -462,6 +470,8 @@ MDResolveHandle::MDResolveHandle(const ScraperSearchResult& result, const Scrape
 		case MetaDataId::Map: suffix = "map"; resize = false; break;
 		case MetaDataId::Cartridge: suffix = "cartridge"; break;
 		case MetaDataId::Bezel: suffix = "bezel"; resize = false; break;
+		default:
+			break;
 		}
 
 		auto ext = url.second.format;
@@ -829,6 +839,8 @@ std::string Scraper::getSaveAsPath(FileData* game, const MetaDataId metadataId, 
 	case MetaDataId::Map: suffix = "map"; break;
 	case MetaDataId::Cartridge: suffix = "cartridge"; break;
 	case MetaDataId::Bezel: suffix = "bezel"; break;
+	default:
+		break;
 	}
 
 	auto system = game->getSourceFileData()->getSystem();

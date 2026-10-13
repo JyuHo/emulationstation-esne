@@ -193,7 +193,6 @@ GuiGameAchievements::GuiGameAchievements(Window* window, GameInfoAndUserProgress
 
 void GuiGameAchievements::centerWindow()
 {
-	float width = (float)Math::min((int)Renderer::getScreenHeight(), (int)(Renderer::getScreenWidth() * 0.90f));
 
 	if (Renderer::ScreenSettings::fullScreenMenus())
 		mMenu.setSize(Renderer::getScreenWidth(), Renderer::getScreenHeight());

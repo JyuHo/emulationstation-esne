@@ -17,10 +17,10 @@
 
 bool GuiComponent::isLaunchTransitionRunning = false;
 
-GuiComponent::GuiComponent(Window* window) : mWindow(window), mParent(NULL), mOpacity(255), mAmbientOpacity(255),
-	mPosition(Vector3f::Zero()), mOrigin(Vector2f::Zero()), mRotationOrigin(0.5, 0.5), mScaleOrigin(0.5f, 0.5f), mSourceBounds(Vector4f::Zero()),
-	mSize(Vector2f::Zero()), mTransform(Transform4x4f::Identity()), mVisible(true), mShowing(false), mPadding(Vector4f(0, 0, 0, 0)), mClipChildren(false),
-	mExtraType(ExtraType::BUILTIN), mStoryboardAnimator(nullptr), mScreenOffset(0.0f), mTransformDirty(true), mIsMouseOver(false), mMousePressed(false), mChildZIndexDirty(false)
+GuiComponent::GuiComponent(Window* window) : mWindow(window), mParent(NULL), mPosition(Vector3f::Zero()), mOrigin(Vector2f::Zero()),
+	mRotationOrigin(0.5, 0.5), mSize(Vector2f::Zero()), mScaleOrigin(0.5f, 0.5f), mScreenOffset(0.0f), mSourceBounds(Vector4f::Zero()),
+	mShowing(false), mVisible(true), mTransformDirty(true), mChildZIndexDirty(false), mIsMouseOver(false), mClipChildren(false),
+	mOpacity(255), mPadding(Vector4f(0, 0, 0, 0)), mExtraType(ExtraType::BUILTIN), mMousePressed(false), mAmbientOpacity(255), mTransform(Transform4x4f::Identity()), mStoryboardAnimator(nullptr)
 {
 	mClipRect = Vector4f();
 }
@@ -536,7 +536,7 @@ bool GuiComponent::finishAnimation(unsigned char slot)
 	auto it = mAnimationMap.find(slot);
 	if (it != mAnimationMap.cend() && it->second != nullptr)
 	{
-		const bool done = mAnimationMap[slot]->update(mAnimationMap[slot]->getAnimation()->getDuration() - mAnimationMap[slot]->getTime());
+		mAnimationMap[slot]->update(mAnimationMap[slot]->getAnimation()->getDuration() - mAnimationMap[slot]->getTime());
 
 		auto anim = it->second;
 		mAnimationMap.erase(it);
@@ -1225,6 +1225,8 @@ void GuiComponent::setProperty(const std::string name, const ThemeData::ThemeEle
 				Sound::get(mStoryBoardSound)->play();
 		}
 
+		break;
+	default:
 		break;
 	}
 	

@@ -15,7 +15,7 @@ enum AsyncHandleStatus
 class AsyncHandle
 {
 public:
-	AsyncHandle() : mStatus(ASYNC_IN_PROGRESS), mErrorCode(200) {};
+	AsyncHandle() : mErrorCode(200), mStatus(ASYNC_IN_PROGRESS) {};
 	virtual ~AsyncHandle() {};
 
 	virtual void update() = 0;

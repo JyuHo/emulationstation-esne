@@ -16,7 +16,7 @@
 #define WINDOW_WIDTH (float)Math::min(Renderer::getScreenHeight() * 1.125f, Renderer::getScreenWidth() * 0.90f)
 
 GuiThemeInstaller::GuiThemeInstaller(Window* window)
-	: GuiComponent(window), mGrid(window, Vector2i(1, 4)), mBackground(window, ":/frame.png"), mReloadList(1), mTabFilter(0)
+	: GuiComponent(window), mReloadList(1), mTabFilter(0), mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 4))
 {
 	addChild(&mBackground);
 	addChild(&mGrid);

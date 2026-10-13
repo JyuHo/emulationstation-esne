@@ -789,6 +789,8 @@ void ThemeData::loadFile(const std::string& system, const std::map<std::string, 
 		case SettingType::Float:
 			mVariables[variableName] = std::to_string(Settings::getInstance()->getFloat(name));
 			break;
+		default:
+			break;
 		}
 	}
 

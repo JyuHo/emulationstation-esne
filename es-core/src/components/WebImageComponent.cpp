@@ -46,7 +46,7 @@ public:
 // keepInCacheDuration = 86400 -> image expire in 24 hours ( 60*60*10 )
 
 WebImageComponent::WebImageComponent(Window* window, double keepInCacheDuration) : ImageComponent(window, false), 
-	mRequest(nullptr), mKeepInCacheDuration(keepInCacheDuration), mMaxSize(MaxSizeInfo::Empty),
+	mRequest(nullptr), mMaxSize(MaxSizeInfo::Empty), mKeepInCacheDuration(keepInCacheDuration),
 	mBusyAnim(nullptr)
 {
 	mWaitLoaded = false;

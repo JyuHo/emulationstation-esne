@@ -10,6 +10,8 @@ struct SaveState
 {
 	friend class SaveStateRepository;
 
+	virtual ~SaveState() { }
+
 	bool isSlotValid() const { return slot != -99; }
 	
 	std::string rom;

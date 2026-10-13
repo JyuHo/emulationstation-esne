@@ -284,16 +284,6 @@ namespace Utils
 			
 			try
 			{
-				OpaqueWrapper w;
-				w.opaque = pOpaque;
-				w.callback = pCallback;
-
-				mz_file_write_func func = [](void *pOpaque, uint64_t file_ofs, const void *pBuf, size_t n)
-				{
-					OpaqueWrapper* wrapper = (OpaqueWrapper*)pOpaque;
-					return wrapper->callback(wrapper->opaque, file_ofs, pBuf, n);
-				};
-
 				return mz_zip_reader_extract_file_to_callback(mZipArchive, getInternalFilename(name).c_str(), pCallback, pOpaque, 0);
 			}
 			catch (...)

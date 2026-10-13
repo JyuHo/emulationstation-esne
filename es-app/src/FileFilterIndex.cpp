@@ -20,8 +20,8 @@
 #define INCLUDE_UNKNOWN false;
 
 FileFilterIndex::FileFilterIndex()
-	: filterByFavorites(false), filterByGenre(false), filterByKidGame(false), filterByPlayers(false), filterByPubDev(false), filterByRatings(false), filterByYear(false), filterByTag(false)
-	, filterByLightGun(false), filterByWheel(false), filterByTrackball(false), filterBySpinner(false), filterByVertical(false), filterByCheevos(false), filterByPlayed(false), filterByRegion(false), filterByLang(false), filterByFamily(false), filterByHasMedia(false), filterByMissingMedia(false)
+	: filterByGenre(false), filterByFamily(false), filterByPlayers(false), filterByPubDev(false), filterByRatings(false), filterByFavorites(false), filterByYear(false), filterByKidGame(false)
+	, filterByPlayed(false), filterByLang(false), filterByRegion(false), filterByCheevos(false), filterByVertical(false), filterByLightGun(false), filterByWheel(false), filterByTrackball(false), filterBySpinner(false), filterByHasMedia(false), filterByMissingMedia(false), filterByTag(false)
 {
 	clearAllFilters();
 	FilterDataDecl filterDecls[] = 
@@ -444,6 +444,8 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 
 		return game->isVerticalArcadeGame() ? "TRUE" : "FALSE";		
 	}
+	default:
+		break;
 	}
 
 	if (key.empty() || (type == RATINGS_FILTER && key == "0 STARS"))

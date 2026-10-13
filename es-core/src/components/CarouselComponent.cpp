@@ -758,6 +758,8 @@ void CarouselComponent::ensureLogo(IList<CarouselComponentData, IBindable*>::Ent
 		case CarouselImageSource::FANART:    mediaName = "fanart";    break;
 		case CarouselImageSource::CARTRIDGE: mediaName = "cartridge"; break;
 		case CarouselImageSource::MIX:       mediaName = "mix";       break;
+		default:
+			break;
 		}
 
 		std::string marqueePath = entry.object->getProperty(mediaName).toString();

@@ -6,4 +6,7 @@ include(GNUInstallDirs)
 option(BUILD_SHARED_LIBS "Build shared libraries instead of static ones." OFF)
 
 add_subdirectory(src)
-add_subdirectory(test)
+option(ID3V2LIB_BUILD_TESTS "Compiler les tests d'id3v2lib (inutiles pour ES)" OFF)
+if(ID3V2LIB_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

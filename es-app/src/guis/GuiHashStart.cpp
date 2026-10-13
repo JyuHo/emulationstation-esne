@@ -18,7 +18,6 @@ GuiHashStart::GuiHashStart(Window* window, ThreadedHasher::HasherType type) : Gu
 
 	addChild(&mMenu);
 
-	auto scraper = Scraper::getScraper();
 
 	// add filters (with first one selected)
 	mFilters = std::make_shared< OptionListComponent<bool> >(mWindow, _("GAMES TO INDEX"), false);

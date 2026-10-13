@@ -127,9 +127,9 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 
 	char strbuf[256];
 	if(target->getDeviceId() == DEVICE_KEYBOARD)
-	  strncpy(strbuf, _("KEYBOARD").c_str(), 256); 
+	  snprintf(strbuf, sizeof(strbuf), "%s", _("KEYBOARD").c_str());
 	else if(target->getDeviceId() == DEVICE_CEC)
-	  strncpy(strbuf, _("CEC").c_str(), 256); 
+	  snprintf(strbuf, sizeof(strbuf), "%s", _("CEC").c_str());
 	else {
 	  snprintf(strbuf, 256, _("GAMEPAD %i").c_str(), target->getDeviceId() + 1); 
 	}

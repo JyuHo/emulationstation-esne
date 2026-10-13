@@ -61,8 +61,8 @@ static void display(void* data, void* id)
 }
 
 VideoVlcComponent::VideoVlcComponent(Window* window) : VideoComponent(window), 
-	mMediaPlayer(nullptr), mMedia(nullptr),
-	mTopLeftCrop(0.0f, 0.0f), mBottomRightCrop(1.0f, 1.0f), mContext(nullptr)
+	mMedia(nullptr), mMediaPlayer(nullptr),
+	mContext(nullptr), mTopLeftCrop(0.0f, 0.0f), mBottomRightCrop(1.0f, 1.0f)
 {
 	mIsParsing = false;
 	mSaturation = 1.0f;
@@ -384,7 +384,7 @@ void VideoVlcComponent::updateColors()
 	if (hasStoryBoard() && currentStoryBoardHasProperty("opacity") && isStoryBoardRunning())
 		opacity = (getOpacity() / 255.0f);
 
-	unsigned int color = Renderer::convertColor(mColorShift & 0xFFFFFF00 | (unsigned char)((mColorShift & 0xFF) * opacity));
+	unsigned int color = Renderer::convertColor((mColorShift & 0xFFFFFF00) | (unsigned char)((mColorShift & 0xFF) * opacity));
 
 	mVertices[0].col = color;
 	mVertices[1].col = color;
@@ -550,7 +550,6 @@ void VideoVlcComponent::render(const Transform4x4f& parentTrans)
 
 		beginCustomClipRect();
 
-		Vector2f targetSizePos = (mTargetSize - mSize) * mOrigin * -1;
 		
 		// Render it
 		mVertices->saturation = mSaturation;

@@ -234,6 +234,8 @@ namespace Utils
 				Scripting::fireEvent("quit", "shutdown");
 				Scripting::fireEvent("shutdown");
 				break;
+			default:
+				break;
 			}
 
 			SDL_Event* quit = new SDL_Event();

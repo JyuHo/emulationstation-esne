@@ -148,11 +148,9 @@ void ComponentTab::render(const Transform4x4f& parentTrans)
 
 	auto menuTheme = ThemeData::getMenuTheme();
 	unsigned int selectorColor = menuTheme->Text.selectorColor;
-	unsigned int selectorGradientColor = menuTheme->Text.selectorGradientColor;
 	unsigned int selectedColor = menuTheme->Title.color;
 	unsigned int bgColor = menuTheme->Background.color;
 	unsigned int separatorColor = menuTheme->Text.separatorColor;
-	unsigned int textColor = menuTheme->Text.color;
 	bool selectorGradientHorz = menuTheme->Text.selectorGradientType;
 
 	Transform4x4f trans = parentTrans * getTransform();

@@ -61,8 +61,7 @@ bool ThemeStoryboard::fromXmlNode(const pugi::xml_node& root, const std::map<std
 
 	if (!sbrepeat.empty())
 	{
-		if (this->repeat = 1)
-			this->repeat = 0;
+		this->repeat = 0;
 
 		this->repeatAt = Utils::String::toInteger(sbrepeat);
 	}

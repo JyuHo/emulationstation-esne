@@ -351,7 +351,6 @@ void MenuComponent::setSubTitle(const std::string& text)
 	mSubtitle->setLineSpacing(1.1);
 	
 	const float titleHeight = mTitle->getFont()->getLetterHeight() + (mSubtitle ? TITLE_WITHSUB_VERT_PADDING : TITLE_VERT_PADDING);
-	const float subtitleHeight = mSubtitle->getSize().y() + SUBTITLE_VERT_PADDING;
 
 	mHeaderGrid->setRowHeightPerc(0, titleHeight / TITLE_HEIGHT);	
 

@@ -93,7 +93,6 @@ public:
 		{
 			if (mFunc2)
 			{
-				Window* window = mWindow;
 				auto func = mFunc2;
 				auto ret = result;
 

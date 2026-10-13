@@ -14,9 +14,9 @@
 #define BLINKTIME	1000
 
 TextEditComponent::TextEditComponent(Window* window) : GuiComponent(window),
-	mBox(window, ":/textinput_ninepatch.png"), mFocused(false), 
-	mScrollOffset(0.0f, 0.0f), mCursor(0), mEditing(false), mFont(Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT)), 
-	mCursorRepeatDir(0)
+	mFocused(false), mEditing(false), 
+	mCursor(0), mCursorRepeatDir(0), mScrollOffset(0.0f, 0.0f), mBox(window, ":/textinput_ninepatch.png"), 
+	mFont(Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT))
 {
 	mBlinkTime = 0;
 	mDeferTextInputStart = false;

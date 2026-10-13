@@ -2230,6 +2230,8 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::NFC:
 		executables.push_back("batocera-nfc");
 		break;
+	default:
+		break;
 	}
 
 	if (executables.size() == 0)

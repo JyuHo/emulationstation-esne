@@ -13,8 +13,8 @@
 static int slots = 6; // 5;
 
 GuiSaveState::GuiSaveState(Window* window, FileData* game, const std::function<void(SaveState* state)>& callback) :
-	GuiComponent(window), mGrid(nullptr), mBackground(window, ":/frame.png"),
-	mLayout(window, Vector2i(3, 5)), mTitle(nullptr)
+	GuiComponent(window), mGrid(nullptr), mTitle(nullptr),
+	mBackground(window, ":/frame.png"), mLayout(window, Vector2i(3, 5))
 {
 	mGame = game;
 	mRepository = game->getSourceFileData()->getSystem()->getSaveStateRepository();
@@ -165,7 +165,6 @@ void GuiSaveState::onSizeChanged()
 
 		const float height = Math::round(help.font->getLetterHeight() * 1.25f);
 
-		float helpBottom = help.position.y() + (height * mOrigin.y());
 		float helpBottomSpace = 0; // Renderer::getScreenHeight() - helpBottom;
 
 		float helpTop = help.position.y() - (height * mOrigin.y()); // +height / 2;

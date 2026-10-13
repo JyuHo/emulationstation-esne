@@ -195,7 +195,7 @@ namespace Renderer
 		return ret;
 	};
 
-	static int getAvailableVideoMemory();
+	[[maybe_unused]] static int getAvailableVideoMemory();
 
 	static void setupDefaultShaders()
 	{
@@ -415,7 +415,7 @@ namespace Renderer
 	#define GL_GPU_MEM_INFO_CURRENT_AVAILABLE_MEM_NVX 0x9049
 	#endif
 
-	static int getAvailableVideoMemory()
+	[[maybe_unused]] static int getAvailableVideoMemory()
 	{	
 		/*
 		const std::string extensions = glGetString(GL_EXTENSIONS) ? (const char*)glGetString(GL_EXTENSIONS) : "";
@@ -1251,7 +1251,6 @@ namespace Renderer
 
 		if (nTextureID > 0)
 		{
-			int width = getScreenWidth();
 			int height = getScreenHeight();
 
 			unsigned int nFrameBuffer2 = -1;
