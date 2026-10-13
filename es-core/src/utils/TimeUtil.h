@@ -9,7 +9,7 @@ namespace Utils
 {
 	namespace Time
 	{
-		static const int NOT_A_DATE_TIME = 0;
+		[[maybe_unused]] static const int NOT_A_DATE_TIME = 0;
 
 		class DateTime
 		{
