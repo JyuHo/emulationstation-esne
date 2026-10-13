@@ -30,7 +30,7 @@ namespace Renderer
 
 	void Shader::deleteShader()
 	{
-		if (id >= 0 && compileStatus)
+		if (compileStatus)
 		{
 			glDeleteShader(id);
 			compileStatus = false;
@@ -108,7 +108,7 @@ namespace Renderer
 		}
 #endif
 
-		if (mId >= 0)
+		if (mId != 0)
 		{
 			for (auto shader : mAttachedShaders)
 				shader.deleteShader();

@@ -680,7 +680,7 @@ void TextListComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, c
 
 	if (elem)
 	{
-		auto itemTemplate = std::find_if(elem->children.cbegin(), elem->children.cend(), [](const std::pair<std::string, ThemeData::ThemeElement> ss) { return ss.first == "itemTemplate"; });
+		auto itemTemplate = std::find_if(elem->children.cbegin(), elem->children.cend(), [](const std::pair<std::string, ThemeData::ThemeElement>& ss) { return ss.first == "itemTemplate"; });
 		if (itemTemplate != elem->children.cend())
 			mItemTemplate = itemTemplate->second;
 	}

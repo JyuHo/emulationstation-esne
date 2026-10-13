@@ -217,6 +217,7 @@ public:
 	public:
 		ThemeElement() { extra = 0; }
 		ThemeElement(const ThemeElement& src);
+		ThemeElement& operator=(const ThemeElement& src);
 		~ThemeElement();
 
 		int extra;

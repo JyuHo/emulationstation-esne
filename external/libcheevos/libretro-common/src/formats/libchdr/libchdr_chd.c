@@ -1163,6 +1163,7 @@ static inline int chd_compressed(chd_header* header) {
 static chd_error decompress_v5_map(chd_file* chd, chd_header* header)
 {
 	int result = 0;
+	(void)result;
 	uint32_t hunknum;
 	int repcount = 0;
 	uint8_t lastcomp = 0;
@@ -2324,6 +2325,7 @@ static chd_error hunk_read_into_memory(chd_file *chd, UINT32 hunknum, UINT8 *des
 			if (blockoffs != 0) {
 				core_fseek(chd->file, blockoffs, SEEK_SET);
 				int result = core_fread(chd->file, dest, chd->header.hunkbytes);
+				(void)result;
 			/* TODO
 			else if (m_parent_missing)
 				throw CHDERR_REQUIRES_PARENT; */

@@ -251,9 +251,6 @@ void TextureResource::cancelAsync(std::shared_ptr<TextureResource> texture)
 // For scalable source images in textures we want to set the resolution to rasterize at
 void TextureResource::rasterizeAt(size_t width, size_t height)
 {
-	// Avoids crashing if a theme (in grids) defines negative sizes
-	if (width < 0) width = -width;
-	if (height < 0) height = -height;
 
 	auto data = mTextureData ? mTextureData : sTextureDataManager.get(this, TextureLoadMode::NOLOAD);
 	if (data != nullptr)
