@@ -390,7 +390,7 @@ void TextComponent::buildTextCache()
 			std::string textCopy = text;
 
 			size_t cursor = 0;
-			while (cursor >= 0 && cursor < textCopy.size())
+			while (cursor < textCopy.size())
 			{
 				auto newCursor = Utils::String::nextCursor(textCopy, cursor);
 				if (cursor == newCursor)

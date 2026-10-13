@@ -1612,7 +1612,7 @@ static int nsvg__parseRotate(float* xform, const char* str)
 
 static void nsvg__parseTransform(float* xform, const char* str)
 {
-	float t[6];
+	float t[6] = { 1, 0, 0, 1, 0, 0 };
 	nsvg__xformIdentity(xform);
 	while (*str)
 	{

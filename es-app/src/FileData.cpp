@@ -842,6 +842,7 @@ static std::vector<std::string> getTokens(const std::string& string)
 			inString = !inString;
 			if (inString)
 				startPos = i + 1;
+			// fall through
 
 		case '\0':
 		case ' ':

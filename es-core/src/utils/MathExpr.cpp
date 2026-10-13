@@ -221,7 +221,7 @@ namespace Utils
 				}
 
 				start--;
-				if (start >= 0 && input[start] == '(' && parenth == 0)
+				if (input[start] == '(' && parenth == 0)
 				{
 					start++;
 					break;

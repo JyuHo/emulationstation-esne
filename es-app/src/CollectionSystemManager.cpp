@@ -839,6 +839,7 @@ void CollectionSystemManager::updateCollectionFolderMetadata(SystemData* sys)
 			case 3:
 			case 4:
 				games_list += "\n";
+			// fall through
 			case 1:
 				games_list += "- " + file->getName();
 				break;

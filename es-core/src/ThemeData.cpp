@@ -2742,6 +2742,27 @@ ThemeData::ThemeElement::ThemeElement(const ThemeElement& src)
 		mStoryBoards[sb.first] = new ThemeStoryboard(*sb.second);
 }
 
+ThemeData::ThemeElement& ThemeData::ThemeElement::operator=(const ThemeElement& src)
+{
+	if (this == &src)
+		return *this;
+
+	// Les storyboards sont possedes par l'element : copie profonde, sinon double delete
+	for (auto sb : mStoryBoards)
+		delete sb.second;
+	mStoryBoards.clear();
+
+	extra = src.extra;
+	type = src.type;
+	properties = src.properties;
+	children = src.children;
+
+	for (auto sb : src.mStoryBoards)
+		mStoryBoards[sb.first] = new ThemeStoryboard(*sb.second);
+
+	return *this;
+}
+
 ThemeData::ThemeElement::~ThemeElement()
 {
 	for (auto sb : mStoryBoards)

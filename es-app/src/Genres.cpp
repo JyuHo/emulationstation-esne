@@ -338,7 +338,7 @@ void Genres::convertGenreToGenreIds(MetaDataList* file)
 			auto sg = mAllGenresNames.find(Utils::String::trim(subgenre));
 			if (sg != mAllGenresNames.cend())
 				ids.insert(sg->second);
-			else if (genre.find("/") >= 0)
+			else if (genre.find("/") != std::string::npos)
 			{
 				std::vector<std::string> subItems = Utils::String::splitAny(subgenre, "/", true);	
 				std::reverse(subItems.begin(), subItems.end());
