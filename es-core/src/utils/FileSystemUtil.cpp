@@ -728,7 +728,6 @@ namespace Utils
 			char fp[4096];
 
 			int pos = 0;
-			int ofs = 0;
 
 			bool pointset = false;
 			bool twopointset = false;
@@ -1497,7 +1496,7 @@ namespace Utils
 				return false;
 			}
 
-			while (size = fread(buf, 1, 512, source))
+			while ((size = fread(buf, 1, 512, source)))
 				fwrite(buf, 1, size, dest);
 
 			fclose(dest);
@@ -1680,7 +1679,7 @@ namespace Utils
 					MD5 md5;
 
 					size_t size;
-					while (size = fread(buffer, 1, CRCBUFFERSIZE, file))
+					while ((size = fread(buffer, 1, CRCBUFFERSIZE, file)))
 						md5.update(buffer, size);
 
 					md5.finalize();

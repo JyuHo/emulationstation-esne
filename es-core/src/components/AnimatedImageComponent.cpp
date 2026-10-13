@@ -4,7 +4,7 @@
 #include "resources/ResourceManager.h"
 #include "Log.h"
 
-AnimatedImageComponent::AnimatedImageComponent(Window* window) : GuiComponent(window), mEnabled(false), mCurrentFrame(0), mFrameAccumulator(0), mLoop(true)
+AnimatedImageComponent::AnimatedImageComponent(Window* window) : GuiComponent(window), mLoop(true), mEnabled(false), mFrameAccumulator(0), mCurrentFrame(0)
 {
 }
 

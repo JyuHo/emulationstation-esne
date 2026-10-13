@@ -23,7 +23,7 @@
 #define WINDOW_WIDTH (float)Math::min(Renderer::getScreenHeight() * 1.125f, Renderer::getScreenWidth() * 0.95f)
 
 GuiBatoceraStore::GuiBatoceraStore(Window* window)
-	: GuiComponent(window), mGrid(window, Vector2i(1, 4)), mBackground(window, ":/frame.png")
+	: GuiComponent(window), mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 4))
 {
 	mReloadList = 1;
 
@@ -285,16 +285,17 @@ std::vector<PacmanPackage> GuiBatoceraStore::queryPackages()
 
 void GuiBatoceraStore::loadPackagesAsync(bool updatePackageList, bool refreshOnly)
 {
-	Window* window = mWindow;
 
 	mWindow->pushGui(new GuiLoading<std::vector<PacmanPackage>>(mWindow, _("PLEASE WAIT"),
 		[this,  updatePackageList, refreshOnly](auto gui)
 		{	
 			if (updatePackageList)
+			{
 				if (refreshOnly)
 					ApiSystem::getInstance()->refreshBatoceraStorePackageList();
 				else
 					ApiSystem::getInstance()->updateBatoceraStorePackageList();
+			}
 
 			return queryPackages();
 		},

@@ -10,9 +10,9 @@
 #define TEXT_PADDING Math::max(12, Renderer::getScreenWidth() * 0.014)
 
 ButtonComponent::ButtonComponent(Window* window, const std::string& text, const std::string& helpText, const std::function<void()>& func, bool upperCase) : GuiComponent(window),
-	mBox(window, ThemeData::getMenuTheme()->Button.path),	
-	mFocused(false), 
-	mEnabled(true),
+	mFocused(false),	
+	mEnabled(true), 
+	mBox(window, ThemeData::getMenuTheme()->Button.path),
 	mMousePressed(false)	
 {
 	auto menuTheme = ThemeData::getMenuTheme();

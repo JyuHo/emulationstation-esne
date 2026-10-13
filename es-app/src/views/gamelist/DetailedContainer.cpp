@@ -22,26 +22,26 @@
 DetailedContainer::DetailedContainer(ISimpleGameListView* parent, GuiComponent* list, Window* window, DetailedContainerType viewType) :
 	mParent(parent), mList(list), mWindow(window), mViewType(viewType),
 	mDescription(window),
-	mImage(nullptr), mVideo(nullptr), mThumbnail(nullptr), mFlag(nullptr),
-	mKidGame(nullptr), mNotKidGame(nullptr), mHidden(nullptr),
-	mGunGame(nullptr), mNotGunGame(nullptr),
-	mWheelGame(nullptr), mNotWheelGame(nullptr),
-	mTrackballGame(nullptr), mNotTrackballGame(nullptr),
-	mSpinnerGame(nullptr), mNotSpinnerGame(nullptr),
-	mFavorite(nullptr), mNotFavorite(nullptr),
-	mManual(nullptr), mNoManual(nullptr),
-	mMap(nullptr), mNoMap(nullptr),
-	mCheevos(nullptr), mNotCheevos(nullptr),
-	mNetplay(nullptr), mNotNetplay(nullptr),
-	mSaveState(nullptr), mNoSaveState(nullptr),
-	mState(true), mFolderView(nullptr),
+	mIsPerGameExtrasPathBinding(false), mImage(nullptr), mThumbnail(nullptr), mVideo(nullptr),
+	mFlag(nullptr), mHidden(nullptr), mFavorite(nullptr),
+	mNotFavorite(nullptr), mKidGame(nullptr),
+	mNotKidGame(nullptr), mCheevos(nullptr),
+	mNotCheevos(nullptr), mNetplay(nullptr),
+	mNotNetplay(nullptr), mManual(nullptr),
+	mNoManual(nullptr), mMap(nullptr),
+	mNoMap(nullptr), mSaveState(nullptr),
+	mNoSaveState(nullptr), mGunGame(nullptr),
+	mNotGunGame(nullptr), mWheelGame(nullptr),
+	mNotWheelGame(nullptr), mTrackballGame(nullptr),
+	mNotTrackballGame(nullptr), mSpinnerGame(nullptr),
+	mNotSpinnerGame(nullptr), mLblRating(window),
 
-	mLblRating(window), mLblReleaseDate(window), mLblDeveloper(window), mLblPublisher(window),
-	mLblGenre(window), mLblPlayers(window), mLblLastPlayed(window), mLblPlayCount(window), mLblGameTime(window), mLblFavorite(window),
+	mLblReleaseDate(window), mLblDeveloper(window), mLblPublisher(window), mLblGenre(window),
+	mLblPlayers(window), mLblLastPlayed(window), mLblPlayCount(window), mLblGameTime(window), mLblFavorite(window), mDeveloper(window),
 
-	mRating(window), mReleaseDate(window), mDeveloper(window), mPublisher(window),
-	mGenre(window), mPlayers(window), mLastPlayed(window), mPlayCount(window),
-	mName(window), mGameTime(window), mTextFavorite(window), mIsPerGameExtrasPathBinding(false)
+	mPublisher(window), mGenre(window), mPlayers(window), mPlayCount(window),
+	mName(window), mGameTime(window), mTextFavorite(window), mRating(window),
+	mReleaseDate(window), mLastPlayed(window), mFolderView(nullptr), mState(true)
 {
 	std::vector<MdImage> mdl = 
 	{ 
@@ -338,7 +338,6 @@ void DetailedContainer::initMDLabels()
 	const float colSize = (mSize.x() * 0.48f) / colCount;
 	const float rowPadding = 0.01f * mSize.y();
 
-	int i = 0;	
 	for (unsigned int i = 0; i < components.size(); i++)
 	{
 		if (components[i].labelid.empty() || components[i].label == nullptr)

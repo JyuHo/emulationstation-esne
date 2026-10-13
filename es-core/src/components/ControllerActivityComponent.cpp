@@ -15,7 +15,7 @@
 
 #define PLAYER_PAD_TIME_MS		 150
 
-ControllerActivityComponent::ControllerActivityComponent(Window* window) : GuiComponent(window), mBatteryInfoChanged(false), mBatteryTextX(0), mNetworkConnected(false), mPlanemodeEnabled(false)
+ControllerActivityComponent::ControllerActivityComponent(Window* window) : GuiComponent(window), mNetworkConnected(false), mPlanemodeEnabled(false), mBatteryTextX(0), mBatteryInfoChanged(false)
 {
 	WatchersManager::getInstance()->RegisterNotify(this);
 	init();
@@ -212,7 +212,6 @@ void ControllerActivityComponent::render(const Transform4x4f& parentTrans)
 	{	
 		auto& playerJoysticks = InputManager::getInstance()->lastKnownPlayersDeviceIndexes();
 
-		int padCount = 0;
 
 		for (int player = 0; player < MAX_PLAYERS; player++)
 		{

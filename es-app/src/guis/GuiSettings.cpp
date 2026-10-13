@@ -383,7 +383,6 @@ void GuiSettings::addFileBrowser(const std::string& title, const std::string& se
 
 std::shared_ptr<SwitchComponent> GuiSettings::addSwitch(const std::string& title, const std::string& description, const std::string& settingsID, bool storeInSettings, const std::function<void()>& onChanged)
 {
-	Window* window = mWindow;
 
 	bool value = storeInSettings ? Settings::getInstance()->getBool(settingsID) : SystemConf::getInstance()->getBool(settingsID);
 
@@ -410,7 +409,6 @@ std::shared_ptr<SwitchComponent> GuiSettings::addSwitch(const std::string& title
 
 std::shared_ptr<OptionListComponent<std::string>> GuiSettings::addOptionList(const std::string& title, const std::string& description, const std::vector<std::pair<std::string, std::string>>& values, const std::string& settingsID, bool storeInSettings, const std::function<void()>& onChanged)
 {
-	Window* window = mWindow;
 
 	std::string value = storeInSettings ? Settings::getInstance()->getString(settingsID) : SystemConf::getInstance()->get(settingsID);
 

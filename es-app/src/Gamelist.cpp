@@ -732,6 +732,8 @@ void cleanupGamelist(SystemData* system)
 				case MetaDataId::Magazine: suffix = "magazine"; folder = "/magazines/"; ext = ".pdf"; break;
 				case MetaDataId::Map: suffix = "map"; break;
 				case MetaDataId::Cartridge: suffix = "cartridge"; break;
+				default:
+					break;
 				}
 
 				if (!suffix.empty())

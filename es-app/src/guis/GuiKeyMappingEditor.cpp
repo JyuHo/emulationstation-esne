@@ -68,7 +68,7 @@ void GuiKeyMappingEditor::initMappingNames()
 }
 
 GuiKeyMappingEditor::GuiKeyMappingEditor(Window* window, IKeyboardMapContainer* mapping, bool editable)
-	: GuiComponent(window), mGrid(window, Vector2i(1, 4)), mBackground(window, ":/frame.png")
+	: GuiComponent(window), mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 4))
 {
 	initMappingNames();
 
@@ -200,17 +200,6 @@ void GuiKeyMappingEditor::centerWindow()
 		setSize(WINDOW_WIDTH, Renderer::getScreenHeight() * 0.875f);
 
 	setPosition((Renderer::getScreenWidth() - getSize().x()) / 2, (Renderer::getScreenHeight() - getSize().y()) / 2);
-}
-
-static bool sortPackagesByGroup(PacmanPackage& sys1, PacmanPackage& sys2)
-{
-	std::string name1 = Utils::String::toUpper(sys1.group);
-	std::string name2 = Utils::String::toUpper(sys2.group);
-
-	if (name1 == name2)
-		return Utils::String::compareIgnoreCase(sys1.description, sys2.description) < 0;		
-
-	return name1.compare(name2) < 0;
 }
 
 void GuiKeyMappingEditor::loadList(bool restoreIndex)

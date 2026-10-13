@@ -56,19 +56,19 @@ void VideoComponent::setScreensaverMode(bool isScreensaver)
 
 VideoComponent::VideoComponent(Window* window) :
 	GuiComponent(window),
-	mStaticImage(window, !Settings::AllImagesAsync()),
-	mVideoHeight(0),
 	mVideoWidth(0),
+	mVideoHeight(0),
+	mTargetSize(0, 0),
+	mStaticImage(window, !Settings::AllImagesAsync()),
+	mPlayAudio(true),
 	mStartDelayed(false),
 	mIsPlaying(false),
 	mScreensaverActive(false),
-	mIsTopWindow(true),
-	mEnabled(true),
 	mScreensaverMode(false),
 	mTargetIsMax(false),
 	mTargetIsMin(false),
-	mTargetSize(0, 0),
-	mPlayAudio(true)
+	mIsTopWindow(true),
+	mEnabled(true)
 {
 	mScaleOrigin = Vector2f::Zero();
 

@@ -397,7 +397,7 @@ void ImageGridComponent<T>::ensureVisibleTileExist()
 					entry.data.tile->onShow();
 			}
 
-			if (mScrollLoop && i < startIndex || i > endIndex)
+			if ((mScrollLoop && i < startIndex) || i > endIndex)
 			{
 				auto tile = createTile(idx, dimOpposite, tileDistance, startPosition);
 				loadTile(tile, entry);
@@ -733,8 +733,6 @@ void ImageGridComponent<T>::render(const Transform4x4f& parentTrans)
 
 	Renderer::pushClipRect(pos, size);
 
-	float dimScrollable = isVertical() ? mGridDimension.y() - 2 * EXTRAITEMS : mGridDimension.x() - 2 * EXTRAITEMS;
-	float dimOpposite = Math::max(1, isVertical() ? mGridDimension.x() : mGridDimension.y());
 	
 	tileTrans.translate(isVertical() ? 0 : -mCameraOffset, isVertical() ? -mCameraOffset : 0);
 
@@ -1076,7 +1074,6 @@ void ImageGridComponent<T>::onCursorChanged(const CursorState& state)
 		}
 	}
 
-	int oldStart = mStartPosition;
 
 	float dimScrollable = isVertical() ? mGridDimension.y() - 2 * EXTRAITEMS : mGridDimension.x() - 2 * EXTRAITEMS;
 	float dimOpposite = Math::max(1, isVertical() ? mGridDimension.x() : mGridDimension.y());
@@ -1091,8 +1088,6 @@ void ImageGridComponent<T>::onCursorChanged(const CursorState& state)
 
 	int lastScroll = std::max(0, (int)(lastCol + 1 - dimScrollable));
 
-	float startPos = 0;
-	float endPos = 1;
 
 	Vector3f oldPos = Vector3f::Zero();
 
@@ -1129,8 +1124,11 @@ void ImageGridComponent<T>::onCursorChanged(const CursorState& state)
 					if (tile->hasItemTemplate())
 						tile->setSelected(false);
 		}
-		else if (mLastCursor = -9999)
+		else
+		{
+			mLastCursor = -9999;
 			mEntries[mCursor].data.tile->startVideo();
+		}
 	}
 
 	int firstVisibleCol = mStartPosition / dimOpposite;
@@ -1152,7 +1150,7 @@ void ImageGridComponent<T>::onCursorChanged(const CursorState& state)
 			mStartPosition = 0;
 		else if ((col - centralCol) > lastScroll && mCenterSelection == CenterSelection::PARTIAL && !mScrollLoop)
 			mStartPosition = lastScroll * dimOpposite;
-		else if (maxCentralCol != centralCol && col == firstVisibleCol + maxCentralCol || col == firstVisibleCol + centralCol)
+		else if ((maxCentralCol != centralCol && col == firstVisibleCol + maxCentralCol) || col == firstVisibleCol + centralCol)
 		{
 			if (col == firstVisibleCol + maxCentralCol)
 				mStartPosition = (col - maxCentralCol) * dimOpposite;
@@ -1390,7 +1388,7 @@ void ImageGridComponent<T>::resetGrid()
 			mStartPosition = 0;
 		else if ((col - centralCol) > lastScroll && mCenterSelection == CenterSelection::PARTIAL && !mScrollLoop)
 			mStartPosition = lastScroll * dimOpposite;
-		else if (maxCentralCol != centralCol && col == firstVisibleCol + maxCentralCol || col == firstVisibleCol + centralCol)
+		else if ((maxCentralCol != centralCol && col == firstVisibleCol + maxCentralCol) || col == firstVisibleCol + centralCol)
 		{
 			if (col == firstVisibleCol + maxCentralCol)
 				mStartPosition = (col - maxCentralCol) * dimOpposite;

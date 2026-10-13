@@ -2601,7 +2601,7 @@ static chd_error zlib_codec_init(void *codec, uint32_t hunkbytes)
 
 	/* handle an error */
 	if (err != CHDERR_NONE)
-		free(data);
+		zlib_codec_free(data);	/* 'data' appartient à l'appelant: on libère ses ressources internes, jamais le bloc lui-même */
 
 	return err;
 }

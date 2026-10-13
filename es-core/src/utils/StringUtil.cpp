@@ -734,7 +734,7 @@ namespace Utils
 			while(idx < len) {
 				int code = chars2Unicode(_string, idx);
 				if (code < 0x80) {
-					vpinyin.push_back( s_tblpinyin[_string[idx-1]] );
+					vpinyin.push_back( s_tblpinyin[(unsigned char)_string[idx-1]] );
 				} else {
 					ret = true;
 					auto it = s_mapPinyin.find(code);

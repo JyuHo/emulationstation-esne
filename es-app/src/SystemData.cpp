@@ -70,7 +70,7 @@ VectorEx<SystemData*> SystemData::sSystemVector;
 bool SystemData::IsManufacturerSupported = false;
 
 SystemData::SystemData(const SystemMetadata& meta, SystemEnvironmentData* envData, std::vector<EmulatorData>* pEmulators, bool CollectionSystem, bool groupedSystem, bool withTheme, bool loadThemeOnlyIfElements) :
-	mMetadata(meta), mEnvData(envData), mIsCollectionSystem(CollectionSystem), mIsGameSystem(true)
+	mIsCollectionSystem(CollectionSystem), mIsGameSystem(true), mMetadata(meta), mEnvData(envData)
 {
 	mBindableRandom = nullptr;
 	mSaveRepository = nullptr;
@@ -465,6 +465,8 @@ void SystemData::indexAllGameFilters(const FolderData* folder)
 		{
 			case GAME:   { mFilterIndex->addToIndex(*it); } break;
 			case FOLDER: { indexAllGameFilters((FolderData*)*it); } break;
+			default:
+				break;
 		}
 	}
 }
@@ -2001,8 +2003,7 @@ bool SystemData::hasEmulatorSelection()
 	for (auto& emulator : mEmulators)
 	{
 		ec++;
-		for (auto& core : emulator.cores)
-			cc++;
+		cc += emulator.cores.size();
 	}
 
 	return ec > 1 || cc > 1;

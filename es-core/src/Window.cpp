@@ -33,8 +33,8 @@
 #include <SDL_syswm.h>
 #endif
 
-Window::Window() : mNormalizeNextUpdate(false), mFrameTimeElapsed(0), mFrameCountElapsed(0), mAverageDeltaTime(10),
-  mAllowSleep(true), mSleeping(false), mTimeSinceLastInput(0), mScreenSaver(NULL), mRenderScreenSaver(false), mClockElapsed(0), mMouseCapture(nullptr), mMenuBackgroundShaderTextureCache(-1)
+Window::Window() : mScreenSaver(NULL), mRenderScreenSaver(false), mFrameTimeElapsed(0), mFrameCountElapsed(0),
+  mAverageDeltaTime(10), mClockElapsed(0), mNormalizeNextUpdate(false), mAllowSleep(true), mSleeping(false), mTimeSinceLastInput(0), mMouseCapture(nullptr), mMenuBackgroundShaderTextureCache(-1)
 {			
 	mTransitionOffset = 0;
 
@@ -589,7 +589,6 @@ void Window::renderSindenBorders()
 
 		const unsigned int outerBorderColor = 0x000000FF;
 		unsigned int innerBorderColor = 0xFFFFFFFF;
-		unsigned int externalBorderColor = 0x000000CC;
 
 		auto bordersColor = SystemConf::getInstance()->get("controllers.guns.borderscolor");
 		if (bordersColor == "red")   innerBorderColor = 0xFF0000FF;
@@ -810,7 +809,6 @@ void Window::render()
 		auto margin = Renderer::setScreenMargin(0, 0);
 		Renderer::setMatrix(Transform4x4f::Identity());
 
-		bool hasMousePointer = false;
 
 		if (mGunAimTexture == nullptr)
 			mGunAimTexture = TextureResource::get(":/gun.png", false, false, true, false);
@@ -821,7 +819,6 @@ void Window::render()
 			{
 				if (gun->isMouse())
 				{
-					hasMousePointer = true;
 					continue;
 				}
 

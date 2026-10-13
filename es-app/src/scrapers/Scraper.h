@@ -246,7 +246,8 @@ public:
 		WheelHD = 20,
 	};
 
-	static std::vector<std::pair<std::string, Scraper*>> scrapers;
+	// Liste construite à la première utilisation (pas à l'initialisation statique: elle lit keys.conf via Paths)
+	static std::vector<std::pair<std::string, Scraper*>>& scraperList();
 	
 	static Scraper* getScraper(const std::string name = "");
 	static std::string getScraperName(Scraper* scraper);

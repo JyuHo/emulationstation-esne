@@ -13,7 +13,7 @@ ThreadedScraper* ThreadedScraper::mInstance = nullptr;
 bool ThreadedScraper::mPaused = false;
 
 ThreadedScraper::ThreadedScraper(Window* window, const std::queue<ScraperSearchParams>& searches, int threadCount)
-	: mSearchQueue(searches), mWindow(window)
+	: mWindow(window), mSearchQueue(searches)
 {
 	mExitCode = ASYNC_IN_PROGRESS;
 	mTotal = (int) mSearchQueue.size();

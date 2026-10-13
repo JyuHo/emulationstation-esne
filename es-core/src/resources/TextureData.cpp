@@ -25,11 +25,11 @@
 IPdfHandler* TextureData::PdfHandler = nullptr;
 
 TextureData::TextureData(bool tile, bool linear) : 
-	mTile(tile), mLinear(linear), mTextureID(0), mDataRGBA(nullptr), mScalable(false), mDynamic(true), mReloadable(false),
+	mTile(tile), mLinear(linear), mTextureID(0), mDataRGBA(nullptr), mReloadable(false), mDynamic(true),
 #if defined(USE_OPENGLES_30)
 	mMipmapped(false),
 #endif
-	mSize(Vector2i::Zero()), mPhysicalSize(Vector2f::Zero()), mMaxSize(MaxSizeInfo::Empty)
+	mMaxSize(MaxSizeInfo::Empty), mSize(Vector2i::Zero()), mPhysicalSize(Vector2f::Zero()), mScalable(false)
 {
 	mIsExternalDataRGBA = false;
 	mRequired = false;
@@ -228,7 +228,6 @@ bool TextureData::initImageFromMemory(const unsigned char* fileData, size_t leng
 	if (OPTIMIZEVRAM && !mMaxSize.empty() && mMaxSize.x() < maxSize.x() && mMaxSize.y() < maxSize.y())
 		maxSize = mMaxSize;
 		
-	auto oldSize = mSize;
 
 	size_t width, height;
 	Vector2i size;
@@ -399,7 +398,7 @@ bool TextureData::loadFromVideo()
 			n--;
 		}
 
-		int result = libvlc_video_take_snapshot(vlcMediaPlayer, 0, localFile.c_str(), 0, 0);
+		libvlc_video_take_snapshot(vlcMediaPlayer, 0, localFile.c_str(), 0, 0);
 
 		libvlc_media_player_stop(vlcMediaPlayer);
 		libvlc_media_player_release(vlcMediaPlayer);

@@ -93,8 +93,8 @@ void RatingComponent::updateVertices()
 	float fw = h * numStars;
 
 	float opacity = getOpacity() / 255.0;
-	const unsigned int color = Renderer::convertColor(mColorShift & 0xFFFFFF00 | (unsigned char)((mColorShift & 0xFF) * opacity));
-	const unsigned int unFilledColor = Renderer::convertColor(mUnfilledColor & 0xFFFFFF00 | (unsigned char)((mUnfilledColor & 0xFF) * opacity));
+	const unsigned int color = Renderer::convertColor((mColorShift & 0xFFFFFF00) | (unsigned char)((mColorShift & 0xFF) * opacity));
+	const unsigned int unFilledColor = Renderer::convertColor((mUnfilledColor & 0xFFFFFF00) | (unsigned char)((mUnfilledColor & 0xFF) * opacity));
 
 	float x = 0;
 	float y = 0;
@@ -143,11 +143,11 @@ void RatingComponent::updateColors()
 {
 	float opacity = getOpacity() / 255.0;
 
-	const unsigned int color = Renderer::convertColor(mColorShift & 0xFFFFFF00 | (unsigned char)((mColorShift & 0xFF) * opacity));
+	const unsigned int color = Renderer::convertColor((mColorShift & 0xFFFFFF00) | (unsigned char)((mColorShift & 0xFF) * opacity));
 	for (int i = 0; i < 4; i++)
 		mVertices[i].col = color;
 
-	const unsigned int unFilledColor = Renderer::convertColor(mUnfilledColor & 0xFFFFFF00 | (unsigned char)((mUnfilledColor & 0xFF) * opacity));
+	const unsigned int unFilledColor = Renderer::convertColor((mUnfilledColor & 0xFFFFFF00) | (unsigned char)((mUnfilledColor & 0xFF) * opacity));
 	for (int i = 4; i < 8; i++)
 		mVertices[i].col = unFilledColor;
 }

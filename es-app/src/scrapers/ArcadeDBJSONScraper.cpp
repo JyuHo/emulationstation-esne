@@ -53,7 +53,7 @@ bool ArcadeDBScraper::isSupportedPlatform(SystemData* system)
 	if (system && system->getName() == "teknoparrot")
 		return false;
 
-	return system && system->hasPlatformId(PlatformIds::ARCADE) || system->hasPlatformId(PlatformIds::NEOGEO) || system->hasPlatformId(PlatformIds::LCD_GAMES);
+	return system && (system->hasPlatformId(PlatformIds::ARCADE) || system->hasPlatformId(PlatformIds::NEOGEO) || system->hasPlatformId(PlatformIds::LCD_GAMES));
 }
 
 const std::set<Scraper::ScraperMediaSource>& ArcadeDBScraper::getSupportedMedias()
@@ -80,24 +80,6 @@ std::string getStringOrThrow(const Value& v, const std::string& key)
 		throw std::runtime_error("rapidjson internal assertion failure: missing or non string key:" + key);
 	}
 	return v[key.c_str()].GetString();
-}
-
-int getIntOrThrow(const Value& v, const std::string& key)
-{
-	if (!v.HasMember(key.c_str()) || !v[key.c_str()].IsInt())
-	{
-		throw std::runtime_error("rapidjson internal assertion failure: missing or non int key:" + key);
-	}
-	return v[key.c_str()].GetInt();
-}
-
-int getIntOrThrow(const Value& v)
-{
-	if (!v.IsInt())
-	{
-		throw std::runtime_error("rapidjson internal assertion failure: not an int");
-	}
-	return v.GetInt();
 }
 
 std::vector<std::string> getMediaTagNames(std::string imageSource)

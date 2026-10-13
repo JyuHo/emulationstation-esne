@@ -405,8 +405,8 @@ void TextListComponent<T>::render(const Transform4x4f& parentTrans)
 				{
 					Renderer::setMatrix(trans);
 					Renderer::drawRect(0.0f, y + mSelectorOffsetY, mSize.x(), mSelectorHeight,
-						mSelectorColor & 0xFFFFFF00 | (unsigned char)((mSelectorColor & 0xFF) * opacity),
-						mSelectorColorEnd & 0xFFFFFF00 | (unsigned char)((mSelectorColorEnd & 0xFF) * opacity),
+						(mSelectorColor & 0xFFFFFF00) | (unsigned char)((mSelectorColor & 0xFF) * opacity),
+						(mSelectorColorEnd & 0xFFFFFF00) | (unsigned char)((mSelectorColorEnd & 0xFF) * opacity),
 						mSelectorColorGradientHorizontal);
 				}
 			}
@@ -416,8 +416,8 @@ void TextListComponent<T>::render(const Transform4x4f& parentTrans)
 
 				float hotOpacity = 0.1f;
 				Renderer::drawRect(0.0f, y + mSelectorOffsetY, mSize.x(), entrySize,
-					mSelectorColor & 0xFFFFFF00 | (unsigned char)((mSelectorColor & 0xFF) * opacity * hotOpacity),
-					mSelectorColorEnd & 0xFFFFFF00 | (unsigned char)((mSelectorColorEnd & 0xFF) * opacity * hotOpacity),
+					(mSelectorColor & 0xFFFFFF00) | (unsigned char)((mSelectorColor & 0xFF) * opacity * hotOpacity),
+					(mSelectorColorEnd & 0xFFFFFF00) | (unsigned char)((mSelectorColorEnd & 0xFF) * opacity * hotOpacity),
 					mSelectorColorGradientHorizontal);
 			}
 
@@ -813,7 +813,6 @@ bool TextListComponent<T>::hitTest(int x, int y, Transform4x4f& parentTransform,
 
 		for (unsigned int i = 0; i < mEntries.size(); i++)
 		{
-			auto& entry = mEntries.at(i);
 
 			if (ry - mCameraOffset + rowHeight >= 0)
 			{

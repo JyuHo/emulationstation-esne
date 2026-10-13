@@ -109,7 +109,7 @@ void HttpReq::resetCookies()
 }
 
 HttpReq::HttpReq(const std::string& url, const std::string& outputFilename) 
-	: mStatus(REQ_IN_PROGRESS), mHandle(NULL), mFile(NULL)
+	: mHandle(NULL), mStatus(REQ_IN_PROGRESS), mFile(NULL)
 {
 	HttpReqOptions options;
 	options.outputFilename = outputFilename;	
@@ -117,7 +117,7 @@ HttpReq::HttpReq(const std::string& url, const std::string& outputFilename)
 }
 
 HttpReq::HttpReq(const std::string& url, HttpReqOptions* options)
-	: mStatus(REQ_IN_PROGRESS), mHandle(NULL), mFile(NULL)
+	: mHandle(NULL), mStatus(REQ_IN_PROGRESS), mFile(NULL)
 {
 	performRequest(url, options);
 }

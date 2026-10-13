@@ -943,7 +943,6 @@ TextCache* Font::buildTextCache(const std::string& _text, Vector2f offset, unsig
 				continue;
 
 			tabIndex = 0;
-			int curTab = 0;
 			int xpos = x;
 
 			size_t pos = 0;
@@ -967,7 +966,6 @@ TextCache* Font::buildTextCache(const std::string& _text, Vector2f offset, unsig
 					else
 						tabStops[tabIndex] = xpos;
 
-					curTab = xpos;
 					tabIndex++;
 				}
 

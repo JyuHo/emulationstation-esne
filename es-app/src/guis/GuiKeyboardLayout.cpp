@@ -15,7 +15,7 @@ std::vector<std::vector<std::string>> kbLayout =
 	{ "KEY_LEFTCTRL",	"KEY_LEFTMETA",		"KEY_LEFTALT",	"KEY_SPACE", "KEY_SPACE","KEY_SPACE","KEY_SPACE","KEY_SPACE","KEY_SPACE",	"KEY_RIGHTALT", "KEY_RIGHTMETA",	"KEY_MENU",			"KEY_RIGHTCTRL",	"KEY_RIGHTCTRL",	"KEY_LEFT",		"KEY_DOWN",		"KEY_RIGHT",	"KEY_KP0",		"KEY_KP0",		"KEY_KPDOT",		"KEY_KPENTER",		"BTN_LEFT", "BTN_MIDDLE", "BTN_RIGHT" }
 };
 
-GuiKeyboardLayout::GuiKeyboardLayout(Window* window, const std::function<void(const std::set<std::string>&)>& okCallback, std::set<std::string>* activeKeys) : GuiComponent(window), mKeyboard(window, true, false), mImageToggle(false)
+GuiKeyboardLayout::GuiKeyboardLayout(Window* window, const std::function<void(const std::set<std::string>&)>& okCallback, std::set<std::string>* activeKeys) : GuiComponent(window), mImageToggle(false), mKeyboard(window, true, false)
 {
 	setTag("popup");
 

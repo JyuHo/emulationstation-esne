@@ -16,7 +16,7 @@
 #define WINDOW_WIDTH (float)Math::min(Renderer::getScreenHeight() * 1.125f, Renderer::getScreenWidth() * 0.90f)
 
 GuiBezelInstaller::GuiBezelInstaller(Window* window)
-	: GuiComponent(window), mMenu(window, _("THE BEZEL PROJECT").c_str()), mReloadList(1)
+	: GuiComponent(window), mReloadList(1), mMenu(window, _("THE BEZEL PROJECT").c_str())
 {
 	addChild(&mMenu);
 	mMenu.setSubTitle(_("SELECT BEZELS TO INSTALL/REMOVE"));
@@ -101,7 +101,6 @@ void GuiBezelInstaller::loadList()
 
 void GuiBezelInstaller::loadBezelsAsync()
 {
-	Window* window = mWindow;
 
 	mWindow->pushGui(new GuiLoading<std::vector<BatoceraBezel>>(mWindow, _("PLEASE WAIT"),
 		[this](auto gui)

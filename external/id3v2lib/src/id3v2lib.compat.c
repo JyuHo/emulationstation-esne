@@ -129,8 +129,15 @@ ID3v2_tag* load_tag(const char* file_name)
     FILE* fp = fopen(file_name, "rb");
     const int buffer_size = header->tag_size + ID3v2_TAG_HEADER_LENGTH;
     char* buffer = (char*) malloc(buffer_size * sizeof(char));
-    fread(buffer, sizeof(char), buffer_size, fp);
+    size_t read_count = fread(buffer, sizeof(char), buffer_size, fp);
     fclose(fp);
+
+    if (read_count != (size_t) buffer_size)
+    {
+        free(buffer);
+        ID3v2_TagHeader_free(header);
+        return NULL;
+    }
 
     ID3v2_tag* tag = load_tag_with_buffer(buffer, buffer_size);
 
@@ -426,9 +433,15 @@ void tag_set_album_cover(const char* filename, ID3v2_tag* tag)
     fseek(album_cover, 0, SEEK_SET);
 
     album_cover_bytes = (char*) malloc(image_size * sizeof(char));
-    fread(album_cover_bytes, sizeof(char), image_size, album_cover);
+    size_t read_count = fread(album_cover_bytes, sizeof(char), image_size, album_cover);
 
     fclose(album_cover);
+
+    if (read_count != (size_t) image_size)
+    {
+        free(album_cover_bytes);
+        return;
+    }
 
     mimetype =
         strcmp(strrchr(filename, '.') + 1, "png") == 0 ? ID3v2_MIME_TYPE_PNG : ID3v2_MIME_TYPE_JPG;

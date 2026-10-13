@@ -23,7 +23,6 @@ GridGameListView::GridGameListView(Window* window, FolderData* root, const std::
 
 	setTag("grid");
 
-	const float padding = 0.01f;
 
 	mGrid.longMouseClick += this;
 

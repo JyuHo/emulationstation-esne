@@ -45,8 +45,6 @@ void VideoGameListView::updateInfoPanel()
 
 void VideoGameListView::launch(FileData* game)
 {
-	float screenWidth = (float) Renderer::getScreenWidth();
-	float screenHeight = (float) Renderer::getScreenHeight();
 
 	Vector3f target = mDetails.getLaunchTarget();
 	ViewController::get()->launch(game, target);

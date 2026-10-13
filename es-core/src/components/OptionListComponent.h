@@ -219,8 +219,8 @@ private:
 	};
 
 public:
-	OptionListComponent(Window* window, const std::string& name, bool multiSelect = false, bool multiSelectShowNames = false) : GuiComponent(window), mMultiSelect(multiSelect), mName(name),
-		 mText(window), mLeftArrow(window), mRightArrow(window), mMultiSelectShowNames(multiSelectShowNames)
+	OptionListComponent(Window* window, const std::string& name, bool multiSelect = false, bool multiSelectShowNames = false) : GuiComponent(window), mMultiSelect(multiSelect), mMultiSelectShowNames(multiSelectShowNames),
+		 mName(name), mText(window), mLeftArrow(window), mRightArrow(window)
 	{
 		auto theme = ThemeData::getMenuTheme();
 

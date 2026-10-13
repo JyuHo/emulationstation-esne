@@ -322,10 +322,18 @@ void Paths::loadCustomConfiguration(bool overridesOnly)
 	}
 }
 
-static std::string homePath;
+// Variable locale à la fonction: getHomePath() est appelé pendant l'initialisation statique d'autres fichiers (liste des scrapers
+// via EsneKeys), donc la chaîne doit exister avant que le constructeur d'une variable globale de ce fichier ait pu s'exécuter.
+static std::string& homePathStorage()
+{
+	static std::string value;
+	return value;
+}
 
 std::string& Paths::getHomePath()
 {
+	std::string& homePath = homePathStorage();
+
 	if (homePath.length())
 		return homePath;
 
@@ -372,7 +380,7 @@ std::string& Paths::getHomePath()
 
 void Paths::setHomePath(const std::string& _path)
 {
-	homePath = Utils::FileSystem::getGenericPath(_path);
+	homePathStorage() = Utils::FileSystem::getGenericPath(_path);
 }
 
 static std::string exePath;

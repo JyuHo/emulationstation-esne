@@ -58,7 +58,7 @@ private:
 
 public:
 	FileFilterIndex();
-	~FileFilterIndex();
+	virtual ~FileFilterIndex();
 
 	void addToIndex(FileData* game);
 	void removeFromIndex(FileData* game);

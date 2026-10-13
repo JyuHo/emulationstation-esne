@@ -75,6 +75,8 @@ private:
 class IKeyboardMapContainer
 {
 public:
+	virtual ~IKeyboardMapContainer() { }
+
 	virtual bool hasKeyboardMapping() = 0;
 	virtual KeyMappingFile getKeyboardMapping() = 0;
 };

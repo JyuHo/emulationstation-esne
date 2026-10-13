@@ -34,15 +34,15 @@
 SystemScreenSaver::SystemScreenSaver(Window* window) :
 	mVideoScreensaver(NULL),
 	mImageScreensaver(NULL),
-	mWindow(window),
 	mGamesWithVideosLoaded(false),
 	mGamesWithImagesLoaded(false),
+	mWindow(window),
 	mState(STATE_INACTIVE),
 	mOpacity(0.0f),
 	mTimer(0),
-	mSystemName(""),
-	mGameName(""),
 	mCurrentGame(NULL),
+	mGameName(""),
+	mSystemName(""),
 	mLoadingNext(false)
 {
 
@@ -230,7 +230,6 @@ void SystemScreenSaver::startScreenSaver()
 void SystemScreenSaver::stopScreenSaver()
 {
 	bool isExitingScreenSaver = !mLoadingNext;
-	bool isVideoScreenSaver = (mVideoScreensaver != nullptr);
 
 	if (mLoadingNext)
 		mFadingImageScreensaver = mImageScreensaver;

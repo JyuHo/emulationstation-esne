@@ -663,7 +663,6 @@ void GuiControllersSettings::openGlobalHotkeys()
 void GuiControllersSettings::openKeyboardtopads()
 {
 	GuiSettings* s = new GuiSettings(mWindow, _("KEYBOARDTOPADS"), true);
-	Window* window = mWindow;
 
 	std::vector<Keyboardtopad> keyboardtopads = ApiSystem::getInstance()->getKeyboardtopads();
 

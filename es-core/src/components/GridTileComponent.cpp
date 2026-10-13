@@ -19,7 +19,7 @@
 
 #define VIDEODELAY	100
 
-GridTileComponent::GridTileComponent(Window* window) : GuiComponent(window), mBackground(window), mLabel(window), mVideo(nullptr), mVideoPlaying(false), mHasItemTemplate(false)
+GridTileComponent::GridTileComponent(Window* window) : GuiComponent(window), mLabel(window), mBackground(window), mVideo(nullptr), mVideoPlaying(false), mHasItemTemplate(false)
 {
 	mHasStandardMarquee = false;
 	mSelectedZoomPercent = 1.0f;
@@ -1364,17 +1364,6 @@ static Vector4f mixVectors(const Vector4f& def, const Vector4f& sel, float perce
 	float z = def.z() * (1.0 - percent) + sel.z() * percent;
 	float w = def.w() * (1.0 - percent) + sel.w() * percent;
 	return Vector4f(x, y, z, w);
-}
-
-static unsigned int mixUnsigned(const unsigned int def, const unsigned int sel, float percent)
-{
-	if (def == sel || percent == 0)
-		return def;
-
-	if (percent == 1)
-		return sel;
-
-	return def * (1.0 - percent) + sel * percent;
 }
 
 static float mixFloat(const float def, const float sel, float percent)

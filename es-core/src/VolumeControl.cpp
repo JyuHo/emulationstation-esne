@@ -226,13 +226,14 @@ std::weak_ptr<VolumeControl> VolumeControl::sInstance;
 
 
 VolumeControl::VolumeControl()
-	: internalVolume(0)
 #if defined (__APPLE__)
 	#error TODO: Not implemented for MacOS yet!!!
 #elif defined(__linux__)
-	, mixerIndex(0), mixerHandle(nullptr), mixerElem(nullptr), mixerSelemId(nullptr)
+	: mixerIndex(0), mixerHandle(nullptr), mixerElem(nullptr), mixerSelemId(nullptr), internalVolume(0)
 #elif defined(WIN32) || defined(_WIN32)
-	, mixerHandle(nullptr), endpointVolume(nullptr)
+	: mixerHandle(nullptr), endpointVolume(nullptr), internalVolume(0)
+#else
+	: internalVolume(0)
 #endif
 {
 	init();

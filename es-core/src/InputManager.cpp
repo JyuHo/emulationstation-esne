@@ -53,7 +53,7 @@ static std::mutex mJoysticksLock;
 InputManager* InputManager::mInstance = NULL;
 Delegate<IJoystickChangedEvent> InputManager::joystickChanged;
 
-InputManager::InputManager() : mKeyboardInputConfig(nullptr), mMouseButtonsInputConfig(nullptr), mCECInputConfig(nullptr), mGunInputConfig(nullptr), mGunManager(nullptr)
+InputManager::InputManager() : mGunManager(nullptr), mMouseButtonsInputConfig(nullptr), mKeyboardInputConfig(nullptr), mGunInputConfig(nullptr), mCECInputConfig(nullptr)
 {
 
 }
@@ -756,10 +756,12 @@ bool InputManager::parseEvent(const SDL_Event& ev, Window* window)
 
 	case SDL_MOUSEMOTION:
 #if !WIN32
-	  if (!Utils::Platform::isBuildroot() || ev.motion.which == SDL_TOUCH_MOUSEID)
+		if (!Utils::Platform::isBuildroot() || ev.motion.which == SDL_TOUCH_MOUSEID)
 #endif
-		if (!getGunManager()->isReplacingMouse())
-			window->processMouseMove(ev.motion.x, ev.motion.y, ev.motion.which == SDL_TOUCH_MOUSEID);
+		{
+			if (!getGunManager()->isReplacingMouse())
+				window->processMouseMove(ev.motion.x, ev.motion.y, ev.motion.which == SDL_TOUCH_MOUSEID);
+		}
 	  
 		return true;
 

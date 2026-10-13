@@ -32,7 +32,7 @@ void GuiBios::show(Window* window)
 }
 
 GuiBios::GuiBios(Window* window, const std::vector<BiosSystem> bioses)
-	: GuiComponent(window), mGrid(window, Vector2i(1, 4)), mBackground(window, ":/frame.png"), mTabFilter(0)
+	: GuiComponent(window), mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 4)), mTabFilter(0)
 {
 	mBios = bioses;
 
@@ -127,7 +127,6 @@ void GuiBios::loadList()
 	
 	auto theme = ThemeData::getMenuTheme();
 
-	int idx = mList->getCursorIndex();
 	mList->clear();
 
 	if (mBios.size() == 0)
