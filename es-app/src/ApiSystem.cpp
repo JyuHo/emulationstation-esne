@@ -2627,7 +2627,7 @@ std::string ApiSystem::getCurrentTimezone()
 	LOG(LogInfo) << "ApiSystem::getCurrentTimezone";
 	auto cmd = executeEnumerationScript("batocera-timezone get");
 	std::string tz = Utils::String::join(cmd, "");
-	remove_if(tz.begin(), tz.end(), isspace);
+	tz.erase(std::remove_if(tz.begin(), tz.end(), [](unsigned char c) { return std::isspace(c); }), tz.end());
 	if (tz.empty()) {
 		cmd = executeEnumerationScript("batocera-timezone detect");
 		tz = Utils::String::join(cmd, "");
