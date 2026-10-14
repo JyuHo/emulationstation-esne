@@ -300,8 +300,7 @@ endif()
 # ever compiled in or committed. The macros keep the scrapers compiled in and make them call EsneKeys.
 # Other builds: put the keys in an untracked "esne-keys.cmake" (compile-time keys).
 if(ESNE)
-    # Optional: bake the developer keys into the binary (release builds). ESNE_KEYS_FILE = a keys.conf-format file (never committed).
-    # The keys in ~/.config/esne/keys.conf still take precedence at run time. Without the option the table is empty.
+    # Optional build input (release builds)
     set(ESNE_KEYS_FILE "$ENV{ESNE_KEYS_FILE}" CACHE FILEPATH "keys.conf-format file whose keys are compiled into the binary")
     find_package(Python3 REQUIRED COMPONENTS Interpreter)
     set(ESNE_GENERATED_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")

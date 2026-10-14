@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-"""Génère EsneEmbeddedKeys.h: clés développeur intégrées au binaire (ES-NE).
-
-usage: esne_embed_keys.py SORTIE.h [keys.conf]
-
-Format de keys.conf: NOM=valeur par ligne ('#' commentaire). Sans fichier, la table est vide.
-Les valeurs sont masquées par un XOR avec un masque aléatoire: cela évite qu'un `strings` les affiche,
-mais ne les protège pas d'une personne qui analyse le binaire. Ne mets que des clés que tu acceptes de rendre publiques.
-"""
+"""Génère EsneEmbeddedKeys.h (usage: esne_embed_keys.py SORTIE.h [fichier])."""
 import os
 import secrets
 import sys
