@@ -215,8 +215,8 @@ msgstr "CHOISIR"
 msgid "BACK"
 msgstr "RETOUR"
 
-msgid "SAVESTATES (HOLD)"
-msgstr "SAUVEGARDES D'ÉTAT (MAINTENU)"
+msgid "SAVE STATES (HOLD)"
+msgstr "SAUVEGARDES (MAINTENU)"
 
 msgid "GAME OPTIONS (HOLD)"
 msgstr "OPTIONS DU JEU (MAINTENU)"
@@ -230,8 +230,8 @@ msgstr "OPTIONS DU JEU"
 msgid "FAVORITE"
 msgstr "FAVORIS"
 
-msgid "SAVESTATES"
-msgstr "SAUVEGARDES D'ÉTAT"
+msgid "SAVE STATES"
+msgstr "SAUVEGARDES D’ÉTAT"
 
 #, c-format
 msgid "Back to %s"
@@ -1387,7 +1387,7 @@ msgid "FAVORITE SONGS"
 msgstr "MUSIQUES FAVORITES"
 
 msgid "SAVESTATE MANAGER"
-msgstr "GESTIONNAIRE DE SAUVEGARDES D'ÉTAT"
+msgstr "GESTIONNAIRE DE SAUVEGARDES"
 
 msgid "START NEW GAME"
 msgstr "NOUVELLE PARTIE"
@@ -2206,17 +2206,17 @@ msgstr ""
 "INTERVERTIR LES BOUTONS DE CONFIRMATION ET ANNULATION DANS EMULATIONSTATION"
 
 msgid "Switches the South and East buttons' functionality"
-msgstr "Intervertit les fonctions des boutons Sud et Est"
+msgstr "Intervertir les fonctions des boutons Sud et Est"
 
 msgid "ACCESS GAME OPTIONS WITH NORTH BUTTON"
-msgstr "ACCÉDER AUX OPTIONS DU JEU AVEC LE BOUTON NORD"
+msgstr "ACCÉDER AUX OPTIONS DU JEUX AVEC LE BOUTON NORD"
 
 msgid ""
 "Switches to short-press North for Savestates & long-press South button for "
 "Game Options"
 msgstr ""
-"Intervertit le bouton Nord pour les sauvegardes d'état et la pression longue "
-"du bouton Sud pour les options du jeu"
+"Intervertit le bouton nord (sauvegardes de jeu) et la pression longue sur le "
+"bouton sud (options du jeu)"
 
 msgid "CONTROL EMULATIONSTATION WITH FIRST JOYSTICK ONLY"
 msgstr "CONTRÔLER EMULATIONSTATION AVEC LA 1ÈRE MANETTE UNIQUEMENT"
@@ -2232,13 +2232,13 @@ msgid "GUN MOVE TOLERENCE"
 msgstr "TOLÉRANCE DE MOUVEMENT DES PISTOLETS"
 
 msgid "ENABLE PS3 CONTROLLER SUPPORT"
-msgstr "ACTIVER LE SUPPORT DE LA MANETTE PS3"
+msgstr "ACTIVER LE SUPPORT DU CONTRÔLEUR PS3"
 
 msgid "Might have negative impact on security."
 msgstr "Peut avoir un impact négatif sur la sécurité."
 
 msgid "ENABLE HID JOYSTICK DRIVERS"
-msgstr "ACTIVER LE PILOTE  POUR MANETTES HID"
+msgstr "ACTIVER LE DRIVER DE MANETTES HID"
 
 msgid "SHOW NETWORK INDICATOR"
 msgstr "AFFICHER L’INDICATEUR RÉSEAU"
@@ -2266,17 +2266,17 @@ msgstr ""
 "le temps de démarrage"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr "PROFONDEUR DES RÉPERTOIRES À INDEXER"
+msgstr "PROFONDEUR DES DOSSIERS À INDEXER"
 
 msgid "UNLIMITED"
-msgstr "ILLIMITÉ"
+msgstr "ILLIMITÉE"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
-"Profondeur maximale dans chaque dossier ROM pour d'ignorer les sous-dossiers "
-"ayant beaucoup de fichiers."
+"Profondeur maximale analysée dans chaque dossier de ROM, pour ignorer les "
+"sous-dossiers contenant beaucoup de fichiers."
 
 msgid "THREADED LOADING"
 msgstr "CHARGEMENT EN PARALLÈLE"
@@ -2333,7 +2333,7 @@ msgid "SOFTWARE UPDATES VIA TORRENT"
 msgstr "MISES À JOUR LOGICIEL VIA TORRENT"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr "PARTAGER LES MISES À JOUR VIA TORRENT"
+msgstr "PARTAGER les MISES À JOUR VIA TORRENT"
 
 msgid "Torrent update service started"
 msgstr "Service de mise à jour torrent démarré"
@@ -2370,7 +2370,7 @@ msgstr ""
 "nécessaire pour que les modifications prennent pleinement effet."
 
 msgid "SELECT YOUR TIME ZONE"
-msgstr "SÉLECTIONNEZ VOTRE FUSEAU HORAIRE"
+msgstr "SÉLECTIONNER VOTRE FUSEAU HORAIRE"
 
 msgid "TIME ZONE"
 msgstr "FUSEAU HORAIRE"
@@ -2391,24 +2391,22 @@ msgid "Reduces power consumption when idle (useful for handhelds)."
 msgstr "Réduit la consommation d’énergie si inactif."
 
 msgid "SCREEN READER (TEXT TO SPEECH)"
-msgstr "LECTEUR D'ÉCRAN (SYNTHÈSE VOCALE)"
+msgstr "LECTURE À L’ÉCRAN"
 
 msgid "USER INTERFACE MODE"
 msgstr "RESTRICTIONS DE L’INTERFACE"
 
 msgid "Lock down certain config menus for use with guest users/kids."
-msgstr ""
-"Verrouille certains menus de configuration pour les utilisateurs invités ou "
-"les enfants."
+msgstr "Verrouille les menus des bornes d’arcade et pour les enfants."
 
 msgid ""
 "You are changing the user interface to a restricted mode:\n"
 "This will hide most menu options to prevent changes to the system.\n"
 "To unlock and return to the full user interface, enter this code:"
 msgstr ""
-"Vous allez passer à une interface restreinte:\n"
+"Vous allez passer à une interface plus restreinte:\n"
 "Cela cachera la plupart des options pouvant modifier le système.\n"
-"Pour revenir à l’interface complète, utilisez ce code de déverouillage :"
+"Pour revenir à l’interface complète, utilisez ce code :"
 
 msgid "Do you want to proceed?"
 msgstr "Voulez-vous continuer ?"
@@ -2436,12 +2434,6 @@ msgstr "PROFIL AUDIO"
 
 msgid "Available options can change depending on current audio output."
 msgstr "Les options disponibles dépendent de la sortie audio sélectionnée."
-
-msgid "HDR"
-msgstr "HDR"
-
-msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr "Permet le contenu HDR tel que les flux Moonlight HDR."
 
 msgid "BOOT SPLASH"
 msgstr "SPLASH AU DÉMARRAGE"
@@ -2596,12 +2588,15 @@ msgstr "Paramètre actuel"
 msgid "BIOS SETTINGS"
 msgstr "PARAMÈTRES BIOS"
 
+msgid "SAVESTATES"
+msgstr "SAUVEGARDES"
+
 msgid "AUTO SAVE/LOAD"
 msgstr "SAUV./CHARG. AUTO"
 
-msgid "Load latest savestate on game launch and save state when exiting game."
+msgid "Load latest savestate on game launch and savestate when exiting game."
 msgstr ""
-"Charge la dernière sauvegarde d'état automatiquement et sauve en quittant le "
+"Charge et enregistre l’état de jeu le plus récent en lançant et quittant le "
 "jeu."
 
 msgid "INCREMENTAL SAVESTATES"
@@ -2626,7 +2621,7 @@ msgid "Use current slot on a new game."
 msgstr "Utilise l’emplacement actuel au lancement d’une partie."
 
 msgid "SHOW SAVESTATE MANAGER"
-msgstr "AFFICHER LE GESTIONNAIRE DE SAUVEGARDES D'ÉTAT"
+msgstr "AFFICHER LE GESTIONNAIRE DE SAUVEGARDES"
 
 msgid "ALWAYS"
 msgstr "TOUJOURS"
@@ -2635,7 +2630,7 @@ msgid "IF NOT EMPTY"
 msgstr "SI NON VIDE"
 
 msgid "Display savestate manager before launching a game."
-msgstr "Afficher le gestionnaire de sauvegardes d'état au lancement d’un jeu."
+msgstr "Afficher le gestionnaire de sauvegarde au lancement d’un jeu."
 
 msgid "DEFAULT GLOBAL SETTINGS"
 msgstr "PARAMÈTRES GLOBAUX PAR DÉFAUT"
@@ -2711,19 +2706,19 @@ msgstr ""
 "Rétrécir/agrandir le tatouage pour s’adapter à la bordure de la décoration."
 
 msgid "AI GAME TRANSLATION"
-msgstr "TRADUCTION DE JEUX PAR IA"
+msgstr "IA DE TRADUCTION"
 
 msgid "ENABLE AI TRANSLATION SERVICE"
-msgstr "ACTIVER LE SERVICE DE TRADUCTION IA"
+msgstr "ACTIVER LE SERVICE IA"
 
 msgid "TARGET LANGUAGE"
 msgstr "LANGUE CIBLE"
 
 msgid "AI TRANSLATION SERVICE URL"
-msgstr "URL DU SERVICE DE TRADUCTION IA"
+msgstr "URL DU SERVICE IA"
 
 msgid "PAUSE ON TRANSLATED SCREEN"
-msgstr "PAUSE SUR L’ÉCRAN TRADUIT"
+msgstr "PAUSE SUR L’ÉCRAN DE TRADUCTION"
 
 msgid "AUTOCONFIGURE CONTROLLERS"
 msgstr "AUTOCONFIGURER LES MANETTES"
@@ -2738,7 +2733,7 @@ msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
 msgstr "L’INDEXATION DES JEUX EST EN COURS. VOULEZ-VOUS L’INTERROMPRE ?"
 
 msgid "REALLY UPDATE GAMELISTS?"
-msgstr "VOULEZ-VOUS VRAIMENT METTRE À JOUR LES LISTES DES JEUX ?"
+msgstr "VOULEZ-VOUS VRAIMENT METTRE À JOUR LES LISTES DE JEUX ?"
 
 msgid "Emulator"
 msgstr "Émulateur"
@@ -2882,7 +2877,7 @@ msgid "IGNORE LEADING ARTICLES WHEN SORTING"
 msgstr "IGNORER LES ARTICLES LORS DU TRI"
 
 msgid "Ignore 'The' and 'A' if at the start."
-msgstr "Ignore 'The' et 'A' en début de titre."
+msgstr "Ignore les articles 'Le, La, De'."
 
 msgid "VOLUME"
 msgstr "VOLUME"
@@ -2900,7 +2895,7 @@ msgid "MUSIC"
 msgstr "MUSIQUE"
 
 msgid "FRONTEND MUSIC"
-msgstr "MUSIQUE DU MENU"
+msgstr "ACTIVER LES MUSIQUES D’AMBIANCE"
 
 msgid "DISPLAY SONG TITLES"
 msgstr "NOTIFIER LE TITRE DES MUSIQUES"
@@ -2909,10 +2904,10 @@ msgid "SONG TITLE DISPLAY DURATION"
 msgstr "DURÉE DE LA NOTIFICATION DU TITRE"
 
 msgid "ONLY PLAY SYSTEM-SPECIFIC MUSIC FOLDER"
-msgstr "JOUER SEULEMENT LES MUSIQUES PAR SYSTÈME"
+msgstr "JOUER SEULEMENT LES MUSIQUES PAR SYSTÈMES"
 
 msgid "PLAY SYSTEM-SPECIFIC MUSIC"
-msgstr "JOUER LES MUSIQUES D'UN SYSTÈME"
+msgstr "JOUER LES MUSIQUES DU THÈME"
 
 msgid "LOWER MUSIC WHEN PLAYING VIDEO"
 msgstr "BAISSER LA MUSIQUE SI UNE VIDÉO EST EN COURS"
@@ -2932,37 +2927,11 @@ msgstr "ACTIVER LES SONS DE NAVIGATION"
 msgid "ENABLE VIDEO PREVIEW AUDIO"
 msgstr "ACTIVER LE SON DES VIDÉOS"
 
-msgid "CONNECTED"
-msgstr "CONNECTÉ"
-
-#, c-format
-msgid "UNABLE TO CONNECT TO '%s'"
-msgstr "IMPOSSIBLE DE SE CONNECTER À '%s'"
-
-msgid "WI-FI NETWORKS"
-msgstr "RÉSEAUX WI-FI"
-
-msgid "ADD A WI-FI NETWORK"
-msgstr "AJOUTER UN RÉSEAU WI-FI"
-
-msgid "WI-FI SSID"
-msgstr "NOM DU RÉSEAU WI-FI"
-
-msgid "WI-FI KEY"
-msgstr "CLÉ WI-FI"
-
-msgid "USE"
-msgstr "UTILISER"
-
-msgid "FORGET"
-msgstr "OUBLIER"
-
-#, c-format
-msgid "ARE YOU SURE YOU WANT TO FORGET '%s' ?"
-msgstr "ÊTES VOUS SÛR DE VOULOIR OUBLIER '%s' ?"
-
 msgid "IP ADDRESS"
 msgstr "ADRESSE IP"
+
+msgid "CONNECTED"
+msgstr "CONNECTÉ"
 
 msgid "INTERNET STATUS"
 msgstr "STATUT INTERNET"
@@ -2972,6 +2941,12 @@ msgstr "NOM SUR LE RÉSEAU"
 
 msgid "ENABLE WI-FI"
 msgstr "ACTIVER LE WI-FI"
+
+msgid "WI-FI SSID"
+msgstr "NOM DU RÉSEAU WI-FI"
+
+msgid "WI-FI KEY"
+msgstr "CLÉ WI-FI"
 
 msgid "WI-FI COUNTRY"
 msgstr "WI-FI PAYS"
@@ -2983,7 +2958,7 @@ msgid "WI-FI ENABLED"
 msgstr "WI-FI ACTIVÉ"
 
 msgid "WI-FI CONFIGURATION ERROR"
-msgstr "ERREUR DE CONFIGURATION WI-FI"
+msgstr "IMPOSSIBLE DE CONFIGURER LE WI-FI"
 
 msgid "QUICK ACCESS"
 msgstr "ACCÈS RAPIDE"
@@ -3022,7 +2997,7 @@ msgid "SUSPEND SYSTEM"
 msgstr "METTRE EN VEILLE"
 
 msgid "REALLY SUSPEND ?"
-msgstr "VOULEZ-VOUS VRAIMENT METTRE EN VEILLE ?"
+msgstr "VRAIMENT METTRE EN VEILLE ?"
 
 msgid "SHUTDOWN SYSTEM"
 msgstr "ÉTEINDRE"
@@ -3047,6 +3022,10 @@ msgstr "VOULEZ-VOUS VRAIMENT QUITTER ?"
 
 msgid "AUTO SAVE/LOAD ON GAME LAUNCH"
 msgstr "SAUV./CHARG. AUTO AU LANCEMENT"
+
+msgid "Load latest save state on game launch and save state when exiting game."
+msgstr ""
+"Charge la dernière sauvegarde automatiquement et sauve en quittant le jeu."
 
 msgid "SHOW CONTROLLER OVERLAYS"
 msgstr "AFFICHER LA MANETTE EN SURIMPRESSION"
@@ -3150,6 +3129,13 @@ msgstr "DÉCONNECTER"
 
 msgid "CONNECT"
 msgstr "CONNECTER"
+
+msgid "FORGET"
+msgstr "OUBLIER"
+
+#, c-format
+msgid "ARE YOU SURE YOU WANT TO FORGET '%s' ?"
+msgstr "ÊTES VOUS SÛR DE VOULOIR OUBLIER '%s' ?"
 
 #, c-format
 msgid "ARE YOU SURE YOU WANT TO CONNECT TO '%s' ?"
@@ -4077,12 +4063,6 @@ msgid_plural "%d seconds ago"
 msgstr[0] "il y a %d seconde"
 msgstr[1] "il y a %d secondes"
 
-#~ msgid ""
-#~ "Load latest savestate on game launch and savestate when exiting game."
-#~ msgstr ""
-#~ "Charge la dernière sauvegarde d'état automatiquement et sauve en quittant "
-#~ "le jeu."
-
 #~ msgid "FANART"
 #~ msgstr "FANART"
 
@@ -4091,3 +4071,36 @@ msgstr[1] "il y a %d secondes"
 
 #~ msgid "Building image cache"
 #~ msgstr "Génération du cache d’images"
+
+msgid "BACKGROUND AUDIO"
+msgstr "AUDIO EN ARRIÈRE-PLAN"
+
+msgid "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
+msgstr "EMULATIONSTATION DOIT REDÉMARRER POUR APPLIQUER LA NOUVELLE CONFIGURATION. REDÉMARRER MAINTENANT ?"
+
+msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
+msgstr "REGROUPER LES COLLECTIONS PERSONNALISÉES SANS THÈME"
+
+msgid "JOYSTICK MAPPING"
+msgstr "CORRESPONDANCE DU JOYSTICK"
+
+msgid "Now playing: "
+msgstr "Lecture en cours : "
+
+msgid "Parent folder"
+msgstr "Dossier parent"
+
+msgid "SCRAPE CARTRIDGE"
+msgstr "SCRAPER LA CARTOUCHE"
+
+msgid "SCRAPE TITLESHOT"
+msgstr "SCRAPER L’ÉCRAN-TITRE"
+
+msgid "SELECT FAVORITE SONGS"
+msgstr "SÉLECTIONNER LES MUSIQUES FAVORITES"
+
+msgid "SORT CUSTOM COLLECTIONS AND SYSTEMS"
+msgstr "TRIER LES COLLECTIONS PERSONNALISÉES ET LES SYSTÈMES"
+
+msgid "THE USER INTERFACE MODE IS NOW UNLOCKED"
+msgstr "LE MODE DE L’INTERFACE UTILISATEUR EST MAINTENANT DÉVERROUILLÉ"
