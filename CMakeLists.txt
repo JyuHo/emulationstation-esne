@@ -203,6 +203,8 @@ endif()
 #finding necessary packages
 #-------------------------------------------------------------------------------
 if(${GLSystem} MATCHES "Desktop OpenGL")
+    # LEGACY : garde l'edition de liens actuelle (libGL.so) et evite l'avertissement CMP0072
+    set(OpenGL_GL_PREFERENCE LEGACY)
     find_package(OpenGL REQUIRED)
 elseif(${GLSystem} MATCHES "OpenGL ES 3.0")
     find_package(OpenGLES3 REQUIRED)
@@ -583,7 +585,7 @@ endif()
 find_program (PYTHON3_EXECUTABLE python3)
 if(PYTHON3_EXECUTABLE AND NOT MSVC)
   add_custom_target (checkgamesdb ALL COMMENT "Checking guns and wheels games db.")
-  add_custom_command (TARGET checkgamesdb COMMAND "${PYTHON3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/resources/checkWheelGunGamesResources.py")
+  add_custom_command (TARGET checkgamesdb POST_BUILD COMMAND "${PYTHON3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/resources/checkWheelGunGamesResources.py")
 endif()
 
 #-------------------------------------------------------------------------------
