@@ -296,12 +296,11 @@ if(CEC)
   endif()
 endif()
 
-# ES-NE: the scrapers' developer keys are read at runtime from <config>/keys.conf (see es-core/src/EsneKeys.h), so no key is
-# ever compiled in or committed. The macros keep the scrapers compiled in and make them call EsneKeys.
-# Other builds: put the keys in an untracked "esne-keys.cmake" (compile-time keys).
+# ES-NE: the scrapers' developer keys come from EsneKeys (see es-core/src/EsneKeys.h).
+# Other builds: untracked "esne-keys.cmake".
 if(ESNE)
     # Optional build input (release builds)
-    set(ESNE_KEYS_FILE "$ENV{ESNE_KEYS_FILE}" CACHE FILEPATH "keys.conf-format file whose keys are compiled into the binary")
+    set(ESNE_KEYS_FILE "$ENV{ESNE_KEYS_FILE}" CACHE FILEPATH "Optional keys file")
     find_package(Python3 REQUIRED COMPONENTS Interpreter)
     set(ESNE_GENERATED_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
     if(ESNE_KEYS_FILE AND NOT EXISTS "${ESNE_KEYS_FILE}")
