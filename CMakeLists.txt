@@ -300,6 +300,21 @@ endif()
 # ever compiled in or committed. The macros keep the scrapers compiled in and make them call EsneKeys.
 # Other builds: put the keys in an untracked "esne-keys.cmake" (compile-time keys).
 if(ESNE)
+    # Optional: bake the developer keys into the binary (release builds). ESNE_KEYS_FILE = a keys.conf-format file (never committed).
+    # The keys in ~/.config/esne/keys.conf still take precedence at run time. Without the option the table is empty.
+    set(ESNE_KEYS_FILE "$ENV{ESNE_KEYS_FILE}" CACHE FILEPATH "keys.conf-format file whose keys are compiled into the binary")
+    find_package(Python3 REQUIRED COMPONENTS Interpreter)
+    set(ESNE_GENERATED_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
+    if(ESNE_KEYS_FILE AND NOT EXISTS "${ESNE_KEYS_FILE}")
+        message(FATAL_ERROR "ESNE_KEYS_FILE does not exist: ${ESNE_KEYS_FILE}")
+    endif()
+    execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/esne_embed_keys.py"
+                            "${ESNE_GENERATED_DIR}/EsneEmbeddedKeys.h" "${ESNE_KEYS_FILE}"
+                    RESULT_VARIABLE ESNE_EMBED_RESULT)
+    if(NOT ESNE_EMBED_RESULT EQUAL 0)
+        message(FATAL_ERROR "tools/esne_embed_keys.py failed")
+    endif()
+    include_directories("${ESNE_GENERATED_DIR}")
     add_definitions(-DSCREENSCRAPER_SOFTNAME=EsneKeys::softName\(\))
     add_definitions(-DSCREENSCRAPER_DEV_LOGIN=EsneKeys::screenscraperDevLogin\(\))
     add_definitions(-DGAMESDB_APIKEY=EsneKeys::gamesDbApiKey\(\))

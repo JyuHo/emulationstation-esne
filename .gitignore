@@ -56,3 +56,4 @@ CPackSourceConfig.cmake
 
 # ES-NE: scraper developer keys (personal, never committed)
 esne-keys.cmake
+EsneEmbeddedKeys.h
