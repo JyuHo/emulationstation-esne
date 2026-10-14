@@ -31,6 +31,8 @@
 #include "TextToSpeech.h"
 #include "LocaleES.h"
 #include "guis/GuiMsgBox.h"
+#include "guis/GuiLoading.h"
+#include <fstream>
 #include "Paths.h"
 #include "resources/TextureData.h"
 #include "views/gamelist/GameNameFormatter.h"
@@ -805,6 +807,54 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 		AudioManager::getInstance()->changePlaylist(system->getTheme(), true);
 	else
 		AudioManager::getInstance()->playRandomMusic();
+
+#if !WIN32
+	// ES-NE: core libretro manquant -> es-launcher a écrit /tmp/esne-missing-core (core, paquet, source): proposer l'installation
+	if (exitCode == 205)
+	{
+		std::string core, package, source;
+		std::ifstream hint("/tmp/esne-missing-core");
+		std::getline(hint, core);
+		std::getline(hint, package);
+		std::getline(hint, source);
+		hint.close();
+		::remove("/tmp/esne-missing-core");
+
+		if (!core.empty() && core.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_") == std::string::npos)
+		{
+			if (source == "official")
+			{
+				window->pushGui(new GuiMsgBox(window,
+					_("AN ERROR OCCURRED") + ":\r\n" + getMessageFromExitCode(exitCode) + "\r\n" + core + " (" + package + ")\r\n" + _("INSTALL IT NOW?"),
+					_("YES"), [window, core]
+					{
+						window->pushGui(new GuiLoading<std::pair<std::string, int>>(window, _("PLEASE WAIT"),
+							[core](auto gui)
+							{
+								return ApiSystem::getInstance()->installLibretroCore(core);
+							},
+							[window, core](std::pair<std::string, int> result)
+							{
+								if (result.second == 0)
+									window->pushGui(new GuiMsgBox(window, core + ": " + _("INSTALLED. LAUNCH THE GAME AGAIN."), _("OK"), nullptr));
+								else
+									window->pushGui(new GuiMsgBox(window, _("AN ERROR OCCURRED") + ":\r\n" + Utils::String::trim(result.first), _("OK"), nullptr, GuiMsgBoxIcon::ICON_ERROR));
+							}));
+					},
+					_("NO"), nullptr, GuiMsgBoxIcon::ICON_ERROR));
+				return exitCode == 0;
+			}
+
+			if (source == "aur")
+			{
+				window->pushGui(new GuiMsgBox(window,
+					_("AN ERROR OCCURRED") + ":\r\n" + getMessageFromExitCode(exitCode) + "\r\n" + core + " (AUR: " + package + ")",
+					_("OK"), nullptr, GuiMsgBoxIcon::ICON_ERROR));
+				return exitCode == 0;
+			}
+		}
+	}
+#endif
 
 	if (exitCode >= 200 && exitCode <= 300)
 		window->pushGui(new GuiMsgBox(window, _("AN ERROR OCCURRED") + ":\r\n" + getMessageFromExitCode(exitCode), _("OK"), nullptr, GuiMsgBoxIcon::ICON_ERROR));

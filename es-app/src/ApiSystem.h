@@ -315,6 +315,8 @@ public:
 	virtual std::pair<std::string, int> uninstallBatoceraBezel(std::string bezelsystem, const std::function<void(const std::string)>& func = nullptr);
 
     virtual std::vector<BatoceraBezel> getBatoceraBezelsList();
+    // ES-NE: installs a libretro core (esctl install-core); returns the last output line and the exit code
+    virtual std::pair<std::string, int> installLibretroCore(const std::string& core);
 	virtual std::pair<std::string,int> installBatoceraBezel(std::string bezelsystem, const std::function<void(const std::string)>& func = nullptr);
 	virtual std::pair<std::string,int> uninstallBatoceraTheme(std::string bezelsystem, const std::function<void(const std::string)>& func = nullptr);
 

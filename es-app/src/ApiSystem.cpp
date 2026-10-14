@@ -1284,6 +1284,12 @@ std::pair<std::string, int> ApiSystem::uninstallBatoceraTheme(std::string thname
 	return std::pair<std::string, int>(std::string(""), 1);
 }
 
+std::pair<std::string, int> ApiSystem::installLibretroCore(const std::string& core)
+{
+	// the core name comes from /tmp and is checked by the caller (letters, digits and underscores only)
+	return executeScript("esctl install-core " + core + " 2>&1", nullptr);
+}
+
 std::vector<BatoceraBezel> ApiSystem::getBatoceraBezelsList()
 {
 	LOG(LogInfo) << "ApiSystem::getBatoceraBezelsList";
