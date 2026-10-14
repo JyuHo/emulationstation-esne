@@ -3998,3 +3998,36 @@ msgid "%d second ago"
 msgid_plural "%d seconds ago"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "BACKGROUND AUDIO"
+msgstr ""
+
+msgid "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
+msgstr ""
+
+msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
+msgstr ""
+
+msgid "JOYSTICK MAPPING"
+msgstr ""
+
+msgid "Now playing: "
+msgstr ""
+
+msgid "Parent folder"
+msgstr ""
+
+msgid "SCRAPE CARTRIDGE"
+msgstr ""
+
+msgid "SCRAPE TITLESHOT"
+msgstr ""
+
+msgid "SELECT FAVORITE SONGS"
+msgstr ""
+
+msgid "SORT CUSTOM COLLECTIONS AND SYSTEMS"
+msgstr ""
+
+msgid "THE USER INTERFACE MODE IS NOW UNLOCKED"
+msgstr ""
