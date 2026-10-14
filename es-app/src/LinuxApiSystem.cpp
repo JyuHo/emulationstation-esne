@@ -145,7 +145,7 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 
 	// Standard Linux tools
 	case ApiSystem::KODI:
-		return Utils::FileSystem::exists(Paths::getKodiPath());
+		return false; // ES-NE does not ship Kodi: hide its menu entries even if kodi is installed
 	case ApiSystem::NETPLAY:
 		return !getSevenZipCommand().empty();
 	case ApiSystem::PDFEXTRACTION:
@@ -269,27 +269,9 @@ void LinuxApiSystem::suspend()
 
 bool LinuxApiSystem::launchKodi(Window* window)
 {
-	LOG(LogDebug) << "LinuxApiSystem::launchKodi";
-
-	// Kodi does not need Batocera's controller configuration (batocera-kodi): start it directly
-	const std::string kodi = Paths::getKodiPath();
-	if (!Utils::FileSystem::exists(kodi))
-	{
-		LOG(LogError) << "Kodi not found: " << kodi;
-		return false;
-	}
-
-	const std::string command = "\"" + kodi + "\" --standalone";
-
-	ApiSystem::launchExternalWindow_before(window);
-
-	int exitCode = system(command.c_str());
-	if (exitCode != -1 && WIFEXITED(exitCode))
-		exitCode = WEXITSTATUS(exitCode);
-
-	ApiSystem::launchExternalWindow_after(window);
-
-	return exitCode == 0;
+	// Kodi is not part of ES-NE (isScriptingSupported(KODI) is false, so no menu reaches this)
+	LOG(LogDebug) << "LinuxApiSystem::launchKodi: not supported";
+	return false;
 }
 
 #endif
