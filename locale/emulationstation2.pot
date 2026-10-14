@@ -3555,6 +3555,15 @@ msgstr ""
 msgid "CORE IS MISSING"
 msgstr ""
 
+msgid "INSTALL IT NOW?"
+msgstr ""
+
+msgid "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
+msgstr ""
+
+msgid "INSTALLED. LAUNCH THE GAME AGAIN."
+msgstr ""
+
 msgid "UKNOWN ERROR"
 msgstr ""
 
