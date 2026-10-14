@@ -1510,20 +1510,31 @@ void GuiMenu::openSystemSettings()
 		}
 	});
 
-	// Keyboard layout & variant (ES-NE: handled by the desktop environment, batocera-keyboard does not exist)
-#if !WIN32 && !ESNE
-
+	// Keyboard layout & variant (ES-NE: esctl keyboard, based on localectl; hidden when localectl is missing)
+#if !WIN32
+	if (system("esctl has keyboard >/dev/null 2>&1") == 0)
+	{
 	std::string curLayout = SystemConf::getInstance()->get("system.kblayout");
 	if (curLayout.empty()) curLayout = "us";
 
 	std::string curVariant = SystemConf::getInstance()->get("system.kbvariant");
 	if (curVariant.empty()) curVariant = "none";
 
+	{
+		// the real configuration (localectl) takes precedence over the value saved by ES
+		auto current = getScriptOutput("esctl keyboard get");
+		if (!current.empty())
+		{
+			curLayout = current[0].first;
+			curVariant = current[0].second;
+		}
+	}
+
 	auto keyboard_layout = std::make_shared<OptionListComponent<std::string>>(window, _("KEYBOARD LAYOUT"), false);
 	auto keyboard_variant = std::make_shared<OptionListComponent<std::string>>(window, _("KEYBOARD VARIANT"), false);
 
 	// Populate Layouts
-	auto layouts = getScriptOutput("/usr/bin/batocera-keyboard list-layouts");
+	auto layouts = getScriptOutput("esctl keyboard list-layouts");
 	bool layoutFound = false;
 
 	for (const auto& l : layouts)
@@ -1542,7 +1553,7 @@ void GuiMenu::openSystemSettings()
 		bool noneSelected = (curVariant == "none" || curVariant.empty());
 		keyboard_variant->add(_("NONE"), "none", noneSelected);
 
-		auto variants = getScriptOutput("/usr/bin/batocera-keyboard list-variants " + layoutCode);
+		auto variants = getScriptOutput("esctl keyboard list-variants " + layoutCode);
 		bool variantFound = false;
 		for (const auto& v : variants)
 		{
@@ -1563,8 +1574,8 @@ void GuiMenu::openSystemSettings()
 	keyboard_layout->setSelectedChangedCallback([populateVariants, keyboard_variant](std::string newLayout) {
 		keyboard_variant->clear();
 		keyboard_variant->add(_("NONE"), "none", true);
-
-		auto variants = getScriptOutput("/usr/bin/batocera-keyboard list-variants " + newLayout);
+		
+		auto variants = getScriptOutput("esctl keyboard list-variants " + newLayout);
 		for (const auto& v : variants)
 		{
 			keyboard_variant->add(v.second, v.first, false);
@@ -1583,8 +1594,8 @@ void GuiMenu::openSystemSettings()
 		{
 			std::string selLayout = keyboard_layout->getSelected();
 			std::string selVariant = keyboard_variant->getSelected();
-
-			std::string cmd = "/usr/bin/batocera-keyboard set \"" + selLayout + "\" \"" + selVariant + "\"";
+			
+			std::string cmd = "esctl keyboard set \"" + selLayout + "\" \"" + selVariant + "\"";
 			if (system(cmd.c_str()) == 0) {
 				SystemConf::getInstance()->set("system.kblayout", selLayout);
 				SystemConf::getInstance()->set("system.kbvariant", selVariant);
@@ -1594,6 +1605,7 @@ void GuiMenu::openSystemSettings()
 			}
 		}
 	});
+	}
 #endif
 
 	// Timezone
