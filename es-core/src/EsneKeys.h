@@ -1,7 +1,7 @@
 #pragma once
 
 // ES-NE: developer keys (ScreenScraper, TheGamesDB, HFS, RetroAchievements) are read at startup from
-// <config>/keys.conf (~/.config/esne/keys.conf), one "NAME=value" per line, '#' starts a comment. The file is never part of
+// <config>/keys.conf (~/.config/esne/keys.conf) and, as a fallback, from the keys compiled into the binary (-DESNE_KEYS_FILE=..., see CMakeLists.txt), one "NAME=value" per line, '#' starts a comment. The file is never part of
 // the package or of git (it is read very early, so problems are reported on stderr, not in the log). Names: SCREENSCRAPER_SOFTNAME, SCREENSCRAPER_DEV_LOGIN (devid=...&devpassword=...),
 // GAMESDB_APIKEY, HFS_DEV_LOGIN (user:password), CHEEVOS_DEV_LOGIN (z=user&y=api key).
 #if ESNE
@@ -11,6 +11,7 @@
 #include <fstream>
 #include <sys/stat.h>
 #include "Paths.h"
+#include "EsneEmbeddedKeys.h" // generated at configure time (tools/esne_embed_keys.py), empty table by default
 #include <cstdio>
 
 namespace EsneKeys
@@ -63,7 +64,24 @@ namespace EsneKeys
 	// Value of a key, empty when it is not set.
 	inline const std::string& get(const std::string& name)
 	{
-		static const std::map<std::string, std::string> keys = load(Paths::getUserEmulationStationPath() + "/keys.conf");
+		static const std::map<std::string, std::string> keys = [] {
+			std::map<std::string, std::string> all;
+
+			// keys compiled into the binary (release builds), unmasked
+			for (const embedded::Entry* e = embedded::entries; e->name != nullptr; e++)
+			{
+				std::string value;
+				for (size_t i = 0; i < e->size; i++)
+					value.push_back((char) (e->data[i] ^ embedded::pad[i % sizeof(embedded::pad)]));
+				all[e->name] = value;
+			}
+
+			// keys.conf takes precedence over the embedded ones
+			for (const auto& kv : load(Paths::getUserEmulationStationPath() + "/keys.conf"))
+				all[kv.first] = kv.second;
+
+			return all;
+		}();
 		static const std::string empty;
 
 		auto it = keys.find(name);
