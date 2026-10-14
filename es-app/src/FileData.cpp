@@ -822,10 +822,14 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 
 		if (!core.empty() && core.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_") == std::string::npos)
 		{
-			if (source == "official")
+			if (source == "official" || source == "aur")
 			{
+				std::string question = _("INSTALL IT NOW?");
+				if (source == "aur")
+					question = _("THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?");
+
 				window->pushGui(new GuiMsgBox(window,
-					_("AN ERROR OCCURRED") + ":\r\n" + getMessageFromExitCode(exitCode) + "\r\n" + core + " (" + package + ")\r\n" + _("INSTALL IT NOW?"),
+					_("AN ERROR OCCURRED") + ":\r\n" + getMessageFromExitCode(exitCode) + "\r\n" + core + " (" + (source == "aur" ? "AUR: " : "") + package + ")\r\n" + question,
 					_("YES"), [window, core]
 					{
 						window->pushGui(new GuiLoading<std::pair<std::string, int>>(window, _("PLEASE WAIT"),
@@ -842,14 +846,6 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 							}));
 					},
 					_("NO"), nullptr, GuiMsgBoxIcon::ICON_ERROR));
-				return exitCode == 0;
-			}
-
-			if (source == "aur")
-			{
-				window->pushGui(new GuiMsgBox(window,
-					_("AN ERROR OCCURRED") + ":\r\n" + getMessageFromExitCode(exitCode) + "\r\n" + core + " (AUR: " + package + ")",
-					_("OK"), nullptr, GuiMsgBoxIcon::ICON_ERROR));
 				return exitCode == 0;
 			}
 		}
