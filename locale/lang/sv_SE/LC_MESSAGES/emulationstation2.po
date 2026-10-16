@@ -2210,6 +2210,8 @@ msgstr "ÄR DU SÄKER PÅ ATT DU VILL AVBRYTA KOPPLINGEN AV \\\"%s\\\"?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION MÅSTE STARTAS OM FÖR ATT TILLÄMPA DEN NYA KONFIGURATIONEN. "
+"STARTA OM NU?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "OMSTART KRÄVS FÖR ATT TILLÄMPA DEN NYA KONFIGURATIONEN"
@@ -2709,15 +2711,17 @@ msgstr ""
 "starttiden"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "MAPPDJUP ATT INDEXERA"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "OBEGRÄNSAD"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Maximalt djup som söks igenom i varje ROM-mapp, för att hoppa över "
+"undermappar med många filer."
 
 msgid "THREADED LOADING"
 msgstr "GÄNGAD LASTNING"
@@ -2873,10 +2877,11 @@ msgid "Available options can change depending on current audio output."
 msgstr "Tillgängliga alternativ kan ändras beroende på aktuell ljudutgång."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Tillåter HDR-innehåll, till exempel Moonlight HDR-strömmar, på skärmen."
 
 msgid "BOOT SPLASH"
 msgstr "SKOSNÖRE SPLASH"
@@ -3363,13 +3368,13 @@ msgstr "ANSLUTEN"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "KAN INTE ANSLUTA TILL '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WI-FI-NÄTVERK"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "LÄGG TILL ETT WI-FI-NÄTVERK"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID"
@@ -3378,7 +3383,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI-NYCKEL"
 
 msgid "USE"
-msgstr ""
+msgstr "ANVÄND"
 
 msgid "IP ADDRESS"
 msgstr "IP-ADRESS"
@@ -3698,15 +3703,17 @@ msgid "UKNOWN ERROR"
 msgstr "OKÄNT FEL"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "INSTALLERA NU?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"DEN HÄR COREN KOMMER FRÅN AUR: DEN BYGGS FRÅN OGRANSKADE KÄLLOR OCH ETT "
+"LÖSENORD KOMMER ATT BEGÄRAS. BYGG OCH INSTALLERA NU?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTALLERAD. STARTA SPELET IGEN."
 
 msgid "Loading system config..."
 msgstr "Läser in systemkonfiguration…"

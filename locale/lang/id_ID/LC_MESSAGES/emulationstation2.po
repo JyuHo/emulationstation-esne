@@ -2207,6 +2207,8 @@ msgstr "ANDA YAKIN INGIN MEMUTUS SAMBUNGAN '%s' ?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION HARUS DIMULAI ULANG UNTUK MENERAPKAN KONFIGURASI BARU. "
+"MULAI ULANG SEKARANG?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "REBOOT DIPERLUKAN UNTUK MENERAPKAN KONFIGURASI BARU"
@@ -2706,15 +2708,17 @@ msgstr ""
 "meningkatkan waktu boot"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "KEDALAMAN FOLDER UNTUK DIINDEKS"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "TANPA BATAS"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Kedalaman maksimum yang dipindai di setiap folder ROM, untuk mengabaikan "
+"subfolder dengan banyak berkas."
 
 msgid "THREADED LOADING"
 msgstr "MEMUAT THREAD"
@@ -2870,10 +2874,11 @@ msgstr ""
 "Pilihan yang tersedia dapat berubah tergantung pada output audio saat ini."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Mengizinkan konten HDR, seperti aliran HDR Moonlight, ditampilkan di layar."
 
 msgid "BOOT SPLASH"
 msgstr "SPLASH BOOT"
@@ -3358,13 +3363,13 @@ msgstr "TERHUBUNG"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "TIDAK DAPAT TERHUBUNG KE '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "JARINGAN WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "TAMBAH JARINGAN WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "NAMA WI-FI"
@@ -3373,7 +3378,7 @@ msgid "WI-FI KEY"
 msgstr "PASSWORD WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "GUNAKAN"
 
 msgid "IP ADDRESS"
 msgstr "ALAMAT IP"
@@ -3693,15 +3698,17 @@ msgid "UKNOWN ERROR"
 msgstr "ERROR TAK DIKETAHUI"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "PASANG SEKARANG?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"CORE INI BERASAL DARI AUR: AKAN DIBANGUN DARI SUMBER YANG BELUM DITINJAU DAN"
+" KATA SANDI AKAN DIMINTA. BANGUN DAN PASANG SEKARANG?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "TERPASANG. JALANKAN GAME LAGI."
 
 msgid "Loading system config..."
 msgstr "Memuat konfigurasi sistem…"

@@ -2194,7 +2194,7 @@ msgstr "你確定要斷開「%s」連線嗎？"
 
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
-msgstr ""
+msgstr "EMULATIONSTATION 必須重新啟動才能套用新設定。現在重新啟動嗎？"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "需要重新啟動系統才可以套用新的設定"
@@ -2478,10 +2478,10 @@ msgid "VSYNC"
 msgstr "垂直同步"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "抗鋸齒 (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "幀率上限"
 
 msgid "OVERSCAN"
 msgstr "過掃瞄 (OVERSCAN)"
@@ -2643,7 +2643,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "上下移動右搖桿以調高或調低音量。"
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "光槍移動容忍度"
@@ -2679,15 +2679,15 @@ msgid ""
 msgstr "藉由完全擷取遊戲清單來減少捲動時的卡頓，會增加啟動時間"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "索引的目錄深度"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "不限制"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
-msgstr ""
+msgstr "在每個 ROM 資料夾中掃描的最大深度，用於忽略包含大量檔案的子資料夾。"
 
 msgid "THREADED LOADING"
 msgstr "多執行緒載入"
@@ -2839,10 +2839,10 @@ msgid "Available options can change depending on current audio output."
 msgstr "可用的選項會依目前的音訊輸出而改變。"
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "允許在螢幕上顯示 HDR 內容，例如 Moonlight HDR 串流。"
 
 msgid "BOOT SPLASH"
 msgstr "開機畫面"
@@ -3320,13 +3320,13 @@ msgstr "已連線"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "無法連線到「%s」"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WI-FI 網路"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "新增 WI-FI 網路"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI 連線名稱"
@@ -3335,7 +3335,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI 連線金鑰"
 
 msgid "USE"
-msgstr ""
+msgstr "使用"
 
 msgid "IP ADDRESS"
 msgstr "IP 位址"
@@ -3655,15 +3655,15 @@ msgid "UKNOWN ERROR"
 msgstr "未知的錯誤"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "現在安裝嗎？"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
-msgstr ""
+msgstr "此核心來自 AUR：它將從未經審查的原始碼建置，並且會要求輸入密碼。現在建置並安裝嗎？"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "已安裝。請重新啟動遊戲。"
 
 msgid "Loading system config..."
 msgstr "正在載入系統設定…"

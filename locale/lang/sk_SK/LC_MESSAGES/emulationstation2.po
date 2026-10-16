@@ -2216,6 +2216,8 @@ msgstr "Určite sa chcete odpojiť z '%s' ?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION SA MUSÍ REŠTARTOVAŤ, ABY SA POUŽILA NOVÁ KONFIGURÁCIA. "
+"REŠTARTOVAŤ TERAZ?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "Na použitie zmien je potrebný reštart"
@@ -2499,10 +2501,10 @@ msgid "VSYNC"
 msgstr "Vsync"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "VYHLADZOVANIE HRÁN (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "LIMIT FPS"
 
 msgid "OVERSCAN"
 msgstr "Overscan"
@@ -2672,7 +2674,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Pohybom pravej páčky hore/dole zvýšite alebo znížite hlasitosť."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "Tolerancia pohybu zbrane"
@@ -2712,15 +2714,17 @@ msgstr ""
 "spustenia"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "HĹBKA ADRESÁROV NA INDEXOVANIE"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "BEZ OBMEDZENIA"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Maximálna hĺbka prehľadávaná v každom adresári ROM, aby sa preskočili "
+"podadresáre s veľkým počtom súborov."
 
 msgid "THREADED LOADING"
 msgstr "Súčasné načítavanie"
@@ -2872,10 +2876,10 @@ msgid "Available options can change depending on current audio output."
 msgstr "Dostupné voľby sa môžu zmeniť podľa aktuálneho audio výstupu."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "Povoľuje na displeji obsah HDR, napríklad HDR streamy z Moonlight."
 
 msgid "BOOT SPLASH"
 msgstr "Obrázok pri spustení"
@@ -3359,13 +3363,13 @@ msgstr "Pripojené"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "NEDÁ SA PRIPOJIŤ K '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "SIETE WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "PRIDAŤ SIEŤ WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "Názov siete"
@@ -3374,7 +3378,7 @@ msgid "WI-FI KEY"
 msgstr "Wi-Fi heslo"
 
 msgid "USE"
-msgstr ""
+msgstr "POUŽIŤ"
 
 msgid "IP ADDRESS"
 msgstr "IP adresa"
@@ -3694,15 +3698,17 @@ msgid "UKNOWN ERROR"
 msgstr "Neznáma chyba"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "NAINŠTALOVAŤ TERAZ?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"TENTO CORE POCHÁDZA Z AUR: BUDE ZOSTAVENÝ Z NEOVERENÝCH ZDROJOV A BUDE SA "
+"VYŽADOVAŤ HESLO. ZOSTAVIŤ A NAINŠTALOVAŤ TERAZ?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "NAINŠTALOVANÉ. SPUSTITE HRU ZNOVA."
 
 msgid "Loading system config..."
 msgstr "Načítavam systémové nastavenie…"

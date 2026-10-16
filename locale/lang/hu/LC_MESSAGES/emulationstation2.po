@@ -2216,6 +2216,8 @@ msgstr "BIZTOS VAGY BENNE, HOGY A '%s'-T LE AKAROD VÁLASZTANI?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"AZ EMULATIONSTATIONT ÚJRA KELL INDÍTANI AZ ÚJ BEÁLLÍTÁSOK ALKALMAZÁSÁHOZ. "
+"ÚJRAINDÍTJA MOST?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "AZ ÚJ KONFIGURÁCIÓ ÉRVÉNYESÍTÉSÉHEZ ÚJRAINDÍTÁS SZÜKSÉGES"
@@ -2499,10 +2501,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ÉLSIMÍTÁS (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "FPS-KORLÁT"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2680,6 +2682,7 @@ msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
 msgstr ""
+"Mozgassa a jobb botot fel/le a hangerő növeléséhez vagy csökkentéséhez."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "FEGYVERMOZGÁS TŰRÉSHATÁR"
@@ -2719,15 +2722,17 @@ msgstr ""
 "a rendszerindítási időt"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "INDEXELENDŐ MAPPAMÉLYSÉG"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "KORLÁTLAN"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Az egyes ROM-mappákban átvizsgált legnagyobb mélység, a sok fájlt tartalmazó"
+" almappák kihagyásához."
 
 msgid "THREADED LOADING"
 msgstr "TÖBBSZÁLAS TÖLTÉS"
@@ -2888,10 +2893,12 @@ msgstr ""
 "Az elérhető beállítások az aktuális hangkimenettől függően változhatnak."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Engedélyezi a HDR-tartalmakat, például a Moonlight HDR-streameket, a "
+"kijelzőn."
 
 msgid "BOOT SPLASH"
 msgstr "RENDSZERINDÍTÁS KEZDŐKÉP"
@@ -3379,13 +3386,13 @@ msgstr "CSATLAKOZVA"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "NEM LEHET CSATLAKOZNI A KÖVETKEZŐHÖZ: '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WI-FI HÁLÓZATOK"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "WI-FI HÁLÓZAT HOZZÁADÁSA"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID"
@@ -3394,7 +3401,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI JELSZÓ"
 
 msgid "USE"
-msgstr ""
+msgstr "HASZNÁLAT"
 
 msgid "IP ADDRESS"
 msgstr "IP CÍM"
@@ -3714,15 +3721,17 @@ msgid "UKNOWN ERROR"
 msgstr "ISMERETLEN HIBA"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "TELEPÍTI MOST?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"EZ A CORE AZ AUR-BÓL SZÁRMAZIK: ELLENŐRZÉSRE NEM KERÜLT FORRÁSOKBÓL FOGJÁK "
+"LEFORDÍTANI, ÉS JELSZÓT FOGNAK KÉRNI. LEFORDÍTJA ÉS TELEPÍTI MOST?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "TELEPÍTVE. INDÍTSA ÚJRA A JÁTÉKOT."
 
 msgid "Loading system config..."
 msgstr "Rendszer konfiguráció betöltése…"

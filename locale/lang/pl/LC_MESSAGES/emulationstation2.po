@@ -2216,6 +2216,8 @@ msgstr "CZY NA PEWNO ROZŁĄCZYĆ '%s'?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION MUSI ZOSTAĆ URUCHOMIONY PONOWNIE, ABY ZASTOSOWAĆ NOWĄ "
+"KONFIGURACJĘ. URUCHOMIĆ PONOWNIE TERAZ?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr ""
@@ -2886,10 +2888,10 @@ msgstr ""
 "Dostępne opcje mogą się zmieniać w zależności od bieżącego wyjścia audio."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "Pozwala wyświetlać treści HDR, takie jak strumienie HDR z Moonlight."
 
 msgid "BOOT SPLASH"
 msgstr "EKRAN STARTOWY"
@@ -3377,13 +3379,13 @@ msgstr "POŁĄCZONO"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "NIE MOŻNA POŁĄCZYĆ Z '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "SIECI WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "DODAJ SIEĆ WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID"
@@ -3392,7 +3394,7 @@ msgid "WI-FI KEY"
 msgstr "HASŁO WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "UŻYJ"
 
 msgid "IP ADDRESS"
 msgstr "ADRES IP"
@@ -3712,15 +3714,17 @@ msgid "UKNOWN ERROR"
 msgstr "NIEZNANY BŁĄD"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "ZAINSTALOWAĆ TERAZ?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"TEN CORE POCHODZI Z AUR: ZOSTANIE ZBUDOWANY ZE ŹRÓDEŁ, KTÓRE NIE ZOSTAŁY "
+"SPRAWDZONE, I ZOSTANIE POPROSZONE HASŁO. ZBUDOWAĆ I ZAINSTALOWAĆ TERAZ?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "ZAINSTALOWANO. URUCHOM GRĘ PONOWNIE."
 
 msgid "Loading system config..."
 msgstr "Wczytywanie konfiguracji systemowej…"

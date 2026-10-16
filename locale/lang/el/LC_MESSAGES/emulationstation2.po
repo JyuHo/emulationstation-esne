@@ -2205,6 +2205,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"ΤΟ EMULATIONSTATION ΠΡΕΠΕΙ ΝΑ ΞΕΚΙΝΗΣΕΙ ΞΑΝΑ ΓΙΑ ΝΑ ΕΦΑΡΜΟΣΤΕΙ Η ΝΕΑ "
+"ΔΙΑΜΟΡΦΩΣΗ. ΕΠΑΝΕΚΚΙΝΗΣΗ ΤΩΡΑ;"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr ""
@@ -2489,10 +2491,10 @@ msgid "VSYNC"
 msgstr ""
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ANTI-ALIASING (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "ΟΡΙΟ FPS"
 
 msgid "OVERSCAN"
 msgstr ""
@@ -2661,6 +2663,8 @@ msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
 msgstr ""
+"Μετακινήστε τον δεξιό μοχλό πάνω/κάτω για να αυξήσετε ή να μειώσετε την "
+"ένταση."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr ""
@@ -2696,15 +2700,17 @@ msgid ""
 msgstr ""
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "ΒΑΘΟΣ ΦΑΚΕΛΩΝ ΓΙΑ ΕΥΡΕΤΗΡΙΑΣΜΟ"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "ΑΠΕΡΙΟΡΙΣΤΟ"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Το μέγιστο βάθος που σαρώνεται μέσα σε κάθε φάκελο ROM, ώστε να αγνοούνται "
+"οι υποφάκελοι με πολλά αρχεία."
 
 msgid "THREADED LOADING"
 msgstr "THREADED ΦΟΡΤΩΣΗ"
@@ -2855,10 +2861,12 @@ msgid "Available options can change depending on current audio output."
 msgstr ""
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Επιτρέπει την εμφάνιση περιεχομένου HDR, όπως οι ροές HDR του Moonlight, "
+"στην οθόνη."
 
 msgid "BOOT SPLASH"
 msgstr ""
@@ -3336,13 +3344,13 @@ msgstr "ΣΥΝΔΕΔΕΜΕΝΟ"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "ΑΔΥΝΑΜΙΑ ΣΥΝΔΕΣΗΣ ΣΤΟ '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "ΔΙΚΤΥΑ WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "ΠΡΟΣΘΗΚΗ ΔΙΚΤΥΟΥ WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "SSID ΑΣΥΡΜΑΤΟΥ ΔΙΚΤΥΟΥ"
@@ -3351,7 +3359,7 @@ msgid "WI-FI KEY"
 msgstr "ΚΛΕΙΔΙ ΑΣΥΡΜΑΤΟΥ ΔΙΚΤΥΟΥ"
 
 msgid "USE"
-msgstr ""
+msgstr "ΧΡΗΣΗ"
 
 msgid "IP ADDRESS"
 msgstr "ΔΙΕΥΘΥΝΣΗ IP"
@@ -3671,15 +3679,18 @@ msgid "UKNOWN ERROR"
 msgstr "ΑΓΝΩΣΤΟ ΛΑΘΟΣ"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "ΕΓΚΑΤΑΣΤΑΣΗ ΤΩΡΑ;"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"ΑΥΤΟΣ Ο ΠΥΡΗΝΑΣ (CORE) ΠΡΟΕΡΧΕΤΑΙ ΑΠΟ ΤΟ AUR: ΘΑ ΜΕΤΑΦΡΑΣΤΕΙ ΑΠΟ ΜΗ "
+"ΕΛΕΓΜΕΝΟΥΣ ΚΩΔΙΚΕΣ ΚΑΙ ΘΑ ΖΗΤΗΘΕΙ ΚΩΔΙΚΟΣ ΠΡΟΣΒΑΣΗΣ. ΜΕΤΑΦΡΑΣΗ ΚΑΙ "
+"ΕΓΚΑΤΑΣΤΑΣΗ ΤΩΡΑ;"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "ΕΓΚΑΤΑΣΤΑΘΗΚΕ. ΞΕΚΙΝΗΣΤΕ ΞΑΝΑ ΤΟ ΠΑΙΧΝΙΔΙ."
 
 msgid "Loading system config..."
 msgstr "Φορτωση τροποποιησης συστηματος…"

@@ -1241,7 +1241,7 @@ msgstr "EGUNERATU"
 
 #, c-format
 msgid "'%s' ADDED TO DOWNLOAD QUEUE"
-msgstr "'%S' GEHITUTA DESKARGA LERROAN"
+msgstr "'%s' GEHITUTA DESKARGA LERROAN"
 
 msgid "BEZELS UNINSTALLED SUCCESSFULLY"
 msgstr "BEZEL-AK ONDO DESINSTALATU DIRA"
@@ -2209,6 +2209,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION BERRIRAGI BEHAR DA KONFIGURAZIO BERRIA APLIKATZEKO. ORAIN "
+"BERRIRAGI?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "BERABIARAZPENA BEHARREZKOA DA KONFIGURAZIO BERRIA EZARTZEKO"
@@ -2492,10 +2494,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ANTIALIASING (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "FPS MUGA"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2666,7 +2668,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Mugitu eskuineko palanka gora/behera bolumena igotzeko edo jaisteko."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "PISTOLAREN MUGITZE TOLERANTZIA"
@@ -2706,15 +2708,17 @@ msgstr ""
 "abiarazte denbora handitzen du."
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "INDEXATZEKO KARPETEN SAKONERA"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "MUGARIK GABE"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"ROM karpeta bakoitzaren barruan aztertzen den gehienezko sakonera, fitxategi"
+" askoko azpikarpetak alde batera uzteko."
 
 msgid "THREADED LOADING"
 msgstr "HARI BIDEZKO KARGA"
@@ -2869,10 +2873,12 @@ msgstr ""
 "Aukeragarri dauden ezarpenak aldatu daitezke uneko audio irteeraren arabera."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"HDR edukia, hala nola Moonlight-en HDR streamak, pantailan erakusten uzten "
+"du."
 
 msgid "BOOT SPLASH"
 msgstr "ABIARAZTE PANTAILA"
@@ -3359,13 +3365,13 @@ msgstr "KONEKTATUTA"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "EZIN DA '%s'(R)EKIN KONEKTATU"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WI-FI SAREAK"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "GEHITU WI-FI SARE BAT"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID-a"
@@ -3374,7 +3380,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI GAKOA"
 
 msgid "USE"
-msgstr ""
+msgstr "ERABILI"
 
 msgid "IP ADDRESS"
 msgstr "IP HELBIDEA"
@@ -3573,7 +3579,7 @@ msgstr "EZ DAGO EGUNERAKETARIK ERABILGARRI"
 
 #, c-format
 msgid "UPDATING %s"
-msgstr "%S EGUNERATZEN"
+msgstr "%s EGUNERATZEN"
 
 msgid "UPDATE IS READY"
 msgstr "EGUNERAKETA PREST DAGO"
@@ -3694,15 +3700,17 @@ msgid "UKNOWN ERROR"
 msgstr "ERRORE EZEZAGUNA"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "ORAIN INSTALATU?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"CORE HAU AUR-ETIK DATOR: ITURRI BERRIKUSI GABEETATIK KONPILATUKO DA ETA "
+"PASAHITZA BAT ESKATUKO DA. ORAIN KONPILATU ETA INSTALATU?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTALATUTA. ABIARAZI JOKOA BERRIRO."
 
 msgid "Loading system config..."
 msgstr "Kargatu sistemaren konfigurazioa…"

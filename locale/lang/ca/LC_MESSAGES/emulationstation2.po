@@ -2217,6 +2217,8 @@ msgstr "ESTÀS SEGUR DE VOLER DESCONNECTAR ‘%s’?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"L'EMULATIONSTATION S'HA DE REINICIAR PER APLICAR LA NOVA CONFIGURACIÓ. "
+"REINICIAR ARA?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "PER A APLICAR LA NOVA CONFIGURACIÓ ES REQUEREIX REINICIAR"
@@ -2888,10 +2890,12 @@ msgstr ""
 "Les opcions disponibles poden canviar depenent de la sortida d'àudio actual."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Permet mostrar contingut HDR, com les transmissions HDR de Moonlight, a la "
+"pantalla."
 
 msgid "BOOT SPLASH"
 msgstr "PANTALLA DE PRESENTACIÓ"
@@ -3382,13 +3386,13 @@ msgstr "CONNECTAT"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "NO ES POT CONNECTAR A '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "XARXES WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "AFEGEIX UNA XARXA WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "SSID DEL WI-FI"
@@ -3397,7 +3401,7 @@ msgid "WI-FI KEY"
 msgstr "CLAU DEL WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "UTILITZA"
 
 msgid "IP ADDRESS"
 msgstr "ADREÇA IP"
@@ -3717,15 +3721,17 @@ msgid "UKNOWN ERROR"
 msgstr "ERROR DESCONEGUT"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "INSTAL·LAR-LO ARA?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"AQUEST CORE VE DE L'AUR: ES COMPILARÀ A PARTIR DE FONTS SENSE REVISAR I ES "
+"DEMANARÀ UNA CONTRASENYA. COMPILAR-LO I INSTAL·LAR-LO ARA?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTAL·LAT. TORNA A INICIAR EL JOC."
 
 msgid "Loading system config..."
 msgstr "Carregant configuració de sistema…"

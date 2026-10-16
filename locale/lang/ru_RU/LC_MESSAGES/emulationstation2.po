@@ -2215,6 +2215,8 @@ msgstr "ВЫ УВЕРЕНЫ, ЧТО ХОТИТЕ ОТКЛЮЧИТЬ '%s' ?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION НЕОБХОДИМО ПЕРЕЗАПУСТИТЬ, ЧТОБЫ ПРИМЕНИТЬ НОВУЮ "
+"КОНФИГУРАЦИЮ. ПЕРЕЗАПУСТИТЬ СЕЙЧАС?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "ДЛЯ ПРИМЕНЕНИЯ НАСТРОЕК ТРЕБУЕТСЯ ПЕРЕЗАГРУЗИТЬ СИСТЕМУ"
@@ -2498,7 +2500,7 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "СГЛАЖИВАНИЕ (MSAA)"
 
 msgid "FPS LIMIT"
 msgstr "ЛИМИТ FPS"
@@ -2675,6 +2677,7 @@ msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
 msgstr ""
+"Двигайте правый стик вверх/вниз, чтобы увеличить или уменьшить громкость."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "ДОПУСТИМОСТЬ ПЕРЕМЕЩЕНИЯ ПИСТОЛЕТА"
@@ -2711,15 +2714,17 @@ msgstr ""
 "Уменьшает лаги во время просмотра списка игр, увеличивает время загрузки"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "ГЛУБИНА ПАПОК ДЛЯ ИНДЕКСАЦИИ"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "БЕЗ ОГРАНИЧЕНИЙ"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Максимальная глубина сканирования внутри каждой папки с ROM, чтобы "
+"пропускать подпапки с большим числом файлов."
 
 msgid "THREADED LOADING"
 msgstr "МНОГОПОТОЧНАЯ ЗАГРУЗКА"
@@ -2874,10 +2879,11 @@ msgid "Available options can change depending on current audio output."
 msgstr "Доступные опции могут меняться в зависимости от текущего аудио выхода."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Разрешает вывод HDR-контента, например потоков Moonlight HDR, на дисплей."
 
 msgid "BOOT SPLASH"
 msgstr "ВСТУПИТЕЛЬНОЕ ИНТРО"
@@ -3363,13 +3369,13 @@ msgstr "ПОДКЛЮЧЕНО"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "НЕ УДАЛОСЬ ПОДКЛЮЧИТЬСЯ К '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "СЕТИ WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "ДОБАВИТЬ СЕТЬ WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "ИМЯ СЕТИ WI-FI"
@@ -3378,7 +3384,7 @@ msgid "WI-FI KEY"
 msgstr "ПАРОЛЬ СЕТИ WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "ИСПОЛЬЗОВАТЬ"
 
 msgid "IP ADDRESS"
 msgstr "IP АДРЕС"
@@ -3698,15 +3704,17 @@ msgid "UKNOWN ERROR"
 msgstr "НЕИЗВЕСТНАЯ ОШИБКА"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "УСТАНОВИТЬ СЕЙЧАС?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"ЭТО ЯДРО ИЗ AUR: ОНО БУДЕТ СОБРАНО ИЗ НЕПРОВЕРЕННЫХ ИСХОДНИКОВ, И БУДЕТ "
+"ЗАПРОШЕН ПАРОЛЬ. СОБРАТЬ И УСТАНОВИТЬ СЕЙЧАС?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "УСТАНОВЛЕНО. ЗАПУСТИТЕ ИГРУ СНОВА."
 
 msgid "Loading system config..."
 msgstr "Загрузка системных настроек…"

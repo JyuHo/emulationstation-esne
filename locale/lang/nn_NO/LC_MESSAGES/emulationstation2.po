@@ -1170,7 +1170,7 @@ msgid "LEFT ANALOG STICK"
 msgstr ""
 
 msgid "RIGHT ANALOG STICK"
-msgstr ""
+msgstr "HØGRE ANALOGSTIKK ENDRAR VOLUMET"
 
 msgid "EDIT DESCRIPTION"
 msgstr ""
@@ -2182,6 +2182,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION MÅ STARTAST OM FOR Å BRUKA DEN NYE KONFIGURASJONEN. STARTA "
+"OM NO?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr ""
@@ -2465,10 +2467,10 @@ msgid "VSYNC"
 msgstr ""
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "KANTUTJEVNING (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "FPS-GRENSE"
 
 msgid "OVERSCAN"
 msgstr "OVERSKANN"
@@ -2630,7 +2632,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Flytt høgre analogstikke opp/ned for å auka eller redusera volumet."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr ""
@@ -2666,15 +2668,17 @@ msgid ""
 msgstr ""
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "MAPPEDJUP SOM BLIR INDEKSERT"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "UBEGRENSA"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Maksimalt djup som blir søkt gjennom i kvar ROM-mappe, for å hoppa over "
+"undermapper med mange filer."
 
 msgid "THREADED LOADING"
 msgstr ""
@@ -2823,10 +2827,10 @@ msgid "Available options can change depending on current audio output."
 msgstr ""
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "Tillèt HDR-innhald, til dømes Moonlight HDR-straumar, på skjermen."
 
 msgid "BOOT SPLASH"
 msgstr ""
@@ -3304,13 +3308,13 @@ msgstr "TILKOBLET"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "KAN IKKJE KOBLA TIL '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WI-FI-NETTVERK"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "LEGG TIL EIT WI-FI-NETTVERK"
 
 msgid "WI-FI SSID"
 msgstr "NETTVERKSNAVN"
@@ -3319,7 +3323,7 @@ msgid "WI-FI KEY"
 msgstr "NETTVERKSPASSORD"
 
 msgid "USE"
-msgstr ""
+msgstr "BRUK"
 
 msgid "IP ADDRESS"
 msgstr "IP ADRESSE"
@@ -3634,15 +3638,17 @@ msgid "UKNOWN ERROR"
 msgstr ""
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "INSTALLERA NO?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"DENNE COREN KJEM FRÅ AUR: DEN BLIR BYGD FRÅ UGRANSKA KJELDER, OG DET BLIR "
+"BEDE OM EIT PASSORD. BYGGJA OG INSTALLERA NO?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTALLERT. START SPELET PÅ NYTT."
 
 msgid "Loading system config..."
 msgstr ""

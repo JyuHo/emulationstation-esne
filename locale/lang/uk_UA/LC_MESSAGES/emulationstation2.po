@@ -2196,6 +2196,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION ПОТРІБНО ПЕРЕЗАПУСТИТИ, ЩОБ ЗАСТОСУВАТИ НОВУ КОНФІГУРАЦІЮ. "
+"ПЕРЕЗАПУСТИТИ ЗАРАЗ?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "ДЛЯ ЗАСТОСУВАННЯ НАЛАШТУВАНЬ ПОТРІБНО ПЕРЕЗАПУСТИТИ СИСТЕМУ"
@@ -2479,10 +2481,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ЗГЛАДЖУВАННЯ (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "ОБМЕЖЕННЯ FPS"
 
 msgid "OVERSCAN"
 msgstr "РОЗГОРТКА"
@@ -2644,7 +2646,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Рухайте правий стік угору/вниз, щоб збільшити або зменшити гучність."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr ""
@@ -2680,15 +2682,17 @@ msgid ""
 msgstr ""
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "ГЛИБИНА ПАПОК ДЛЯ ІНДЕКСАЦІЇ"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "БЕЗ ОБМЕЖЕНЬ"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Максимальна глибина сканування в кожній папці з ROM, щоб пропускати підпапки"
+" з великою кількістю файлів."
 
 msgid "THREADED LOADING"
 msgstr "THREADED ЗАВАНТАЖЕННЯ"
@@ -2837,10 +2841,11 @@ msgid "Available options can change depending on current audio output."
 msgstr ""
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Дозволяє виведення HDR-вмісту, наприклад потоків Moonlight HDR, на дисплей."
 
 msgid "BOOT SPLASH"
 msgstr ""
@@ -3318,13 +3323,13 @@ msgstr "ПІДКЛЮЧЕНО"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "НЕ ВДАЛОСЯ ПІДКЛЮЧИТИСЯ ДО '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "МЕРЕЖІ WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "ДОДАТИ МЕРЕЖУ WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "ІМ'Я МЕРЕЖІ WI-FI"
@@ -3333,7 +3338,7 @@ msgid "WI-FI KEY"
 msgstr "ПАРОЛЬ МЕРЕЖІ WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "ВИКОРИСТАТИ"
 
 msgid "IP ADDRESS"
 msgstr "IP-АДРЕСА"
@@ -3653,15 +3658,17 @@ msgid "UKNOWN ERROR"
 msgstr ""
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "ВСТАНОВИТИ ЗАРАЗ?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"ЦЕ ЯДРО З AUR: ЙОГО БУДЕ ЗІБРАНО З НЕПЕРЕВІРЕНИХ ДЖЕРЕЛ, І БУДЕ ЗАПИТАНО "
+"ПАРОЛЬ. ЗІБРАТИ ТА ВСТАНОВИТИ ЗАРАЗ?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "ВСТАНОВЛЕНО. ЗАПУСТІТЬ ГРУ ЗНОВУ."
 
 msgid "Loading system config..."
 msgstr "Завантаження системних налаштувань…"
