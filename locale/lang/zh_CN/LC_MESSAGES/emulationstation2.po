@@ -501,6 +501,9 @@ msgstr "联网游戏"
 msgid "NAVIGATION BAR"
 msgstr "导航栏"
 
+msgid "QUICK ACCESS"
+msgstr "快速进入"
+
 msgid "FILES"
 msgstr "文件"
 
@@ -3366,9 +3369,6 @@ msgstr "WI-FI 已启用"
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI 配置错误"
 
-msgid "QUICK ACCESS"
-msgstr "快速进入"
-
 msgid "SKIP TO THE NEXT SONG"
 msgstr "下一首音乐"
 
@@ -3665,7 +3665,9 @@ msgstr "现在安装吗？"
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
-msgstr "此核心来自 AUR：它将从未经审核的源码构建，并且会要求输入密码。现在构建并安装吗？"
+msgstr ""
+"此核心来自 AUR：它将从未经审核的源码构建，并且会要求输入密码。现在构建并安装"
+"吗？"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
 msgstr "已安装。请重新启动游戏。"

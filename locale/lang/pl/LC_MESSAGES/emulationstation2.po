@@ -512,6 +512,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "PASEK NAWIGACJI"
 
+msgid "QUICK ACCESS"
+msgstr "SZYBKI DOSTĘP"
+
 msgid "FILES"
 msgstr "PLIKI"
 
@@ -3419,9 +3422,6 @@ msgstr "WI-FI WŁĄCZONE"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "BŁĄD KONFIGURACJI WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "SZYBKI DOSTĘP"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "PRZEJDŹ DO NASTĘPNEGO UTWORU"

@@ -506,6 +506,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "NAVIGATION BAR"
 
+msgid "QUICK ACCESS"
+msgstr "QUICK ACCESS"
+
 msgid "FILES"
 msgstr "FILES"
 
@@ -3387,9 +3390,6 @@ msgstr "WI-FI ENABLED"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI CONFIGURATION ERROR"
-
-msgid "QUICK ACCESS"
-msgstr "QUICK ACCESS"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "SKIP TO THE NEXT SONG"

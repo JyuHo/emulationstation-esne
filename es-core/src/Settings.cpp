@@ -242,7 +242,7 @@ void Settings::setDefaults()
 	mStringMap["GameTransitionStyle"] = "auto";
 
 #if ESNE
-	// ES-NE: thème livré avec le paquet (themes/es-ne dans le dépôt ES-NE)
+	// ES-NE: theme shipped with the package (themes/es-ne in the ES-NE repository)
 	mStringMap["ThemeSet"] = "es-ne";
 #else
 	mStringMap["ThemeSet"] = "";

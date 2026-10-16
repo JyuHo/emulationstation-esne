@@ -513,6 +513,9 @@ msgstr "VERKKOPELI"
 msgid "NAVIGATION BAR"
 msgstr "NAVIGAATIOPALKKI"
 
+msgid "QUICK ACCESS"
+msgstr ""
+
 msgid "FILES"
 msgstr "TIEDOSTOT"
 
@@ -3390,9 +3393,6 @@ msgstr "WI-FI KÄYTÖSSÄ"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "VIRHE WI-FI:N ASETUKSISSA"
-
-msgid "QUICK ACCESS"
-msgstr ""
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "HYPPÄÄ SEURAAVAAN KAPPALEESEEN"

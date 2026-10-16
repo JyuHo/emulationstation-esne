@@ -504,6 +504,9 @@ msgstr "SARE JOKOA"
 msgid "NAVIGATION BAR"
 msgstr "NABIGAZIO BARRA"
 
+msgid "QUICK ACCESS"
+msgstr "ATZIPEN AZKARRA"
+
 msgid "FILES"
 msgstr "FITXATEGIAK"
 
@@ -2717,8 +2720,8 @@ msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
-"ROM karpeta bakoitzaren barruan aztertzen den gehienezko sakonera, fitxategi"
-" askoko azpikarpetak alde batera uzteko."
+"ROM karpeta bakoitzaren barruan aztertzen den gehienezko sakonera, fitxategi "
+"askoko azpikarpetak alde batera uzteko."
 
 msgid "THREADED LOADING"
 msgstr "HARI BIDEZKO KARGA"
@@ -3405,9 +3408,6 @@ msgstr "WI-FI-a AKTIBATUTA"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI KONFIGURAZIO ERROREA"
-
-msgid "QUICK ACCESS"
-msgstr "ATZIPEN AZKARRA"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "SALTATU HURRENGO ABESTIA"

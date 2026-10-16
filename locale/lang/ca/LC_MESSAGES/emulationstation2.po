@@ -508,6 +508,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "BARRA DE NAVEGACIÓ"
 
+msgid "QUICK ACCESS"
+msgstr "ACCÈS RÀPID"
+
 msgid "FILES"
 msgstr "ARXIUS"
 
@@ -3426,9 +3429,6 @@ msgstr "EL WI-FI ESTÀ ACTIU"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "ERROR EN LA CONFIGURACIÓ DEL WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "ACCÈS RÀPID"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "SALTAR A LA SEGÜENT CANÇÓ"

@@ -503,6 +503,9 @@ msgstr "넷플레이"
 msgid "NAVIGATION BAR"
 msgstr "탐색 바"
 
+msgid "QUICK ACCESS"
+msgstr "빠른 연결"
+
 msgid "FILES"
 msgstr "파일"
 
@@ -2202,7 +2205,9 @@ msgstr "'%s'을(를) 연결 해제할까요?"
 
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
-msgstr "새 구성을 적용하려면 EMULATIONSTATION을 다시 시작해야 합니다. 지금 다시 시작할까요?"
+msgstr ""
+"새 구성을 적용하려면 EMULATIONSTATION을 다시 시작해야 합니다. 지금 다시 시작"
+"할까요?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "새 구성을 적용하려면 재부팅이 필요함"
@@ -2702,7 +2707,9 @@ msgstr "무제한"
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
-msgstr "파일이 많은 하위 폴더를 무시하기 위해 각 ROM 폴더에서 검색하는 최대 깊이입니다."
+msgstr ""
+"파일이 많은 하위 폴더를 무시하기 위해 각 ROM 폴더에서 검색하는 최대 깊이입니"
+"다."
 
 msgid "THREADED LOADING"
 msgstr "스레드된 불러오기"
@@ -2859,7 +2866,8 @@ msgid "HDR"
 msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr "Moonlight HDR 스트림과 같은 HDR 콘텐츠를 디스플레이에 표시할 수 있게 합니다."
+msgstr ""
+"Moonlight HDR 스트림과 같은 HDR 콘텐츠를 디스플레이에 표시할 수 있게 합니다."
 
 msgid "BOOT SPLASH"
 msgstr "스플래시 부팅"
@@ -3382,9 +3390,6 @@ msgstr "WI-FI 활성화됨"
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI 구성 오류"
 
-msgid "QUICK ACCESS"
-msgstr "빠른 연결"
-
 msgid "SKIP TO THE NEXT SONG"
 msgstr "다음 노래로 건너뜀"
 
@@ -3681,7 +3686,9 @@ msgstr "지금 설치할까요?"
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
-msgstr "이 코어는 AUR에서 온 것입니다. 검증되지 않은 소스에서 빌드되며 비밀번호를 요청합니다. 지금 빌드하고 설치할까요?"
+msgstr ""
+"이 코어는 AUR에서 온 것입니다. 검증되지 않은 소스에서 빌드되며 비밀번호를 요"
+"청합니다. 지금 빌드하고 설치할까요?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
 msgstr "설치되었습니다. 게임을 다시 실행하세요."

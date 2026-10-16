@@ -512,6 +512,9 @@ msgstr ""
 msgid "NAVIGATION BAR"
 msgstr ""
 
+msgid "QUICK ACCESS"
+msgstr "ШВИДКИЙ ДОСТУП"
+
 msgid "FILES"
 msgstr "ФАЙЛИ"
 
@@ -2691,8 +2694,8 @@ msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
-"Максимальна глибина сканування в кожній папці з ROM, щоб пропускати підпапки"
-" з великою кількістю файлів."
+"Максимальна глибина сканування в кожній папці з ROM, щоб пропускати підпапки "
+"з великою кількістю файлів."
 
 msgid "THREADED LOADING"
 msgstr "THREADED ЗАВАНТАЖЕННЯ"
@@ -3363,9 +3366,6 @@ msgstr "WI-FI УВІМКНУТО"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "ПОМИЛКА КОНФІГУРАЦІЇ WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "ШВИДКИЙ ДОСТУП"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr ""

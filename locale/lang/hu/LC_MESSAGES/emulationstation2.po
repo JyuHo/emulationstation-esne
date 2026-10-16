@@ -506,6 +506,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "NAVIGÁCIÓS SÁV"
 
+msgid "QUICK ACCESS"
+msgstr "GYORS ELÉRÉS"
+
 msgid "FILES"
 msgstr "FÁJLOK"
 
@@ -2731,8 +2734,8 @@ msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
-"Az egyes ROM-mappákban átvizsgált legnagyobb mélység, a sok fájlt tartalmazó"
-" almappák kihagyásához."
+"Az egyes ROM-mappákban átvizsgált legnagyobb mélység, a sok fájlt tartalmazó "
+"almappák kihagyásához."
 
 msgid "THREADED LOADING"
 msgstr "TÖBBSZÁLAS TÖLTÉS"
@@ -3426,9 +3429,6 @@ msgstr "WI-FI ENGEDÉLYEZVE"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI BEÁLLÍTÁSI HIBA"
-
-msgid "QUICK ACCESS"
-msgstr "GYORS ELÉRÉS"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "UGRÁS A KÖVETKEZŐ DALRA"

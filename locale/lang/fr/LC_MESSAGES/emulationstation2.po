@@ -507,6 +507,9 @@ msgstr "PARTIES EN RÉSEAU"
 msgid "NAVIGATION BAR"
 msgstr "VOLET NAVIGATION"
 
+msgid "QUICK ACCESS"
+msgstr "ACCÈS RAPIDE"
+
 msgid "FILES"
 msgstr "FICHIERS"
 
@@ -3051,7 +3054,9 @@ msgid "AUTO SAVE/LOAD"
 msgstr "SAUV./CHARG. AUTO"
 
 msgid "Load latest savestate on game launch and save state when exiting game."
-msgstr "Charge la dernière sauvegarde d’état au lancement du jeu et en crée une en quittant le jeu."
+msgstr ""
+"Charge la dernière sauvegarde d’état au lancement du jeu et en crée une en "
+"quittant le jeu."
 
 msgid "INCREMENTAL SAVESTATES"
 msgstr "SAUVEGARDES D’ÉTAT INCRÉMENTALES"
@@ -3417,9 +3422,6 @@ msgstr "WI-FI ACTIVÉ"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "IMPOSSIBLE DE CONFIGURER LE WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "ACCÈS RAPIDE"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "PASSER À LA MUSIQUE SUIVANTE"

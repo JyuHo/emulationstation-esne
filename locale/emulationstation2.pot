@@ -510,6 +510,9 @@ msgstr ""
 msgid "NAVIGATION BAR"
 msgstr ""
 
+msgid "QUICK ACCESS"
+msgstr ""
+
 msgid "FILES"
 msgstr ""
 
@@ -3350,9 +3353,6 @@ msgid "WI-FI ENABLED"
 msgstr ""
 
 msgid "WI-FI CONFIGURATION ERROR"
-msgstr ""
-
-msgid "QUICK ACCESS"
 msgstr ""
 
 msgid "SKIP TO THE NEXT SONG"
