@@ -241,7 +241,12 @@ void Settings::setDefaults()
 	mStringMap["TransitionStyle"] = "auto";
 	mStringMap["GameTransitionStyle"] = "auto";
 
+#if ESNE
+	// ES-NE: thème livré avec le paquet (themes/es-ne dans le dépôt ES-NE)
+	mStringMap["ThemeSet"] = "es-ne";
+#else
 	mStringMap["ThemeSet"] = "";
+#endif
 	mStringMap["ScreenSaverBehavior"] = "dim";
 	mStringMap["GamelistViewStyle"] = "automatic";
 
