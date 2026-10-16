@@ -562,6 +562,9 @@ msgstr "نت بلاي NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "شريط التنقل"
 
+msgid "QUICK ACCESS"
+msgstr "الوصول السريع"
+
 msgid "FILES"
 msgstr "ملفات"
 
@@ -3443,9 +3446,6 @@ msgstr "تم تفعيل الواي فاي"
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "خطأ في إعدادات الواي فاي"
 
-msgid "QUICK ACCESS"
-msgstr "الوصول السريع"
-
 msgid "SKIP TO THE NEXT SONG"
 msgstr "الانتقال إلى الأغنية التالية"
 
@@ -3743,8 +3743,8 @@ msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
-"هذه النواة (core) من AUR: ستُبنى من مصادر لم تتم مراجعتها وسيُطلب كلمة مرور."
-" هل تريد البناء والتثبيت الآن؟"
+"هذه النواة (core) من AUR: ستُبنى من مصادر لم تتم مراجعتها وسيُطلب كلمة مرور. "
+"هل تريد البناء والتثبيت الآن؟"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
 msgstr "تم التثبيت. شغّل اللعبة مرة أخرى."

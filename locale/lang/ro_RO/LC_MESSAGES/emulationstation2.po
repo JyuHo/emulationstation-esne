@@ -512,6 +512,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "BARĂ DE NAVIGAȚIE"
 
+msgid "QUICK ACCESS"
+msgstr "ACCES RAPID"
+
 msgid "FILES"
 msgstr "FIȘIERE"
 
@@ -3429,9 +3432,6 @@ msgstr "WI-FI ACTIVAT"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "EROARE DE CONFIGURARE WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "ACCES RAPID"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "TRECI LA URMĂTORUL CÂNTEC"

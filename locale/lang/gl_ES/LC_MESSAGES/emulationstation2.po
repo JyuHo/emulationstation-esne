@@ -506,6 +506,9 @@ msgstr "XOGO EN REDE"
 msgid "NAVIGATION BAR"
 msgstr "BARRA DE NAVEGACIÓN"
 
+msgid "QUICK ACCESS"
+msgstr "ACCESO RAPIDO"
+
 msgid "FILES"
 msgstr "FICHEIROS"
 
@@ -3417,9 +3420,6 @@ msgstr "WI-FI ACTIVADO"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "ERRO DE CONFIGURACIÓN DA WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "ACCESO RAPIDO"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "SALTAR Á SEGUINTE CANCIÓN"

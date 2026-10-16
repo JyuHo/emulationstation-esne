@@ -517,6 +517,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr ""
 
+msgid "QUICK ACCESS"
+msgstr "גישה מהירה "
+
 msgid "FILES"
 msgstr "קבצים"
 
@@ -2690,8 +2693,7 @@ msgstr "ללא הגבלה"
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
-msgstr ""
-"העומק המרבי הנסרק בכל תיקיית ROM, כדי לדלג על תת-תיקיות עם קבצים רבים."
+msgstr "העומק המרבי הנסרק בכל תיקיית ROM, כדי לדלג על תת-תיקיות עם קבצים רבים."
 
 msgid "THREADED LOADING"
 msgstr "טעינה בשיטת THREADED"
@@ -3362,9 +3364,6 @@ msgstr "WI-FI זמין"
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "שגיאה בתצורת WI-FI"
 
-msgid "QUICK ACCESS"
-msgstr "גישה מהירה "
-
 msgid "SKIP TO THE NEXT SONG"
 msgstr "דילוג על השיר הבא"
 
@@ -3657,8 +3656,8 @@ msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
-"ליבה זו מגיעה מ-AUR: היא תיבנה ממקורות שלא נבדקו ותתבקש סיסמה. לבנות ולהתקין"
-" עכשיו?"
+"ליבה זו מגיעה מ-AUR: היא תיבנה ממקורות שלא נבדקו ותתבקש סיסמה. לבנות ולהתקין "
+"עכשיו?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
 msgstr "הותקן. הפעל את המשחק שוב."

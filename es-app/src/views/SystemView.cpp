@@ -915,6 +915,9 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 	if (SystemData::IsManufacturerSupported)
 		prompts.push_back(HelpPrompt("b", _("NAVIGATION BAR"), [&] { showNavigationBar(); }));
 
+	// select already opens the quick access menu (see input()): show it in the help bar
+	prompts.push_back(HelpPrompt("select", _("QUICK ACCESS"), [&] { GuiMenu::openQuitMenu_static(mWindow, true); }));
+
 #ifdef _ENABLE_FILEMANAGER_
 	if (UIModeController::getInstance()->isUIModeFull()) {
 		prompts.push_back(HelpPrompt("F1", _("FILES")));

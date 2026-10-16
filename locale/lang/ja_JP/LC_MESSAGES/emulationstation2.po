@@ -505,6 +505,9 @@ msgstr "ネットプレイ"
 msgid "NAVIGATION BAR"
 msgstr "操作バー"
 
+msgid "QUICK ACCESS"
+msgstr "クイック アクセス"
+
 msgid "FILES"
 msgstr "ファイル"
 
@@ -2208,7 +2211,9 @@ msgstr "'%s'を接続解除しますか?"
 
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
-msgstr "新しい設定を適用するには EMULATIONSTATION を再起動する必要があります。今すぐ再起動しますか？"
+msgstr ""
+"新しい設定を適用するには EMULATIONSTATION を再起動する必要があります。今すぐ"
+"再起動しますか？"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "新しい構成を適用するには、再起動が必要です"
@@ -3398,9 +3403,6 @@ msgstr "WI-FI が有効になりました"
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI 設定エラー"
 
-msgid "QUICK ACCESS"
-msgstr "クイック アクセス"
-
 msgid "SKIP TO THE NEXT SONG"
 msgstr "次の曲にスキップ"
 
@@ -3700,7 +3702,9 @@ msgstr "今すぐインストールしますか？"
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
-msgstr "このコアは AUR 由来です。未確認のソースからビルドされ、パスワードが求められます。今すぐビルドしてインストールしますか？"
+msgstr ""
+"このコアは AUR 由来です。未確認のソースからビルドされ、パスワードが求められま"
+"す。今すぐビルドしてインストールしますか？"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
 msgstr "インストールしました。ゲームをもう一度起動してください。"

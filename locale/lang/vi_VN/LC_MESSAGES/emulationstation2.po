@@ -507,6 +507,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "THANH ĐIỀU HƯỚNG"
 
+msgid "QUICK ACCESS"
+msgstr "TRUY CẬP NHANH"
+
 msgid "FILES"
 msgstr "TỆP"
 
@@ -3404,9 +3407,6 @@ msgstr "ĐÃ KÍCH HOẠT WI-FI"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "LỖI CẤU HÌNH WI-FI"
-
-msgid "QUICK ACCESS"
-msgstr "TRUY CẬP NHANH"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "CHUYỂN ĐẾN BÀI TIẾP THEO"

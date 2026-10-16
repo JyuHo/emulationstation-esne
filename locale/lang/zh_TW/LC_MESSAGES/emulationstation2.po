@@ -503,6 +503,9 @@ msgstr "多人遊戲"
 msgid "NAVIGATION BAR"
 msgstr "導航列"
 
+msgid "QUICK ACCESS"
+msgstr "快速存取"
+
 msgid "FILES"
 msgstr "檔案"
 
@@ -3361,9 +3364,6 @@ msgstr "已啟用 WI-FI 無線網路"
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI 無線網路設定錯誤"
 
-msgid "QUICK ACCESS"
-msgstr "快速存取"
-
 msgid "SKIP TO THE NEXT SONG"
 msgstr "跳至下一首歌"
 
@@ -3660,7 +3660,9 @@ msgstr "現在安裝嗎？"
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
-msgstr "此核心來自 AUR：它將從未經審查的原始碼建置，並且會要求輸入密碼。現在建置並安裝嗎？"
+msgstr ""
+"此核心來自 AUR：它將從未經審查的原始碼建置，並且會要求輸入密碼。現在建置並安"
+"裝嗎？"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
 msgstr "已安裝。請重新啟動遊戲。"

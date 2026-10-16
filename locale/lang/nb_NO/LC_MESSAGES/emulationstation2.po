@@ -508,6 +508,9 @@ msgstr "NETTSPILL"
 msgid "NAVIGATION BAR"
 msgstr "NAVIGASJONSBAR"
 
+msgid "QUICK ACCESS"
+msgstr "RASK TILGANG"
+
 msgid "FILES"
 msgstr "FILER"
 
@@ -3396,9 +3399,6 @@ msgstr "WI-FI AKTIVERT"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "WI-FI KONFIGURASJONSFEIL"
-
-msgid "QUICK ACCESS"
-msgstr "RASK TILGANG"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "HOPP TIL NESTE SANG"

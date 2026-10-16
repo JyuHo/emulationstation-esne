@@ -506,6 +506,9 @@ msgstr ""
 msgid "NAVIGATION BAR"
 msgstr ""
 
+msgid "QUICK ACCESS"
+msgstr "ΓΡΗΓΟΡΗ ΠΡΟΣΒΑΣΗ"
+
 msgid "FILES"
 msgstr "ΑΡΧΕΙΑ"
 
@@ -3384,9 +3387,6 @@ msgstr "ΑΣΥΡΜΑΤΗΣ ΣΥΝΔΕΣΗ ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "ΣΦΑΛΜΑ ΔΙΜΟΡΦΩΣΗΣ ΑΣΥΡΜΑΤΗΣ ΣΥΝΔΕΣΗΣ"
-
-msgid "QUICK ACCESS"
-msgstr "ΓΡΗΓΟΡΗ ΠΡΟΣΒΑΣΗ"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "ΜΕΤΑΒΑΣΗ ΣΤΟ ΕΠΟΜΕΝΟ ΤΡΑΓΟΥΔΙ"

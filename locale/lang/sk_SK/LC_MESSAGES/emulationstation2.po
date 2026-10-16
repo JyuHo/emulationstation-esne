@@ -516,6 +516,9 @@ msgstr "Sieťová hra"
 msgid "NAVIGATION BAR"
 msgstr "Navigačná lišta"
 
+msgid "QUICK ACCESS"
+msgstr "Rýchly prístup"
+
 msgid "FILES"
 msgstr "Súbory"
 
@@ -3403,9 +3406,6 @@ msgstr "Wi-Fi povolené"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "Chyba konfigurácie Wi-Fi"
-
-msgid "QUICK ACCESS"
-msgstr "Rýchly prístup"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "Preskočiť na ďalšiu skladbu"

@@ -512,6 +512,9 @@ msgstr "NETPLAY"
 msgid "NAVIGATION BAR"
 msgstr "ПАНЕЛЬ НАВИГАЦИИ"
 
+msgid "QUICK ACCESS"
+msgstr "БЫСТРЫЙ ДОСТУП"
+
 msgid "FILES"
 msgstr "ФАЙЛЫ"
 
@@ -3409,9 +3412,6 @@ msgstr "WI-FI ВКЛЮЧЕН"
 
 msgid "WI-FI CONFIGURATION ERROR"
 msgstr "ОШИБКА WI-FI КОНФИГУРАЦИИ"
-
-msgid "QUICK ACCESS"
-msgstr "БЫСТРЫЙ ДОСТУП"
 
 msgid "SKIP TO THE NEXT SONG"
 msgstr "ПРОПУСТИТЬ ПЕСНЮ"
