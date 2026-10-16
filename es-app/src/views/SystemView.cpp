@@ -913,7 +913,7 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 	}
 
 	if (SystemData::IsManufacturerSupported)
-		prompts.push_back(HelpPrompt("b", _("NAVIGATION BAR"), [&] { showNavigationBar(); }));
+		prompts.push_back(HelpPrompt(BUTTON_BACK, _("NAVIGATION BAR"), [&] { showNavigationBar(); }));
 
 	// select already opens the quick access menu (see input()): show it in the help bar
 	prompts.push_back(HelpPrompt("select", _("QUICK ACCESS"), [&] { GuiMenu::openQuitMenu_static(mWindow, true); }));
