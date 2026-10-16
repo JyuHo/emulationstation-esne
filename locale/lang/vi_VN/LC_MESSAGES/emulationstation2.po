@@ -2209,6 +2209,8 @@ msgstr "BẠN CÓ CHẮC MUỐN NGẮT KẾT NỐI '%s' KHÔNG?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION CẦN KHỞI ĐỘNG LẠI ĐỂ ÁP DỤNG CẤU HÌNH MỚI. KHỞI ĐỘNG LẠI "
+"NGAY?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "KHỞI ĐỘNG LẠI ĐỂ ÁP DỤNG CẤU HÌNH MỚI"
@@ -2492,10 +2494,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "KHỬ RĂNG CƯA (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "GIỚI HẠN FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2665,7 +2667,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Di chuyển cần phải lên/xuống để tăng hoặc giảm âm lượng."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "GUN MOVE TOLERENCE"
@@ -2705,15 +2707,17 @@ msgstr ""
 "thống"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "ĐỘ SÂU THƯ MỤC CẦN LẬP CHỈ MỤC"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "KHÔNG GIỚI HẠN"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Độ sâu tối đa được quét trong mỗi thư mục ROM, để bỏ qua các thư mục con có "
+"nhiều tệp."
 
 msgid "THREADED LOADING"
 msgstr "NẠP DỮ LIỆU THEO LUỒNG"
@@ -2868,10 +2872,12 @@ msgstr ""
 "Các tùy chọn khả dụng có thể thay đổi tùy thuộc vào đầu ra âm thanh hiện tại."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Cho phép hiển thị nội dung HDR, chẳng hạn luồng HDR của Moonlight, trên màn "
+"hình."
 
 msgid "BOOT SPLASH"
 msgstr "KHỞI ĐỘNG NHANH"
@@ -3358,13 +3364,13 @@ msgstr "ĐÃ KẾT NỐI"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "KHÔNG THỂ KẾT NỐI TỚI '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "MẠNG WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "THÊM MẠNG WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID"
@@ -3373,7 +3379,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI KEY"
 
 msgid "USE"
-msgstr ""
+msgstr "SỬ DỤNG"
 
 msgid "IP ADDRESS"
 msgstr "ĐỊA CHỈ IP"
@@ -3693,15 +3699,17 @@ msgid "UKNOWN ERROR"
 msgstr "LỖI KHÔNG XÁC ĐỊNH"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "CÀI ĐẶT NGAY?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"CORE NÀY ĐẾN TỪ AUR: NÓ SẼ ĐƯỢC BIÊN DỊCH TỪ NGUỒN CHƯA KIỂM TRA VÀ SẼ YÊU "
+"CẦU MẬT KHẨU. BIÊN DỊCH VÀ CÀI ĐẶT NGAY?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "ĐÃ CÀI ĐẶT. HÃY CHẠY LẠI TRÒ CHƠI."
 
 msgid "Loading system config..."
 msgstr "Đang tải cấu hình hệ thống…"

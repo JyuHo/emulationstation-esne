@@ -2196,7 +2196,7 @@ msgstr "您确定要断开 '%s' 的连接吗?"
 
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
-msgstr ""
+msgstr "EMULATIONSTATION 必须重启才能应用新配置。现在重启吗？"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "需要重新启动系统才能应用新配置"
@@ -2681,15 +2681,15 @@ msgid ""
 msgstr "减少扫描完整的游戏列表时的延迟，增加启动时间"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "索引的目录深度"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "不限制"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
-msgstr ""
+msgstr "在每个 ROM 文件夹中扫描的最大深度，用于忽略包含大量文件的子文件夹。"
 
 msgid "THREADED LOADING"
 msgstr "线程载入中"
@@ -2841,10 +2841,10 @@ msgid "Available options can change depending on current audio output."
 msgstr "可用选项会根据当前音频输出而改变。"
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "允许在显示器上显示 HDR 内容，例如 Moonlight HDR 串流。"
 
 msgid "BOOT SPLASH"
 msgstr "开机画面"
@@ -3325,13 +3325,13 @@ msgstr "已连接"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "无法连接到“%s”"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WI-FI 网络"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "添加 WI-FI 网络"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI 名称"
@@ -3340,7 +3340,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI 密码"
 
 msgid "USE"
-msgstr ""
+msgstr "使用"
 
 msgid "IP ADDRESS"
 msgstr "IP地址"
@@ -3660,15 +3660,15 @@ msgid "UKNOWN ERROR"
 msgstr "未知错误"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "现在安装吗？"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
-msgstr ""
+msgstr "此核心来自 AUR：它将从未经审核的源码构建，并且会要求输入密码。现在构建并安装吗？"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "已安装。请重新启动游戏。"
 
 msgid "Loading system config..."
 msgstr "正在载入系统配置…"

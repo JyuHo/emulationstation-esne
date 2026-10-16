@@ -2260,6 +2260,8 @@ msgstr "هل أنت متأكد أنك تريد فصل '%s'؟"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"يجب إعادة تشغيل EMULATIONSTATION لتطبيق الإعدادات الجديدة. هل تريد إعادة "
+"التشغيل الآن؟"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "يرجى إعادة تشغيل النظام لتطبيق الإعدادات الجديدة"
@@ -3735,15 +3737,17 @@ msgid "UKNOWN ERROR"
 msgstr "خطأ مجهول"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "هل تريد تثبيته الآن؟"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"هذه النواة (core) من AUR: ستُبنى من مصادر لم تتم مراجعتها وسيُطلب كلمة مرور."
+" هل تريد البناء والتثبيت الآن؟"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "تم التثبيت. شغّل اللعبة مرة أخرى."
 
 msgid "Loading system config..."
 msgstr "جار تحميل إعدادات النظام…"

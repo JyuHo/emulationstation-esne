@@ -2214,6 +2214,8 @@ msgstr "SEGURO DE QUERER DESCONECTAR '%s'?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION TEN QUE REINICIARSE PARA APLICAR A NOVA CONFIGURACIÓN. "
+"REINICIAR AGORA?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "REQUÍRISE REINICIAR PARA APLICAR A NOVA CONFIGURACIÓN"
@@ -2716,15 +2718,17 @@ msgstr ""
 "auditada, aumenta o tempo de arranque"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "PROFUNDIDADE DE CARTAFOLES A INDEXAR"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "SEN LÍMITE"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Profundidade máxima analizada dentro de cada cartafol de ROM, para ignorar "
+"subcartafoles con moitos ficheiros."
 
 msgid "THREADED LOADING"
 msgstr "ACELERAR CARGA DO SISTEMA"
@@ -2882,10 +2886,11 @@ msgstr ""
 "As opcións dispoñíbeis poden cambiar dependendo da saída de audio actual."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Permite contido HDR, como as transmisións HDR de Moonlight, na pantalla."
 
 msgid "BOOT SPLASH"
 msgstr "PANTALLA DE ARRANQUE"
@@ -3372,13 +3377,13 @@ msgstr "CONECTADO"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "NON SE PODE CONECTAR A '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "REDES WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "ENGADIR UNHA REDE WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "SSID DA WI-FI"
@@ -3387,7 +3392,7 @@ msgid "WI-FI KEY"
 msgstr "CLAVE DA WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "USAR"
 
 msgid "IP ADDRESS"
 msgstr "DIRECCIÓN IP"
@@ -3707,15 +3712,17 @@ msgid "UKNOWN ERROR"
 msgstr "ERRO DESCOÑECIDO"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "INSTALALO AGORA?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"ESTE CORE VÉN DO AUR: COMPILARASE A PARTIR DE FONTES SEN REVISAR E PEDIRASE "
+"UN CONTRASINAL. COMPILAR E INSTALAR AGORA?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTALADO. VOLVE LANZAR O XOGO."
 
 msgid "Loading system config..."
 msgstr "Cargando configuración do sistema…"

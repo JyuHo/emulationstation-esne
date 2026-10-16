@@ -2209,6 +2209,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"RHAID AILGYCHWYN EMULATIONSTATION I GYMHWYSO'R CYFLUNIAD NEWYDD. AILGYCHWYN "
+"NAWR?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "GOFYNNIR I AILGYCHWYN Y SYSTEM I GADARNHAU'R FFURFWEDD NEWYDD"
@@ -2492,10 +2494,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ANTI-ALIASING (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "TERFYN FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2657,7 +2659,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Symudwch y ffon dde i fyny/i lawr i godi neu ostwng y sain."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr ""
@@ -2693,15 +2695,17 @@ msgid ""
 msgstr ""
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "DYFNDER FFOLDERI I'W MYNEGAI"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "DIDERFYN"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Y dyfnder mwyaf a sganir ym mhob ffolder ROM, i anwybyddu is-ffolderi â "
+"llawer o ffeiliau."
 
 msgid "THREADED LOADING"
 msgstr "LLWYTHO EDEFYNNAU"
@@ -2850,10 +2854,10 @@ msgid "Available options can change depending on current audio output."
 msgstr ""
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "Yn caniatáu cynnwys HDR, fel ffrydiau HDR Moonlight, ar y sgrin."
 
 msgid "BOOT SPLASH"
 msgstr ""
@@ -3331,13 +3335,13 @@ msgstr "WEDI CYSYLLTU"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "METHU CYSYLLTU Â '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "RHWYDWEITHIAU WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "YCHWANEGU RHWYDWAITH WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "SSID WI-FI"
@@ -3346,7 +3350,7 @@ msgid "WI-FI KEY"
 msgstr "ALLWEDD WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "DEFNYDDIO"
 
 msgid "IP ADDRESS"
 msgstr "CYFEIRIAD IP"
@@ -3661,15 +3665,17 @@ msgid "UKNOWN ERROR"
 msgstr ""
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "EI OSOD NAWR?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"MAE'R CORE HWN YN DOD O'R AUR: BYDD YN CAEL EI ADEILADU O FFYNONELLAU HEB EU"
+" HADOLYGU A BYDD CYFRINAIR YN CAEL EI OFYN. ADEILADU A GOSOD NAWR?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "WEDI'I OSOD. LANSIWCH Y GÊM ETO."
 
 msgid "Loading system config..."
 msgstr "Llwytho system ffurfweddu…"

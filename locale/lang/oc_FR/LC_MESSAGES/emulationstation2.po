@@ -1180,7 +1180,7 @@ msgid "LEFT ANALOG STICK"
 msgstr ""
 
 msgid "RIGHT ANALOG STICK"
-msgstr ""
+msgstr "LO STICK ANALOGIC DRECH CAMBIA LO VOLUM"
 
 msgid "EDIT DESCRIPTION"
 msgstr ""
@@ -2192,6 +2192,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION DEU ESTRE REVIRAT PER APLICAR LA NOVÈLA CONFIGURACION. "
+"REVIRAR ARA?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr ""
@@ -2475,10 +2477,10 @@ msgid "VSYNC"
 msgstr ""
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ANTI-ALIASING (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "LIMITA FPS"
 
 msgid "OVERSCAN"
 msgstr ""
@@ -2640,7 +2642,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Mòva lo stick drech en naut/en bas per aumentar o baissar lo volum."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr ""
@@ -2676,15 +2678,17 @@ msgid ""
 msgstr ""
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "PROFONDOR DELS DOSSIERS A INDEXAR"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "SENS LIMITA"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Profondor maximala analisada dins cada dossier de ROM, per ignorar los "
+"sosdossiers que contenon fòrça fichièrs."
 
 msgid "THREADED LOADING"
 msgstr ""
@@ -2833,10 +2837,12 @@ msgid "Available options can change depending on current audio output."
 msgstr ""
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Permet d'afichar sus l'ecran de contengut HDR, coma los fluxes HDR de "
+"Moonlight."
 
 msgid "BOOT SPLASH"
 msgstr ""
@@ -3314,13 +3320,13 @@ msgstr "CONNECTAT"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "IMPOSSIBLE DE SE CONNECTAR A '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "RESEUS WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "AJUSTAR UN RESÈU WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "SSID WI-FI"
@@ -3329,7 +3335,7 @@ msgid "WI-FI KEY"
 msgstr "CLAU WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "UTILIZAR"
 
 msgid "IP ADDRESS"
 msgstr "ADREÇA IP"
@@ -3644,15 +3650,17 @@ msgid "UKNOWN ERROR"
 msgstr ""
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "L'INSTALLAR ARA?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"AQUEST CORE VENH DE L'AUR: SERÀ COMPILAT A PARTIR DE FONTS NON VERIFICADAS E"
+" UN MÒT DE PASSA SERÀ DEMANDAT. LO COMPILAR E L'INSTALLAR ARA?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTALLAT. TORNATZ LANÇAR LO JOC."
 
 msgid "Loading system config..."
 msgstr "Cargament conf. sistma…"

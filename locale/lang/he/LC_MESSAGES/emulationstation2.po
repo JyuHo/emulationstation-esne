@@ -2196,6 +2196,8 @@ msgstr ""
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"יש להפעיל מחדש את EMULATIONSTATION כדי להחיל את התצורה החדשה. להפעיל מחדש "
+"עכשיו?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "דרושה הפעלה מחדש בכדי להחיל את ההגדרות"
@@ -2479,10 +2481,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "החלקת קצוות (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "הגבלת FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2644,7 +2646,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "הזז את הסטיק הימני למעלה/למטה כדי להגביר או להנמיך את עוצמת הקול."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr ""
@@ -2680,15 +2682,16 @@ msgid ""
 msgstr ""
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "עומק תיקיות לאינדוקס"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "ללא הגבלה"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"העומק המרבי הנסרק בכל תיקיית ROM, כדי לדלג על תת-תיקיות עם קבצים רבים."
 
 msgid "THREADED LOADING"
 msgstr "טעינה בשיטת THREADED"
@@ -2837,10 +2840,10 @@ msgid "Available options can change depending on current audio output."
 msgstr ""
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "מאפשר הצגת תוכן HDR, כגון שידורי Moonlight HDR, על המסך."
 
 msgid "BOOT SPLASH"
 msgstr "אנימציית פתיח"
@@ -3318,13 +3321,13 @@ msgstr "מחובר"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "לא ניתן להתחבר אל '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "רשתות WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "הוספת רשת WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "שם רשת (WI-FI SSID)"
@@ -3333,7 +3336,7 @@ msgid "WI-FI KEY"
 msgstr "סיסמה (WI-FI KEY)"
 
 msgid "USE"
-msgstr ""
+msgstr "שימוש"
 
 msgid "IP ADDRESS"
 msgstr "כתובת IP"
@@ -3648,15 +3651,17 @@ msgid "UKNOWN ERROR"
 msgstr ""
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "להתקין עכשיו?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"ליבה זו מגיעה מ-AUR: היא תיבנה ממקורות שלא נבדקו ותתבקש סיסמה. לבנות ולהתקין"
+" עכשיו?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "הותקן. הפעל את המשחק שוב."
 
 msgid "Loading system config..."
 msgstr "טוען הגדרות מערכת"

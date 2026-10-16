@@ -2208,6 +2208,8 @@ msgstr "SEI SICURO DI VOLER DISCONNETTERE '%s' ?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION DEVE RIAVVIARSI PER APPLICARE LA NUOVA CONFIGURAZIONE. "
+"RIAVVIARE ORA?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "RIAVVIO DEL SISTEMA NECESSARIO PER APPLICARE LA NUOVA CONFIGURAZIONE"
@@ -2491,7 +2493,7 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "ANTI-ALIASING (MSAA)"
 
 msgid "FPS LIMIT"
 msgstr "LIMITE FPS"
@@ -2667,7 +2669,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Muovi lo stick destro su/giù per alzare o abbassare il volume."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "MUOVI LA TOLLERANZA DELLA PISTOLA"
@@ -2705,15 +2707,17 @@ msgid ""
 msgstr "Precarica tutti i media dei giochi, riducendo i tempi di caricamento"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "PROFONDITÀ DELLE CARTELLE DA INDICIZZARE"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "ILLIMITATA"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Profondità massima analizzata in ogni cartella di ROM, per ignorare le "
+"sottocartelle con molti file."
 
 msgid "THREADED LOADING"
 msgstr "CARICAMENTO ACCODATO"
@@ -2869,10 +2873,12 @@ msgstr ""
 "Le opzioni disponibili possino cambiare a seconda dell'attuale uscita audio"
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
 msgstr ""
+"Consente ai contenuti HDR, come gli stream HDR di Moonlight, di essere "
+"mostrati sullo schermo."
 
 msgid "BOOT SPLASH"
 msgstr "SCHERMATA DI AVVIO"
@@ -3360,13 +3366,13 @@ msgstr "CONNESSO"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "IMPOSSIBILE CONNETTERSI A '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "RETI WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "AGGIUNGI UNA RETE WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "SSID WI-FI"
@@ -3375,7 +3381,7 @@ msgid "WI-FI KEY"
 msgstr "CHIAVE WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "USA"
 
 msgid "IP ADDRESS"
 msgstr "INDIRIZZO IP"
@@ -3695,15 +3701,17 @@ msgid "UKNOWN ERROR"
 msgstr "ERRORE SCONOSCIUTO"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "INSTALLARLO ORA?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"QUESTO CORE PROVIENE DALL'AUR: VERRÀ COMPILATO DA SORGENTI NON VERIFICATE E "
+"VERRÀ RICHIESTA UNA PASSWORD. COMPILARE E INSTALLARE ORA?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "INSTALLATO. AVVIA DI NUOVO IL GIOCO."
 
 msgid "Loading system config..."
 msgstr "Caricamento configurazione di sistema…"

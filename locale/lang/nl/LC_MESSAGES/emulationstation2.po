@@ -2214,6 +2214,8 @@ msgstr "WEET U ZEKER DAT U '%s' WILT VERBREKEN?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION MOET OPNIEUW WORDEN GESTART OM DE NIEUWE CONFIGURATIE TOE "
+"TE PASSEN. NU OPNIEUW STARTEN?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "OPNIEUW OPSTARTEN IS BENODIGD OM DE NIEUWE CONFIGURATIE TOE TE PASSEN"
@@ -2721,15 +2723,17 @@ msgstr ""
 "vermeerdert opstarttijd"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "MAPDIEPTE OM TE INDEXEREN"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "ONBEPERKT"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Maximale diepte die in elke ROM-map wordt doorzocht, om submappen met veel "
+"bestanden te negeren."
 
 msgid "THREADED LOADING"
 msgstr "THREADED LADEN"
@@ -2890,10 +2894,10 @@ msgstr ""
 "uitvoer."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "Laat HDR-inhoud, zoals Moonlight-HDR-streams, op het scherm toe."
 
 msgid "BOOT SPLASH"
 msgstr "OPSTART SPLASH"
@@ -3384,13 +3388,13 @@ msgstr "VERBONDEN"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "KAN NIET VERBINDEN MET '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "WIFI-NETWERKEN"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "WIFI-NETWERK TOEVOEGEN"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID"
@@ -3399,7 +3403,7 @@ msgid "WI-FI KEY"
 msgstr "WI-FI KEY"
 
 msgid "USE"
-msgstr ""
+msgstr "GEBRUIKEN"
 
 msgid "IP ADDRESS"
 msgstr "IP ADRES"
@@ -3721,15 +3725,17 @@ msgid "UKNOWN ERROR"
 msgstr "ONBEKENDE FOUT"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "NU INSTALLEREN?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"DEZE CORE KOMT UIT DE AUR: HIJ WORDT GEBOUWD UIT ONGECONTROLEERDE BRONNEN EN"
+" ER WORDT OM EEN WACHTWOORD GEVRAAGD. NU BOUWEN EN INSTALLEREN?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "GEÏNSTALLEERD. START DE GAME OPNIEUW."
 
 msgid "Loading system config..."
 msgstr "Systeemconfiguratie wordt geladen…"

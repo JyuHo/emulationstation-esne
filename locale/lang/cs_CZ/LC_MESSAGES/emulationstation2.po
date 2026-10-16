@@ -2211,6 +2211,8 @@ msgstr "JSTE SI JISTI, ŽE SE CHCETE ODPOJIT OD '%s' ?"
 msgid ""
 "EMULATIONSTATION MUST RESTART TO APPLY THE NEW CONFIGURATION. RESTART NOW?"
 msgstr ""
+"EMULATIONSTATION SE MUSÍ RESTARTOVAT, ABY SE POUŽILA NOVÁ KONFIGURACE. "
+"RESTARTOVAT NYNÍ?"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "RESTARTOVÁNÍ NUTNÉ PRO POUŽITÍ NOVÉ KONFIGURACE"
@@ -2494,10 +2496,10 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr ""
+msgstr "VYHLAZOVÁNÍ HRAN (MSAA)"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "LIMIT FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2665,7 +2667,7 @@ msgid "RIGHT ANALOG STICK CHANGES VOLUME"
 msgstr ""
 
 msgid "Move the right stick up/down to raise or lower the audio volume."
-msgstr ""
+msgstr "Pohybem pravé páčky nahoru/dolů zvýšíte nebo snížíte hlasitost."
 
 msgid "GUN MOVE TOLERENCE"
 msgstr "TOLERANCE POHYBU ZBRANĚ"
@@ -2705,15 +2707,17 @@ msgstr ""
 "dobu spouštění systému"
 
 msgid "DIRECTORY DEPTH TO INDEX"
-msgstr ""
+msgstr "HLOUBKA SLOŽEK K INDEXOVÁNÍ"
 
 msgid "UNLIMITED"
-msgstr ""
+msgstr "BEZ OMEZENÍ"
 
 msgid ""
 "Maximum depth scanned inside each ROM folder, to ignore subfolders with many "
 "files."
 msgstr ""
+"Maximální hloubka prohledávaná v každé složce ROM, aby se přeskočily "
+"podsložky s mnoha soubory."
 
 msgid "THREADED LOADING"
 msgstr "NAČÍST VLÁKNA"
@@ -2870,10 +2874,10 @@ msgstr ""
 "Dostupné možnosti se mohou měnit v závislosti na aktuálním zvukovém výstupu."
 
 msgid "HDR"
-msgstr ""
+msgstr "HDR"
 
 msgid "Allows HDR content such as Moonlight HDR streams to the display."
-msgstr ""
+msgstr "Povolí na displeji obsah HDR, například HDR streamy z Moonlight."
 
 msgid "BOOT SPLASH"
 msgstr "UVÍTÁNÍ"
@@ -3359,13 +3363,13 @@ msgstr "PŘIPOJEN"
 
 #, c-format
 msgid "UNABLE TO CONNECT TO '%s'"
-msgstr ""
+msgstr "NELZE SE PŘIPOJIT K '%s'"
 
 msgid "WI-FI NETWORKS"
-msgstr ""
+msgstr "SÍTĚ WI-FI"
 
 msgid "ADD A WI-FI NETWORK"
-msgstr ""
+msgstr "PŘIDAT SÍŤ WI-FI"
 
 msgid "WI-FI SSID"
 msgstr "WI-FI SSID"
@@ -3374,7 +3378,7 @@ msgid "WI-FI KEY"
 msgstr "HESLO WI-FI"
 
 msgid "USE"
-msgstr ""
+msgstr "POUŽÍT"
 
 msgid "IP ADDRESS"
 msgstr "IP ADRESA"
@@ -3694,15 +3698,17 @@ msgid "UKNOWN ERROR"
 msgstr "NEZNÁMA CHYBA"
 
 msgid "INSTALL IT NOW?"
-msgstr ""
+msgstr "NAINSTALOVAT NYNÍ?"
 
 msgid ""
 "THIS CORE COMES FROM THE AUR: IT WILL BE BUILT FROM UNREVIEWED SOURCES AND A "
 "PASSWORD WILL BE ASKED. BUILD AND INSTALL IT NOW?"
 msgstr ""
+"TENTO CORE POCHÁZÍ Z AUR: BUDE SESTAVEN Z NEOVĚŘENÝCH ZDROJŮ A BUDE VYŽÁDÁNO"
+" HESLO. SESTAVIT A NAINSTALOVAT NYNÍ?"
 
 msgid "INSTALLED. LAUNCH THE GAME AGAIN."
-msgstr ""
+msgstr "NAINSTALOVÁNO. SPUSŤTE HRU ZNOVU."
 
 msgid "Loading system config..."
 msgstr "Načítání konfigurace systému…"
