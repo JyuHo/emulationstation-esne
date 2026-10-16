@@ -128,6 +128,19 @@ std::vector<HelpPrompt> GuiSettings::getHelpPrompts()
 {
 	std::vector<HelpPrompt> prompts = mMenu.getHelpPrompts();
 
+#if ESNE
+	// ES-NE: always show the confirm button, even for entries without their own prompt
+	{
+		bool hasOk = false;
+		for (auto& pr : prompts)
+			if (pr.first == BUTTON_OK)
+				hasOk = true;
+
+		if (!hasOk)
+			prompts.push_back(HelpPrompt(BUTTON_OK, _("SELECT")));
+	}
+#endif
+
 	prompts.push_back(HelpPrompt(BUTTON_BACK, _("BACK"), [&] { close(); }));
 	prompts.push_back(HelpPrompt(mCloseButton, _("CLOSE"), [&] 
 	{ 
