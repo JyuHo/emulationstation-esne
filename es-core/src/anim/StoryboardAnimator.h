@@ -19,6 +19,29 @@ public:
 		_isReversed = false;		
 	}
 
+#if ESNE
+	// ES-NE : positionne l'animation sur une horloge globale pour qu'une animation
+	// 'forever' (fond anime) reste continue d'une vue a l'autre au lieu de repartir de zero.
+	void seek(int ms)
+	{
+		if (animation == nullptr || animation->duration <= 0)
+			return;
+
+		int period = animation->autoReverse ? animation->duration * 2 : animation->duration;
+		int t = ms % period;
+		if (t > animation->duration)
+		{
+			_isReversed = true;
+			_currentTime = period - t;
+		}
+		else
+		{
+			_isReversed = false;
+			_currentTime = t;
+		}
+	}
+#endif
+
 	bool update(int elapsed)
 	{
 		if (animation == nullptr)

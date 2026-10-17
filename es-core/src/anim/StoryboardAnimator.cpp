@@ -1,5 +1,6 @@
 #include "StoryboardAnimator.h"
 #include "PowerSaver.h"
+#include <SDL.h>
 
 StoryboardAnimator::StoryboardAnimator(GuiComponent* comp, ThemeStoryboard* storyboard)
 {
@@ -83,7 +84,14 @@ void StoryboardAnimator::reset(int atTime, bool resetInitialProperties)
 
 		for (auto anim : mStoryBoard->animations)
 			if (anim->enabled && anim->begin == 0)
-				_currentStories.push_back(new StoryAnimation(anim));
+			{
+				auto story = new StoryAnimation(anim);
+#if ESNE
+				if (mStoryBoard->repeat == 0 && mStoryBoard->animations.size() == 1)
+					story->seek((int)(SDL_GetTicks() & 0x7fffffff));
+#endif
+				_currentStories.push_back(story);
+			}
 	}
 }
 
