@@ -813,12 +813,13 @@ void TextComponent::setProperty(const std::string name, const ThemeData::ThemeEl
 		setFont(value.s, 0);
 	else if (value.type == ThemeData::ThemeElement::Property::PropertyType::String && name == "multiLine")
 	{
+		// same mapping as applyTheme: the enum was passed to setAutoScroll(bool) and turned on horizontal scrolling
 		if (value.s == "true")
-			setAutoScroll(MultiLineType::MULTILINE);
+			setMultiLine(MultiLineType::MULTILINE);
 		else if (value.s == "false")
-			setAutoScroll(MultiLineType::SINGLELINE);
+			setMultiLine(MultiLineType::SINGLELINE);
 		else
-			setAutoScroll(MultiLineType::AUTO);
+			setMultiLine(MultiLineType::AUTO);
 	}
 	else if (value.type == ThemeData::ThemeElement::Property::PropertyType::String && name == "autoScroll")
 	{
