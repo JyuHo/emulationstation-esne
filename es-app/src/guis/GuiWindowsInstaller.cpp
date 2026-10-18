@@ -71,6 +71,21 @@ namespace
 		});
 	}
 
+	// "candidate<TAB>program<TAB>size in KB" lines printed by "esctl windows install"
+	bool isCandidate(const std::vector<std::string>& fields)
+	{
+		return fields.size() >= 3 && fields[0] == "candidate";
+	}
+
+	bool hasCandidates(const std::vector<std::string>& lines)
+	{
+		for (const auto& line : lines)
+			if (isCandidate(split(line)))
+				return true;
+
+		return false;
+	}
+
 	void pickProgram(Window* window, const std::string& name, const std::vector<std::string>& lines);
 	void prepare(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver, bool silent);
 
@@ -93,9 +108,10 @@ namespace
 		AudioManager::getInstance()->init();
 		window->normalizeNextUpdate();
 
+		// esctl exit codes: 0 installed, 3 installed but several programs could be the game (one "candidate" line each)
 		if (result.second == 0)
 			finished(window, name);
-		else if (result.second == 3)
+		else if (result.second == 3 && hasCandidates(lines))
 			pickProgram(window, name, lines);
 		else if (mode == "auto" && (source.type == "cdrom" || source.type == "image"))
 		{
@@ -114,10 +130,10 @@ namespace
 		auto s = new GuiSettings(window, _("CHOOSE THE GAME PROGRAM"));
 		s->setSubTitle(name);
 
-		for (auto line : lines)
+		for (const auto& line : lines)
 		{
 			auto fields = split(line);
-			if (fields.size() < 3 || fields[0] != "candidate")
+			if (!isCandidate(fields))
 				continue;
 
 			std::string program = fields[1];
@@ -264,7 +280,8 @@ namespace
 		auto s = new GuiSettings(window, _("WINDOWS GAMES"));
 		s->addGroup(_("INSTALL A GAME FROM"));
 
-		for (auto line : lines)
+		// "type<TAB>id<TAB>name<TAB>detail" lines printed by "esctl windows sources"
+		for (const auto& line : lines)
 		{
 			auto fields = split(line);
 			if (fields.size() < 4)
