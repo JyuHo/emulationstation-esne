@@ -87,7 +87,7 @@ bool LinuxApiSystem::esctlHas(const std::string& command)
 
 	if (!findInPath("esctl").empty())
 	{
-		// 'command' always comes from the constants in isScriptingSupported, never from user input
+		// 'command' is always a constant from this code (isScriptingSupported, GuiMenu), never user input
 		int rc = system(("esctl has " + command + " >/dev/null 2>&1").c_str());
 		supported = (rc != -1 && WIFEXITED(rc) && WEXITSTATUS(rc) == 0);
 	}

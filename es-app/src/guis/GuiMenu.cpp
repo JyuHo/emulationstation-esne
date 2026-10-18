@@ -79,6 +79,9 @@
 #if WIN32
 #include "Win32ApiSystem.h"
 #endif
+#if ESNE
+#include "LinuxApiSystem.h"
+#endif
 
 #if ESNE
 // No Batocera wrapper script here: when a setting needs a restart, offer to re-exec EmulationStation right away.
@@ -701,7 +704,7 @@ void GuiMenu::openMultiScreensSettings()
 	{
 	  if (s->getVariable("exitreboot") && Settings::getInstance()->getBool("ExitOnRebootRequired"))
 	    {
-	      #if ESNE
+#if ESNE
 	      Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART);
 #else
 	      Utils::Platform::quitES(Utils::Platform::QuitMode::QUIT);
@@ -1191,7 +1194,7 @@ void GuiMenu::openDeveloperSettings()
 	s->onFinalize([s, window]
 	{
 		if (s->getVariable("reboot"))
-			#if ESNE
+#if ESNE
 			esneAskRestart(window);
 #else
 			window->displayNotificationMessage(_U("\uF011  ") + _("REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"));
@@ -1518,7 +1521,11 @@ void GuiMenu::openSystemSettings()
 
 	// Keyboard layout & variant (ES-NE: esctl keyboard, based on localectl; hidden when localectl is missing)
 #if !WIN32
+#if ESNE
+	if (static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->esctlHas("keyboard"))
+#else
 	if (system("esctl has keyboard >/dev/null 2>&1") == 0)
+#endif
 	{
 	std::string curLayout = SystemConf::getInstance()->get("system.kblayout");
 	if (curLayout.empty()) curLayout = "us";
@@ -2317,7 +2324,7 @@ void GuiMenu::openSystemSettings()
 		}
 
 		if (s->getVariable("reboot") || s->getVariable("exitreboot"))
-			#if ESNE
+#if ESNE
 			esneAskRestart(window);
 #else
 			window->displayNotificationMessage(_U("\uF011  ") + _("REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"));

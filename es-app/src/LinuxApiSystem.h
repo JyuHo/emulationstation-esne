@@ -42,15 +42,16 @@ public:
 	bool launchKodi(Window* window) override;
 	void suspend() override;
 
+	// True if esctl is installed and reports support for the given command ("esctl has <command>").
+	// The answer is cached: menus can ask every time they open without starting a process.
+	bool esctlHas(const std::string& command);
+
 protected:
 	bool executeScript(const std::string command) override;
 	std::pair<std::string, int> executeScript(const std::string command, const std::function<void(const std::string)>& func) override;
 	std::vector<std::string> executeEnumerationScript(const std::string command) override;
 
 private:
-	// True if esctl is installed and reports support for the given command ("esctl has <command>")
-	bool esctlHas(const std::string& command);
-
 	std::mutex mEsctlMutex;
 	std::map<std::string, bool> mEsctlSupport;
 };
