@@ -3618,6 +3618,16 @@ msgid ""
 "WINXP OR WIN98."
 msgstr "במהלך ההתקנה. לתוכנית התקנה ישנה שנעצרת לפני הסוף: WINXP או WIN98."
 
+msgid "SILENT INSTALLATION"
+msgstr "התקנה שקטה"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"כאשר תוכנית ההתקנה מזוהה (INNO SETUP, NSIS, MSI): ללא חלון, תיקייה ובחירות "
+"ברירת מחדל."
+
 msgid "INVALID GAME NAME"
 msgstr "שם משחק לא חוקי"
 

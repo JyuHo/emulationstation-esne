@@ -3628,6 +3628,16 @@ msgstr ""
 "ПІД ЧАС ВСТАНОВЛЕННЯ. ДЛЯ СТАРОГО ІНСТАЛЯТОРА, ЯКИЙ ЗУПИНЯЄТЬСЯ ДО КІНЦЯ: "
 "WINXP АБО WIN98."
 
+msgid "SILENT INSTALLATION"
+msgstr "ТИХЕ ВСТАНОВЛЕННЯ"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"ЯКЩО ІНСТАЛЯТОР РОЗПІЗНАНО (INNO SETUP, NSIS, MSI): БЕЗ ВІКНА, ТЕКА ТА "
+"ПАРАМЕТРИ ЗА ЗАМОВЧУВАННЯМ."
+
 msgid "INVALID GAME NAME"
 msgstr "НЕДІЙСНА НАЗВА ГРИ"
 

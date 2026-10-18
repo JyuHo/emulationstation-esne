@@ -3667,6 +3667,16 @@ msgstr ""
 "インストール中のみ。最後まで進まない古いインストーラーには WINXP または "
 "WIN98。"
 
+msgid "SILENT INSTALLATION"
+msgstr "サイレントインストール"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"インストーラーが認識された場合（INNO SETUP、NSIS、MSI）：ウィンドウなし、既定"
+"のフォルダーと選択肢。"
+
 msgid "INVALID GAME NAME"
 msgstr "無効なゲーム名"
 

@@ -3650,6 +3650,16 @@ msgid ""
 msgstr ""
 "설치 중에만 적용. 끝나기 전에 멈추는 오래된 설치 프로그램: WINXP 또는 WIN98."
 
+msgid "SILENT INSTALLATION"
+msgstr "자동 설치"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"설치 프로그램이 인식되면 (INNO SETUP, NSIS, MSI): 창 없이 기본 폴더와 옵션으"
+"로 설치합니다."
+
 msgid "INVALID GAME NAME"
 msgstr "잘못된 게임 이름"
 
