@@ -3605,6 +3605,14 @@ msgid ""
 "WINXP OR WIN98."
 msgstr ""
 
+msgid "SILENT INSTALLATION"
+msgstr ""
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+
 msgid "INVALID GAME NAME"
 msgstr ""
 

@@ -72,10 +72,10 @@ namespace
 	}
 
 	void pickProgram(Window* window, const std::string& name, const std::vector<std::string>& lines);
-	void prepare(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver);
+	void prepare(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver, bool silent);
 
 	// The installer is a Windows program with its own window: ES steps aside as for a game (same steps as FileData::launchGame)
-	void runInstaller(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver)
+	void runInstaller(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver, bool silent)
 	{
 		std::vector<std::string> lines;
 
@@ -85,7 +85,7 @@ namespace
 		bool hideWindow = Settings::getInstance()->getBool("HideWindow");
 		window->deinit(hideWindow);
 
-		auto result = ApiSystem::getInstance()->esctlWindows("install --name " + quote(name) + (winver.empty() ? "" : " --winver " + quote(winver)),
+		auto result = ApiSystem::getInstance()->esctlWindows("install --name " + quote(name) + (winver.empty() ? "" : " --winver " + quote(winver)) + (silent ? "" : " --silent no"),
 			[&lines](const std::string& line) { lines.push_back(line); });
 
 		window->init(hideWindow);
@@ -102,7 +102,7 @@ namespace
 			// old InstallShield installers often fail under Wine: the game can be copied from the disc instead (es-genconfig --disc)
 			window->pushGui(new GuiMsgBox(window, _("AN ERROR OCCURRED") + ":\r\n" + Utils::String::trim(result.first) + "\r\n" +
 				_("TRY AGAIN BY COPYING THE GAME FROM THE DISC?"),
-				_("YES"), [window, source, name] { prepare(window, source, name, "disc", ""); },
+				_("YES"), [window, source, name] { prepare(window, source, name, "disc", "", false); },
 				_("NO"), nullptr, GuiMsgBoxIcon::ICON_ERROR));
 		}
 		else
@@ -142,7 +142,7 @@ namespace
 		window->pushGui(s);
 	}
 
-	void prepare(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver)
+	void prepare(Window* window, const Source& source, const std::string& name, const std::string& mode, const std::string& winver, bool silent)
 	{
 		std::string args = "prepare " + quote(source.id) + " --name " + quote(name) + " --mode " + mode;
 
@@ -155,7 +155,7 @@ namespace
 						gui->setText(line.substr(4));
 				});
 			},
-			[window, source, name, mode, winver](std::pair<std::string, int> result)
+			[window, source, name, mode, winver, silent](std::pair<std::string, int> result)
 			{
 				std::string last = Utils::String::trim(result.first);
 
@@ -171,9 +171,17 @@ namespace
 					return;
 				}
 
+				// "setup<TAB>inno|nsis|msi|unknown": a recognized installer runs without any window when silent is on
+				auto fields = split(last);
+				if (silent && fields.size() > 1 && fields[1] != "unknown")
+				{
+					runInstaller(window, source, name, mode, winver, silent);
+					return;
+				}
+
 				window->pushGui(new GuiMsgBox(window,
 					_("THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."),
-					_("CONTINUE"), [window, source, name, mode, winver] { runInstaller(window, source, name, mode, winver); },
+					_("CONTINUE"), [window, source, name, mode, winver, silent] { runInstaller(window, source, name, mode, winver, silent); },
 					_("CANCEL"), [name] { ApiSystem::getInstance()->esctlWindows("cancel " + quote(name)); }));
 			}));
 	}
@@ -207,7 +215,12 @@ namespace
 			winver->add(version, version, false);
 		s->addWithDescription(_("WINDOWS VERSION"), _("DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: WINXP OR WIN98."), winver);
 
-		s->addEntry(_("INSTALL"), false, [window, s, source, name, mode, winver]
+		auto silent = std::make_shared<OptionListComponent<std::string>>(window, _("SILENT INSTALLATION"), false);
+		silent->add(_("AUTOMATIC"), "auto", true);
+		silent->add(_("NO"), "no", false);
+		s->addWithDescription(_("SILENT INSTALLATION"), _("WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT FOLDER AND CHOICES."), silent);
+
+		s->addEntry(_("INSTALL"), false, [window, s, source, name, mode, winver, silent]
 		{
 			if (!isValidName(*name))
 			{
@@ -218,10 +231,11 @@ namespace
 			Window* w = window;
 			std::string m = mode->getSelected();
 			std::string v = winver->getSelected();
+			bool quiet = silent->getSelected() == "auto";
 			Source src = source;
 			std::string n = *name;
 			delete s; // also deletes this lambda: only locals below
-			prepare(w, src, n, m, v);
+			prepare(w, src, n, m, v, quiet);
 		});
 
 		window->pushGui(s);

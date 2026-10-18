@@ -3649,6 +3649,16 @@ msgstr ""
 "ΚΑΤΑ ΤΗΝ ΕΓΚΑΤΑΣΤΑΣΗ. ΓΙΑ ΠΑΛΙΟ ΠΡΟΓΡΑΜΜΑ ΕΓΚΑΤΑΣΤΑΣΗΣ ΠΟΥ ΣΤΑΜΑΤΑ ΠΡΙΝ ΤΟ "
 "ΤΕΛΟΣ: WINXP Ή WIN98."
 
+msgid "SILENT INSTALLATION"
+msgstr "ΣΙΩΠΗΛΗ ΕΓΚΑΤΑΣΤΑΣΗ"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"ΟΤΑΝ ΑΝΑΓΝΩΡΙΖΕΤΑΙ ΤΟ ΠΡΟΓΡΑΜΜΑ ΕΓΚΑΤΑΣΤΑΣΗΣ (INNO SETUP, NSIS, MSI): ΧΩΡΙΣ "
+"ΠΑΡΑΘΥΡΟ, ΠΡΟΕΠΙΛΕΓΜΕΝΟΣ ΦΑΚΕΛΟΣ ΚΑΙ ΕΠΙΛΟΓΕΣ."
+
 msgid "INVALID GAME NAME"
 msgstr "ΜΗ ΕΓΚΥΡΟ ΟΝΟΜΑ ΠΑΙΧΝΙΔΙΟΥ"
 

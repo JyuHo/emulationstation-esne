@@ -3674,6 +3674,16 @@ msgstr ""
 "ВО ВРЕМЯ УСТАНОВКИ. ДЛЯ СТАРОГО УСТАНОВЩИКА, КОТОРЫЙ ОСТАНАВЛИВАЕТСЯ ДО "
 "КОНЦА: WINXP ИЛИ WIN98."
 
+msgid "SILENT INSTALLATION"
+msgstr "ТИХАЯ УСТАНОВКА"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"ЕСЛИ УСТАНОВЩИК РАСПОЗНАН (INNO SETUP, NSIS, MSI): БЕЗ ОКНА, ПАПКА И "
+"ПАРАМЕТРЫ ПО УМОЛЧАНИЮ."
+
 msgid "INVALID GAME NAME"
 msgstr "НЕДОПУСТИМОЕ НАЗВАНИЕ ИГРЫ"
 

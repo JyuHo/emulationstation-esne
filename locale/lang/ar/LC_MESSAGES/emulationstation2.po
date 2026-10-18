@@ -3705,6 +3705,16 @@ msgid ""
 "WINXP OR WIN98."
 msgstr "أثناء التثبيت. لبرنامج تثبيت قديم يتوقف قبل النهاية: WINXP أو WIN98."
 
+msgid "SILENT INSTALLATION"
+msgstr "تثبيت صامت"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"عند التعرف على برنامج التثبيت (INNO SETUP، NSIS، MSI): بدون نافذة، مع المجلد "
+"والخيارات الافتراضية."
+
 msgid "INVALID GAME NAME"
 msgstr "اسم لعبة غير صالح"
 

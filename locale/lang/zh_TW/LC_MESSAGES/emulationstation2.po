@@ -3620,6 +3620,15 @@ msgid ""
 "WINXP OR WIN98."
 msgstr "僅在安裝期間。對於在結束前停止的舊安裝程式：WINXP 或 WIN98。"
 
+msgid "SILENT INSTALLATION"
+msgstr "靜默安裝"
+
+msgid ""
+"WHEN THE INSTALLER IS RECOGNIZED (INNO SETUP, NSIS, MSI): NO WINDOW, DEFAULT "
+"FOLDER AND CHOICES."
+msgstr ""
+"辨識到安裝程式時（INNO SETUP、NSIS、MSI）：無視窗，使用預設資料夾和選項。"
+
 msgid "INVALID GAME NAME"
 msgstr "遊戲名稱無效"
 
