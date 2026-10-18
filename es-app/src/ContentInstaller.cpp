@@ -4,6 +4,9 @@
 #include "utils/StringUtil.h"
 #include "ApiSystem.h"
 #include "LocaleES.h"
+#if ESNE
+#include "guis/GuiMenu.h"
+#endif
 
 #define ICONINDEX _U("\uF019 ")
 
@@ -12,6 +15,10 @@ std::mutex								ContentInstaller::mLock;
 std::list<std::pair<int, std::string>>	ContentInstaller::mQueue;
 std::list<std::pair<int, std::string>>	ContentInstaller::mProcessingQueue;
 std::list<IContentInstalledNotify*>		ContentInstaller::mNotification;
+#if ESNE
+bool									ContentInstaller::mStoreChanged = false;
+int										ContentInstaller::mStoreOpen = 0;
+#endif
 
 void ContentInstaller::Enqueue(Window* window, ContentType type, const std::string contentName)
 {
@@ -242,7 +249,15 @@ void ContentInstaller::threadUpdate()
 
 		lock.lock();
 		mProcessingQueue.remove(data);
+#if ESNE
+		if (success && (data.first == ContentType::CONTENT_STORE_INSTALL || data.first == ContentType::CONTENT_STORE_UNINSTALL))
+			mStoreChanged = true;
+#endif
 	}
+
+#if ESNE
+	reloadGamesIfIdle(mWindow, true);
+#endif
 
 	delete this;
 	mInstance = nullptr;
@@ -275,3 +290,23 @@ void ContentInstaller::UnregisterNotify(IContentInstalledNotify* instance)
 		}
 	}
 }
+
+#if ESNE
+void ContentInstaller::SetStoreOpen(Window* window, bool open)
+{
+	std::unique_lock<std::mutex> lock(mLock);
+
+	mStoreOpen += open ? 1 : -1;
+	if (!open)
+		reloadGamesIfIdle(window, false);
+}
+
+void ContentInstaller::reloadGamesIfIdle(Window* window, bool queueFinished)
+{
+	if (!mStoreChanged || mStoreOpen > 0 || (!queueFinished && mInstance != nullptr))
+		return;
+
+	mStoreChanged = false;
+	window->postToUiThread([window]() { GuiMenu::updateGameLists(window, false); });
+}
+#endif

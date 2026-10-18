@@ -62,4 +62,16 @@ private:
 public:
 	static void RegisterNotify(IContentInstalledNotify* instance);
 	static void UnregisterNotify(IContentInstalledNotify* instance);
+
+#if ESNE
+	// ES-NE: games installed or removed by the CONTENT DOWNLOADER (ports) appear after a game list reload, done once
+	// the queue is empty and the downloader is closed (the reload closes every menu)
+	static void SetStoreOpen(Window* window, bool open);
+
+private:
+	static bool mStoreChanged;
+	static int  mStoreOpen;
+
+	static void reloadGamesIfIdle(Window* window, bool queueFinished); // mLock must be held
+#endif
 };

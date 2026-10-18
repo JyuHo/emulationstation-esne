@@ -79,11 +79,17 @@ GuiBatoceraStore::GuiBatoceraStore(Window* window)
 	centerWindow();
 
 	ContentInstaller::RegisterNotify(this);
+#if ESNE
+	ContentInstaller::SetStoreOpen(mWindow, true);
+#endif
 }
 
 GuiBatoceraStore::~GuiBatoceraStore()
 {
 	ContentInstaller::UnregisterNotify(this);
+#if ESNE
+	ContentInstaller::SetStoreOpen(mWindow, false);
+#endif
 }
 
 void GuiBatoceraStore::OnContentInstalled(int contentType, std::string contentName, bool success)

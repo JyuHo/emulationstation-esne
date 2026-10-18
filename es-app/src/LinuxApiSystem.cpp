@@ -144,6 +144,8 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 		return esctlHas("preupdate-gamelists-hook");
 	case ApiSystem::WINDOWSINSTALLER:
 		return esctlHas("windows");
+	case ApiSystem::BATOCERASTORE:
+		return esctlHas("store"); // CONTENT DOWNLOADER: ports of the port-esne catalog
 
 	// Standard Linux tools
 	case ApiSystem::KODI:
@@ -166,7 +168,6 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::BLUETOOTH:
 	case ApiSystem::DISKFORMAT:
 	case ApiSystem::OVERCLOCK:
-	case ApiSystem::BATOCERASTORE:
 	case ApiSystem::EVMAPY:
 	case ApiSystem::BACKUP:
 	case ApiSystem::INSTALL:
