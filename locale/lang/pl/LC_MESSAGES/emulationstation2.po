@@ -2390,6 +2390,9 @@ msgstr "SKONFIGURUJ WEJŚCIA"
 msgid "EMULATOR SETTINGS"
 msgstr "USTAWIENIA EMULATORA"
 
+msgid "WINDOWS GAMES"
+msgstr ""
+
 msgid "UPDATES & DOWNLOADS"
 msgstr "AKTUALIZACJE I DO ŚCIĄGNIĘCIA"
 
@@ -3619,6 +3622,76 @@ msgstr "Osiągnięcia (hardcore)"
 #, c-format
 msgid "%d%% complete"
 msgstr "Ukończone w %d%%"
+
+#, c-format
+msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
+msgstr ""
+
+msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
+msgstr ""
+
+msgid "CHOOSE THE GAME PROGRAM"
+msgstr ""
+
+msgid "PREPARING THE INSTALLATION"
+msgstr ""
+
+msgid ""
+"THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
+"EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
+msgstr ""
+
+msgid "CONTINUE"
+msgstr ""
+
+msgid "INSTALL A WINDOWS GAME"
+msgstr ""
+
+msgid "DISC IN THE DRIVE"
+msgstr ""
+
+msgid "GAME NAME"
+msgstr ""
+
+msgid "METHOD"
+msgstr ""
+
+msgid "AUTOMATIC"
+msgstr ""
+
+msgid "RUN THE INSTALLER"
+msgstr ""
+
+msgid "COPY THE GAME FROM THE DISC"
+msgstr ""
+
+msgid ""
+"COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
+"RUNS WITH ITS DISC IMAGE."
+msgstr ""
+
+msgid "WINDOWS VERSION"
+msgstr ""
+
+msgid ""
+"DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
+"WINXP OR WIN98."
+msgstr ""
+
+msgid "INVALID GAME NAME"
+msgstr ""
+
+msgid "INSTALL A GAME FROM"
+msgstr ""
+
+msgid "BROWSE..."
+msgstr ""
+
+msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
+msgstr ""
+
+msgid "SEARCHING FOR DISCS AND INSTALLERS"
+msgstr ""
 
 msgid "HOTKEYS"
 msgstr "HOTKEYS"

@@ -174,6 +174,7 @@ public:
 		BACKGLASS = 31,
 		NFC = 32,
 		UPGRADEVIATORRENT = 33,
+		WINDOWSINSTALLER = 34, // ES-NE: esctl windows
 	};
 
 	virtual bool isScriptingSupported(ScriptId script);
@@ -317,6 +318,9 @@ public:
     virtual std::vector<BatoceraBezel> getBatoceraBezelsList();
     // ES-NE: installs a libretro core (esctl install-core); returns the last output line and the exit code
     virtual std::pair<std::string, int> installLibretroCore(const std::string& core);
+    // ES-NE: Windows games installer (esctl windows <args>, output lines passed to func); returns the last output line and the exit code
+    virtual std::pair<std::string, int> esctlWindows(const std::string& args, const std::function<void(const std::string)>& func = nullptr);
+    virtual std::vector<std::string> getWindowsInstallerSources();
 	virtual std::pair<std::string,int> installBatoceraBezel(std::string bezelsystem, const std::function<void(const std::string)>& func = nullptr);
 	virtual std::pair<std::string,int> uninstallBatoceraTheme(std::string bezelsystem, const std::function<void(const std::string)>& func = nullptr);
 
