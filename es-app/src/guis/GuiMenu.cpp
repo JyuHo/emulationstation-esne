@@ -60,6 +60,7 @@
 #include "GuiLoading.h"
 #include "guis/GuiBios.h"
 #include "guis/GuiKeyMappingEditor.h"
+#include "guis/GuiWindowsInstaller.h"
 #include "Gamelist.h"
 #include "TextToSpeech.h"
 #include "Paths.h"
@@ -214,6 +215,11 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 				break;
 			}
 		}
+#endif
+
+#if ESNE
+		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::WINDOWSINSTALLER))
+			addEntry(_("WINDOWS GAMES").c_str(), true, [this] { GuiWindowsInstaller::open(mWindow); }, "iconGames");
 #endif
 
 		addEntry(_("SCRAPER").c_str(), true, [this] { openScraperSettings(); }, "iconScraper");

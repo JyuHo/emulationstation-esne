@@ -1290,6 +1290,17 @@ std::pair<std::string, int> ApiSystem::installLibretroCore(const std::string& co
 	return executeScript("esctl install-core " + core + " 2>&1", nullptr);
 }
 
+std::pair<std::string, int> ApiSystem::esctlWindows(const std::string& args, const std::function<void(const std::string)>& func)
+{
+	// args are quoted by the caller (GuiWindowsInstaller)
+	return executeScript("esctl windows " + args + " 2>&1", func);
+}
+
+std::vector<std::string> ApiSystem::getWindowsInstallerSources()
+{
+	return executeEnumerationScript("esctl windows sources");
+}
+
 std::vector<BatoceraBezel> ApiSystem::getBatoceraBezelsList()
 {
 	LOG(LogInfo) << "ApiSystem::getBatoceraBezelsList";

@@ -142,6 +142,8 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 		return esctlHas("version");
 	case ApiSystem::BATOCERAPREGAMELISTSHOOK:
 		return esctlHas("preupdate-gamelists-hook");
+	case ApiSystem::WINDOWSINSTALLER:
+		return esctlHas("windows");
 
 	// Standard Linux tools
 	case ApiSystem::KODI:
