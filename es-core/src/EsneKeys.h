@@ -1,9 +1,13 @@
 #pragma once
 
-// ES-NE: developer keys (ScreenScraper, TheGamesDB, HFS, RetroAchievements) are read at startup from
-// <config>/keys.conf (~/.config/esne/keys.conf), one "NAME=value" per line, '#' starts a comment. The file is never part of
-// the package or of git (it is read very early, so problems are reported on stderr, not in the log). Names: SCREENSCRAPER_SOFTNAME, SCREENSCRAPER_DEV_LOGIN (devid=...&devpassword=...),
-// GAMESDB_APIKEY, HFS_DEV_LOGIN (user:password), CHEEVOS_DEV_LOGIN (z=user&y=api key).
+// ES-NE: developer keys (ScreenScraper, TheGamesDB, HFS, RetroAchievements).
+//  - build-time defaults: the file named by ESNE_KEYS_FILE at configure time is masked into EsneEmbeddedKeys.h
+//    (tools/esne_embed_keys.py, generated in the build folder, never committed); without it nothing is embedded;
+//  - runtime: <config>/keys.conf (~/.config/esne/keys.conf) takes precedence, key by key.
+// Format of both files: one "NAME=value" per line, '#' starts a comment, optional quotes around the value.
+// keys.conf is read very early (static initialisation of the scraper list), so problems go to stderr, not to the log.
+// Names: SCREENSCRAPER_SOFTNAME, SCREENSCRAPER_DEV_LOGIN (devid=...&devpassword=...), GAMESDB_APIKEY,
+// HFS_DEV_LOGIN (user:password), CHEEVOS_DEV_LOGIN (z=user&y=api key).
 #if ESNE
 
 #include <string>

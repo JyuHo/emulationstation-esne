@@ -122,8 +122,8 @@ if(ESNE)
   add_definitions(-DESNE)
   add_definitions(-DESNE_SHARE_DIR="${ESNE_SHARE_DIR}")
 
-  # Batocera passes X86/X86_64 through its own build flags; do the same here so that
-  # desktop defaults (HideWindow, fonts, "hide ES when running a game") apply.
+  # Batocera passes X86/X86_64 through its own build flags; do the same here so that the
+  # desktop code paths apply (architecture reported to scripts, x86-only defaults and features).
   if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(x86_64|AMD64|amd64)$")
     add_definitions(-DX86_64)
   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i[3-6]86|x86)$")
