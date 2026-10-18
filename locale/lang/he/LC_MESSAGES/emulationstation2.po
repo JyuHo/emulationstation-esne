@@ -2370,7 +2370,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "הגדרות אמולטור (חַקַּאי)"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "משחקי WINDOWS"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "עדכונים והורדות"
@@ -3561,73 +3561,77 @@ msgstr "%d%% הושלם"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s הותקן. תמצא אותו במערכת WINDOWS."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "לנסות שוב על ידי העתקת המשחק מהדיסק?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "בחר את תוכנת המשחק"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "מכין את ההתקנה"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"תוכנית ההתקנה של WINDOWS תיפתח כעת. מומלץ להשתמש בעכבר ובמקלדת. "
+"EMULATIONSTATION יחזור כשהיא תיסגר."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "המשך"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "התקן משחק WINDOWS"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "דיסק בכונן"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "שם המשחק"
 
 msgid "METHOD"
-msgstr ""
+msgstr "שיטה"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "אוטומטי"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "הפעל את תוכנית ההתקנה"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "העתק את המשחק מהדיסק"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"העתקה מהדיסק: למשחקים ישנים שתוכנית ההתקנה שלהם לא עובדת; המשחק רץ עם תמונת "
+"הדיסק שלו."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "גרסת WINDOWS"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
-msgstr ""
+msgstr "במהלך ההתקנה. לתוכנית התקנה ישנה שנעצרת לפני הסוף: WINXP או WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "שם משחק לא חוקי"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "התקן משחק מ"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "עיון..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "בחר תוכנית התקנה או תמונת דיסק"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "מחפש דיסקים ותוכניות התקנה"
 
 msgid "HOTKEYS"
 msgstr ""

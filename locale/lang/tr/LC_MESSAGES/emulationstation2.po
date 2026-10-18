@@ -2400,7 +2400,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "EMÜLATÖR AYARLARI"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "WINDOWS OYUNLARI"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "GÜNCELLEMELER & İNDİRMELER"
@@ -3638,73 +3638,79 @@ msgstr "%d%% tamamlandı"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s YÜKLENDİ. WINDOWS SİSTEMİNDE BULABİLİRSİNİZ."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "OYUNU DİSKTEN KOPYALAYARAK TEKRAR DENENSİN Mİ?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "OYUN PROGRAMINI SEÇİN"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "KURULUM HAZIRLANIYOR"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"WINDOWS YÜKLEYİCİSİ ŞİMDİ AÇILACAK. FARE VE KLAVYE ÖNERİLİR. KAPATILDIĞINDA "
+"EMULATIONSTATION GERİ GELİR."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "DEVAM"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "WINDOWS OYUNU YÜKLE"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "SÜRÜCÜDEKİ DİSK"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "OYUN ADI"
 
 msgid "METHOD"
-msgstr ""
+msgstr "YÖNTEM"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "OTOMATİK"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "YÜKLEYİCİYİ ÇALIŞTIR"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "OYUNU DİSKTEN KOPYALA"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"DİSKTEN KOPYALA: YÜKLEYİCİSİ ÇALIŞMAYAN ESKİ OYUNLAR İÇİN; OYUN DİSK "
+"GÖRÜNTÜSÜYLE ÇALIŞIR."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "WINDOWS SÜRÜMÜ"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"KURULUM SIRASINDA. SONA ERMEDEN DURAN ESKİ BİR YÜKLEYİCİ İÇİN: WINXP VEYA "
+"WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "GEÇERSİZ OYUN ADI"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "OYUN YÜKLEME KAYNAĞI"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "GÖZAT..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "BİR YÜKLEYİCİ VEYA DİSK GÖRÜNTÜSÜ SEÇİN"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "DİSKLER VE YÜKLEYİCİLER ARANIYOR"
 
 msgid "HOTKEYS"
 msgstr "KISAYOLLAR"

@@ -2383,7 +2383,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "CÀI ĐẶT TRÌNH GIẢ LẬP"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "TRÒ CHƠI WINDOWS"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "CẬP NHẬT & TẢI XUỐNG"
@@ -3610,73 +3610,79 @@ msgstr "%d%% hoàn thành"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s ĐÃ ĐƯỢC CÀI ĐẶT. BẠN SẼ THẤY NÓ TRONG HỆ THỐNG WINDOWS."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "THỬ LẠI BẰNG CÁCH SAO CHÉP TRÒ CHƠI TỪ ĐĨA?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "CHỌN CHƯƠNG TRÌNH CỦA TRÒ CHƠI"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "ĐANG CHUẨN BỊ CÀI ĐẶT"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"TRÌNH CÀI ĐẶT WINDOWS SẼ MỞ NGAY BÂY GIỜ. NÊN DÙNG CHUỘT VÀ BÀN PHÍM. "
+"EMULATIONSTATION SẼ QUAY LẠI KHI NÓ ĐƯỢC ĐÓNG."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "TIẾP TỤC"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "CÀI ĐẶT TRÒ CHƠI WINDOWS"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "ĐĨA TRONG Ổ"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "TÊN TRÒ CHƠI"
 
 msgid "METHOD"
-msgstr ""
+msgstr "PHƯƠNG THỨC"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "TỰ ĐỘNG"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "CHẠY TRÌNH CÀI ĐẶT"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "SAO CHÉP TRÒ CHƠI TỪ ĐĨA"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"SAO CHÉP TỪ ĐĨA: DÀNH CHO TRÒ CHƠI CŨ CÓ TRÌNH CÀI ĐẶT KHÔNG HOẠT ĐỘNG; TRÒ "
+"CHƠI CHẠY VỚI ẢNH ĐĨA CỦA NÓ."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "PHIÊN BẢN WINDOWS"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"TRONG KHI CÀI ĐẶT. DÀNH CHO TRÌNH CÀI ĐẶT CŨ DỪNG LẠI TRƯỚC KHI KẾT THÚC: "
+"WINXP HOẶC WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "TÊN TRÒ CHƠI KHÔNG HỢP LỆ"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "CÀI ĐẶT TRÒ CHƠI TỪ"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "DUYỆT..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "CHỌN TRÌNH CÀI ĐẶT HOẶC ẢNH ĐĨA"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "ĐANG TÌM ĐĨA VÀ TRÌNH CÀI ĐẶT"
 
 msgid "HOTKEYS"
 msgstr ""

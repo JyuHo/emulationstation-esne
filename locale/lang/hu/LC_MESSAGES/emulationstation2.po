@@ -2390,7 +2390,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "EMULÁTOR BEÁLLÍTÁSOK"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "WINDOWS JÁTÉKOK"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "FRISSÍTÉSEK ÉS LETÖLTÉSEK"
@@ -3632,73 +3632,78 @@ msgstr "%d%% teljesítve"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s TELEPÍTVE. A WINDOWS RENDSZERBEN TALÁLOD."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "ÚJRAPRÓBÁLOD A JÁTÉK LEMEZRŐL VALÓ MÁSOLÁSÁVAL?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "VÁLASZD KI A JÁTÉK PROGRAMJÁT"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "TELEPÍTÉS ELŐKÉSZÍTÉSE"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"MOST MEGNYÍLIK A WINDOWS TELEPÍTŐ. EGÉR ÉS BILLENTYŰZET AJÁNLOTT. AZ "
+"EMULATIONSTATION A BEZÁRÁSA UTÁN VISSZATÉR."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "FOLYTATÁS"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "WINDOWS JÁTÉK TELEPÍTÉSE"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "LEMEZ A MEGHAJTÓBAN"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "JÁTÉK NEVE"
 
 msgid "METHOD"
-msgstr ""
+msgstr "MÓDSZER"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "AUTOMATIKUS"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "TELEPÍTŐ FUTTATÁSA"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "JÁTÉK MÁSOLÁSA A LEMEZRŐL"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"MÁSOLÁS A LEMEZRŐL: RÉGI JÁTÉKOKHOZ, AMELYEK TELEPÍTŐJE NEM MŰKÖDIK; A JÁTÉK "
+"A LEMEZKÉPÉVEL FUT."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "WINDOWS VERZIÓ"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"A TELEPÍTÉS ALATT. A VÉGE ELŐTT LEÁLLÓ RÉGI TELEPÍTŐHÖZ: WINXP VAGY WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "ÉRVÉNYTELEN JÁTÉKNÉV"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "JÁTÉK TELEPÍTÉSE INNEN:"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "TALLÓZÁS..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "VÁLASSZ TELEPÍTŐT VAGY LEMEZKÉPET"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "LEMEZEK ÉS TELEPÍTŐK KERESÉSE"
 
 msgid "HOTKEYS"
 msgstr "GYORSBILLENTYŰ"

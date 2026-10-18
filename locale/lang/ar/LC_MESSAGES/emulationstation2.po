@@ -2434,7 +2434,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "إعدادات المُحاكي"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "ألعاب WINDOWS"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "تحديثات و تنزيلات"
@@ -3648,73 +3648,77 @@ msgstr "%d%% تم"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "تم تثبيت %s. ستجدها في نظام WINDOWS."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "إعادة المحاولة بنسخ اللعبة من القرص؟"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "اختر برنامج اللعبة"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "جارٍ تحضير التثبيت"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"سيفتح الآن برنامج تثبيت WINDOWS. يُنصح باستخدام الفأرة ولوحة المفاتيح. يعود "
+"EMULATIONSTATION عند إغلاقه."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "متابعة"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "تثبيت لعبة WINDOWS"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "القرص في المحرك"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "اسم اللعبة"
 
 msgid "METHOD"
-msgstr ""
+msgstr "الطريقة"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "تلقائي"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "تشغيل برنامج التثبيت"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "نسخ اللعبة من القرص"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"النسخ من القرص: للألعاب القديمة التي لا يعمل برنامج تثبيتها؛ تعمل اللعبة مع "
+"صورة قرصها."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "إصدار WINDOWS"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
-msgstr ""
+msgstr "أثناء التثبيت. لبرنامج تثبيت قديم يتوقف قبل النهاية: WINXP أو WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "اسم لعبة غير صالح"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "تثبيت لعبة من"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "استعراض..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "اختر برنامج تثبيت أو صورة قرص"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "جارٍ البحث عن الأقراص وبرامج التثبيت"
 
 msgid "HOTKEYS"
 msgstr "مفاتيح الاختصار"

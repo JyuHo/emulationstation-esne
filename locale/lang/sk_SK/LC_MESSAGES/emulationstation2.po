@@ -2390,7 +2390,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "Nastavenia emulátora"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "HRY PRE WINDOWS"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "Aktualizácie a preberania"
@@ -3609,73 +3609,79 @@ msgstr "%d%% hotovo"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "HRA %s JE NAINŠTALOVANÁ. NÁJDETE JU V SYSTÉME WINDOWS."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "SKÚSIŤ ZNOVA SKOPÍROVANÍM HRY Z DISKU?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "VYBERTE PROGRAM HRY"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "PRÍPRAVA INŠTALÁCIE"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"TERAZ SA OTVORÍ INŠTALÁTOR WINDOWS. ODPORÚČA SA MYŠ A KLÁVESNICA. "
+"EMULATIONSTATION SA VRÁTI PO JEHO ZATVORENÍ."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "POKRAČOVAŤ"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "NAINŠTALOVAŤ HRU PRE WINDOWS"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "DISK V JEDNOTKE"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "NÁZOV HRY"
 
 msgid "METHOD"
-msgstr ""
+msgstr "METÓDA"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "AUTOMATICKY"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "SPUSTIŤ INŠTALÁTOR"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "SKOPÍROVAŤ HRU Z DISKU"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"KOPÍROVANIE Z DISKU: PRE STARÉ HRY, KTORÝCH INŠTALÁTOR NEFUNGUJE; HRA SA "
+"SPÚŠŤA S OBRAZOM SVOJHO DISKU."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "VERZIA WINDOWS"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"POČAS INŠTALÁCIE. PRE STARÝ INŠTALÁTOR, KTORÝ SA ZASTAVÍ PRED KONCOM: WINXP "
+"ALEBO WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "NEPLATNÝ NÁZOV HRY"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "NAINŠTALOVAŤ HRU Z"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "PREHĽADÁVAŤ..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "VYBERTE INŠTALÁTOR ALEBO OBRAZ DISKU"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "HĽADANIE DISKOV A INŠTALÁTOROV"
 
 msgid "HOTKEYS"
 msgstr "Hotkeys"
