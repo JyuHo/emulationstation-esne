@@ -2377,7 +2377,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "에뮬레이터 설정"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "WINDOWS 게임"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "업데이트 & 다운로드"
@@ -3592,73 +3592,78 @@ msgstr "%d%% 완료"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s 설치 완료. WINDOWS 시스템에서 찾을 수 있습니다."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "디스크에서 게임을 복사하여 다시 시도할까요?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "게임 프로그램 선택"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "설치 준비 중"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"WINDOWS 설치 프로그램이 열립니다. 마우스와 키보드를 권장합니다. 닫으면 "
+"EMULATIONSTATION으로 돌아옵니다."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "계속"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "WINDOWS 게임 설치"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "드라이브의 디스크"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "게임 이름"
 
 msgid "METHOD"
-msgstr ""
+msgstr "방법"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "자동"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "설치 프로그램 실행"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "디스크에서 게임 복사"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"디스크에서 복사: 설치 프로그램이 작동하지 않는 오래된 게임용; 게임은 디스크 "
+"이미지와 함께 실행됩니다."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "WINDOWS 버전"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"설치 중에만 적용. 끝나기 전에 멈추는 오래된 설치 프로그램: WINXP 또는 WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "잘못된 게임 이름"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "게임 설치 위치"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "찾아보기..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "설치 프로그램 또는 디스크 이미지 선택"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "디스크 및 설치 프로그램 검색 중"
 
 msgid "HOTKEYS"
 msgstr "단축키"

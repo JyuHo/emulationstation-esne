@@ -2367,7 +2367,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "模擬器設定"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "WINDOWS 遊戲"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "更新＆下載"
@@ -3566,73 +3566,74 @@ msgstr "已完成 %d%%"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s 已安裝。可在 WINDOWS 系統中找到。"
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "從光碟複製遊戲後重試？"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "選擇遊戲程式"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "正在準備安裝"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"WINDOWS 安裝程式即將開啟。建議使用滑鼠和鍵盤。關閉後將返回 EMULATIONSTATION。"
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "繼續"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "安裝 WINDOWS 遊戲"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "光碟機中的光碟"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "遊戲名稱"
 
 msgid "METHOD"
-msgstr ""
+msgstr "方式"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "自動"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "執行安裝程式"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "從光碟複製遊戲"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
-msgstr ""
+msgstr "從光碟複製：適用於安裝程式無法運作的舊遊戲；遊戲將使用其光碟映像執行。"
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "WINDOWS 版本"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
-msgstr ""
+msgstr "僅在安裝期間。對於在結束前停止的舊安裝程式：WINXP 或 WIN98。"
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "遊戲名稱無效"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "安裝遊戲來源"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "瀏覽..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "選擇安裝程式或光碟映像"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "正在搜尋光碟和安裝程式"
 
 msgid "HOTKEYS"
 msgstr ""

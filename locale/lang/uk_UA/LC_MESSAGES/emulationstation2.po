@@ -2370,7 +2370,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "НАЛАШТУВАННЯ ЕМУЛЯТОРА"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "ІГРИ WINDOWS"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "ОНОВЛЕННЯ ТА ЗАВАНТАЖЕННЯ"
@@ -3569,73 +3569,79 @@ msgstr ""
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "ГРУ %s ВСТАНОВЛЕНО. ВОНА В СИСТЕМІ WINDOWS."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "ПОВТОРИТИ, СКОПІЮВАВШИ ГРУ З ДИСКА?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "ВИБЕРІТЬ ПРОГРАМУ ГРИ"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "ПІДГОТОВКА ВСТАНОВЛЕННЯ"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"ЗАРАЗ ВІДКРИЄТЬСЯ ІНСТАЛЯТОР WINDOWS. РЕКОМЕНДУЮТЬСЯ МИША І КЛАВІАТУРА. "
+"EMULATIONSTATION ПОВЕРНЕТЬСЯ ПІСЛЯ ЙОГО ЗАКРИТТЯ."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "ПРОДОВЖИТИ"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "ВСТАНОВИТИ ГРУ WINDOWS"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "ДИСК У ПРИВОДІ"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "НАЗВА ГРИ"
 
 msgid "METHOD"
-msgstr ""
+msgstr "СПОСІБ"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "АВТОМАТИЧНО"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "ЗАПУСТИТИ ІНСТАЛЯТОР"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "СКОПІЮВАТИ ГРУ З ДИСКА"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"КОПІЮВАННЯ З ДИСКА: ДЛЯ СТАРИХ ІГОР, ІНСТАЛЯТОР ЯКИХ НЕ ПРАЦЮЄ; ГРА "
+"ЗАПУСКАЄТЬСЯ З ОБРАЗОМ ДИСКА."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "ВЕРСІЯ WINDOWS"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"ПІД ЧАС ВСТАНОВЛЕННЯ. ДЛЯ СТАРОГО ІНСТАЛЯТОРА, ЯКИЙ ЗУПИНЯЄТЬСЯ ДО КІНЦЯ: "
+"WINXP АБО WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "НЕДІЙСНА НАЗВА ГРИ"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "ВСТАНОВИТИ ГРУ З"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "ОГЛЯД..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "ВИБЕРІТЬ ІНСТАЛЯТОР АБО ОБРАЗ ДИСКА"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "ПОШУК ДИСКІВ ТА ІНСТАЛЯТОРІВ"
 
 msgid "HOTKEYS"
 msgstr ""

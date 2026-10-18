@@ -2389,7 +2389,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "НАСТРОЙКИ ЭМУЛЯТОРА"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "ИГРЫ WINDOWS"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "ОБНОВЛЕНИЯ И ЗАГРУЗКИ"
@@ -3615,73 +3615,79 @@ msgstr "%d%% готово"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "ИГРА %s УСТАНОВЛЕНА. ОНА НАХОДИТСЯ В СИСТЕМЕ WINDOWS."
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "ПОВТОРИТЬ, СКОПИРОВАВ ИГРУ С ДИСКА?"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "ВЫБЕРИТЕ ПРОГРАММУ ИГРЫ"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "ПОДГОТОВКА УСТАНОВКИ"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"СЕЙЧАС ОТКРОЕТСЯ УСТАНОВЩИК WINDOWS. РЕКОМЕНДУЮТСЯ МЫШЬ И КЛАВИАТУРА. "
+"EMULATIONSTATION ВЕРНЁТСЯ ПОСЛЕ ЕГО ЗАКРЫТИЯ."
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "ПРОДОЛЖИТЬ"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "УСТАНОВИТЬ ИГРУ WINDOWS"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "ДИСК В ПРИВОДЕ"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "НАЗВАНИЕ ИГРЫ"
 
 msgid "METHOD"
-msgstr ""
+msgstr "СПОСОБ"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "АВТОМАТИЧЕСКИ"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "ЗАПУСТИТЬ УСТАНОВЩИК"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "СКОПИРОВАТЬ ИГРУ С ДИСКА"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"КОПИРОВАНИЕ С ДИСКА: ДЛЯ СТАРЫХ ИГР, УСТАНОВЩИК КОТОРЫХ НЕ РАБОТАЕТ; ИГРА "
+"ЗАПУСКАЕТСЯ С ОБРАЗОМ ДИСКА."
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "ВЕРСИЯ WINDOWS"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"ВО ВРЕМЯ УСТАНОВКИ. ДЛЯ СТАРОГО УСТАНОВЩИКА, КОТОРЫЙ ОСТАНАВЛИВАЕТСЯ ДО "
+"КОНЦА: WINXP ИЛИ WIN98."
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "НЕДОПУСТИМОЕ НАЗВАНИЕ ИГРЫ"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "УСТАНОВИТЬ ИГРУ С"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "ОБЗОР..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "ВЫБЕРИТЕ УСТАНОВЩИК ИЛИ ОБРАЗ ДИСКА"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "ПОИСК ДИСКОВ И УСТАНОВЩИКОВ"
 
 msgid "HOTKEYS"
 msgstr "ГОРЯЧИЕ КЛАВИШИ (HOTKEYS)"

@@ -2383,7 +2383,7 @@ msgid "EMULATOR SETTINGS"
 msgstr "エミュレーター設定"
 
 msgid "WINDOWS GAMES"
-msgstr ""
+msgstr "WINDOWS ゲーム"
 
 msgid "UPDATES & DOWNLOADS"
 msgstr "更新とダウンロード"
@@ -3608,73 +3608,79 @@ msgstr "%d%% 完了"
 
 #, c-format
 msgid "%s IS INSTALLED. YOU WILL FIND IT IN THE WINDOWS SYSTEM."
-msgstr ""
+msgstr "%s をインストールしました。WINDOWS システムにあります。"
 
 msgid "TRY AGAIN BY COPYING THE GAME FROM THE DISC?"
-msgstr ""
+msgstr "ディスクからゲームをコピーして再試行しますか？"
 
 msgid "CHOOSE THE GAME PROGRAM"
-msgstr ""
+msgstr "ゲームのプログラムを選択"
 
 msgid "PREPARING THE INSTALLATION"
-msgstr ""
+msgstr "インストールの準備中"
 
 msgid ""
 "THE WINDOWS INSTALLER WILL NOW OPEN. A MOUSE AND KEYBOARD ARE RECOMMENDED. "
 "EMULATIONSTATION COMES BACK WHEN IT IS CLOSED."
 msgstr ""
+"WINDOWS のインストーラーが開きます。マウスとキーボードの使用を推奨します。閉"
+"じると EMULATIONSTATION に戻ります。"
 
 msgid "CONTINUE"
-msgstr ""
+msgstr "続行"
 
 msgid "INSTALL A WINDOWS GAME"
-msgstr ""
+msgstr "WINDOWS ゲームをインストール"
 
 msgid "DISC IN THE DRIVE"
-msgstr ""
+msgstr "ドライブ内のディスク"
 
 msgid "GAME NAME"
-msgstr ""
+msgstr "ゲーム名"
 
 msgid "METHOD"
-msgstr ""
+msgstr "方法"
 
 msgid "AUTOMATIC"
-msgstr ""
+msgstr "自動"
 
 msgid "RUN THE INSTALLER"
-msgstr ""
+msgstr "インストーラーを実行"
 
 msgid "COPY THE GAME FROM THE DISC"
-msgstr ""
+msgstr "ディスクからゲームをコピー"
 
 msgid ""
 "COPY FROM THE DISC: FOR OLD GAMES WHOSE INSTALLER DOES NOT WORK; THE GAME "
 "RUNS WITH ITS DISC IMAGE."
 msgstr ""
+"ディスクからコピー：インストーラーが動作しない古いゲーム向け。ゲームはディス"
+"クイメージとともに起動します。"
 
 msgid "WINDOWS VERSION"
-msgstr ""
+msgstr "WINDOWS のバージョン"
 
 msgid ""
 "DURING THE INSTALLATION. FOR AN OLD INSTALLER THAT STOPS BEFORE THE END: "
 "WINXP OR WIN98."
 msgstr ""
+"インストール中のみ。最後まで進まない古いインストーラーには WINXP または "
+"WIN98。"
 
 msgid "INVALID GAME NAME"
-msgstr ""
+msgstr "無効なゲーム名"
 
 msgid "INSTALL A GAME FROM"
-msgstr ""
+msgstr "ゲームのインストール元"
 
 msgid "BROWSE..."
-msgstr ""
+msgstr "参照..."
 
 msgid "CHOOSE AN INSTALLER OR A DISC IMAGE"
-msgstr ""
+msgstr "インストーラーまたはディスクイメージを選択"
 
 msgid "SEARCHING FOR DISCS AND INSTALLERS"
-msgstr ""
+msgstr "ディスクとインストーラーを検索中"
 
 msgid "HOTKEYS"
 msgstr "ホットキー組み合わせ変更"
