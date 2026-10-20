@@ -94,7 +94,9 @@ namespace EsneKeys
 
 	inline std::string softName()
 	{
-		const std::string& value = get("SCREENSCRAPER_SOFTNAME");
+		// copy: get() returns a reference into a static map, but GCC 13+ (-Wdangling-reference) cannot see it
+		// and warns because the argument is a temporary std::string
+		std::string value = get("SCREENSCRAPER_SOFTNAME");
 		return value.empty() ? std::string("ES-NE") : value;
 	}
 
