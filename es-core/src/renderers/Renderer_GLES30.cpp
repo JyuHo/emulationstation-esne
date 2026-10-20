@@ -384,7 +384,7 @@ namespace Renderer
 		return ret;
 	};
 
-	static int getAvailableVideoMemory();
+	[[maybe_unused]] static int getAvailableVideoMemory();
 
 	static void setupDefaultShaders()
 	{
@@ -2227,7 +2227,6 @@ namespace Renderer
 			}
 		}
 
-		int width = getScreenWidth();
 		int height = getScreenHeight();
 
 		auto oldProgram = currentProgram;
