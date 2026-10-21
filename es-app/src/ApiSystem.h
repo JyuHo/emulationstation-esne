@@ -335,11 +335,12 @@ public:
 	virtual std::string getRunningArchitecture();
 	virtual std::string getRunningBoard();
 
-	std::vector<PacmanPackage> getBatoceraStorePackages();
-	std::pair<std::string, int> installBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func = nullptr);
-	std::pair<std::string, int> uninstallBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func = nullptr);
-	void updateBatoceraStorePackageList();
-	void refreshBatoceraStorePackageList();
+	// tool: "batocera-store" (CONTENT DOWNLOADER) or, on ES-NE, "batocera-emulators" (INSTALL EMULATORS), same commands
+	std::vector<PacmanPackage> getBatoceraStorePackages(const std::string& tool = "batocera-store");
+	std::pair<std::string, int> installBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func = nullptr, const std::string& tool = "batocera-store");
+	std::pair<std::string, int> uninstallBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func = nullptr, const std::string& tool = "batocera-store");
+	void updateBatoceraStorePackageList(const std::string& tool = "batocera-store");
+	void refreshBatoceraStorePackageList(const std::string& tool = "batocera-store");
 
 	void callBatoceraPreGameListsHook();
 

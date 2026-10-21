@@ -16,7 +16,7 @@ class OptionListComponent;
 class GuiBatoceraStoreEntry : public ComponentGrid
 {
 public:
-	GuiBatoceraStoreEntry(Window* window, PacmanPackage& entry, bool withPreviewImage);
+	GuiBatoceraStoreEntry(Window* window, PacmanPackage& entry, bool withPreviewImage, bool emulators = false);
 
 	bool isInstallPending() { return mIsPending; }
 	PacmanPackage& getEntry() { return mEntry; }
@@ -38,7 +38,8 @@ private:
 class GuiBatoceraStore : public GuiComponent, IContentInstalledNotify
 {
 public:
-	GuiBatoceraStore(Window* window);
+	// ES-NE: emulators = INSTALL EMULATORS screen (batocera-emulators, i.e. esctl emulators) instead of the content store
+	GuiBatoceraStore(Window* window, bool emulators = false);
 	~GuiBatoceraStore();
 
 	bool input(InputConfig* config, Input input) override;
@@ -50,7 +51,7 @@ public:
 	void OnContentInstalled(int contentType, std::string contentName, bool success) override;
 
 private:
-	static std::vector<PacmanPackage> queryPackages();
+	std::vector<PacmanPackage> queryPackages();
 	void loadPackagesAsync(bool updatePackageList = false, bool refreshOnly = true);
 	void loadList(bool updatePackageList, bool restoreIndex = true);
 	void processPackage(PacmanPackage package);
@@ -78,4 +79,9 @@ private:
 	std::string						mTextFilter;
 
 	std::string						mArchitecture;
+
+	bool							mEmulators;
+	std::string						mTool;
+	ContentInstaller::ContentType	mInstallType;
+	ContentInstaller::ContentType	mUninstallType;
 };

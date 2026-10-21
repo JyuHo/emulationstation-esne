@@ -22,8 +22,11 @@
 
 #define WINDOW_WIDTH (float)Math::min(Renderer::getScreenHeight() * 1.125f, Renderer::getScreenWidth() * 0.95f)
 
-GuiBatoceraStore::GuiBatoceraStore(Window* window)
-	: GuiComponent(window), mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 4))
+GuiBatoceraStore::GuiBatoceraStore(Window* window, bool emulators)
+	: GuiComponent(window), mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 4)), mEmulators(emulators),
+	mTool(emulators ? "batocera-emulators" : "batocera-store"),
+	mInstallType(emulators ? ContentInstaller::CONTENT_EMULATOR_INSTALL : ContentInstaller::CONTENT_STORE_INSTALL),
+	mUninstallType(emulators ? ContentInstaller::CONTENT_EMULATOR_UNINSTALL : ContentInstaller::CONTENT_STORE_UNINSTALL)
 {
 	mReloadList = 1;
 
@@ -41,8 +44,8 @@ GuiBatoceraStore::GuiBatoceraStore(Window* window)
 	// Title
 	mHeaderGrid = std::make_shared<ComponentGrid>(mWindow, Vector2i(1, 5));
 
-	mTitle = std::make_shared<TextComponent>(mWindow, _("CONTENT DOWNLOADER"), theme->Title.font, theme->Title.color, ALIGN_CENTER);
-	mSubtitle = std::make_shared<TextComponent>(mWindow, _("SELECT CONTENT TO INSTALL/REMOVE"), theme->TextSmall.font, theme->TextSmall.color, ALIGN_CENTER);
+	mTitle = std::make_shared<TextComponent>(mWindow, emulators ? _("INSTALL EMULATORS") : _("CONTENT DOWNLOADER"), theme->Title.font, theme->Title.color, ALIGN_CENTER);
+	mSubtitle = std::make_shared<TextComponent>(mWindow, emulators ? _("SELECT EMULATORS TO INSTALL/REMOVE") : _("SELECT CONTENT TO INSTALL/REMOVE"), theme->TextSmall.font, theme->TextSmall.color, ALIGN_CENTER);
 	mHeaderGrid->setEntry(mTitle, Vector2i(0, 1), false, true);
 	mHeaderGrid->setEntry(mSubtitle, Vector2i(0, 3), false, true);
 
@@ -94,7 +97,7 @@ GuiBatoceraStore::~GuiBatoceraStore()
 
 void GuiBatoceraStore::OnContentInstalled(int contentType, std::string contentName, bool success)
 {
-	if (contentType == ContentInstaller::CONTENT_STORE_INSTALL || contentType == ContentInstaller::CONTENT_STORE_UNINSTALL)
+	if (contentType == mInstallType || contentType == mUninstallType)
 		mReloadList = 2;
 }
 
@@ -231,7 +234,7 @@ void GuiBatoceraStore::loadList(bool updatePackageList, bool restoreIndex)
 
 		ComponentListRow row;
 
-		auto grid = std::make_shared<GuiBatoceraStoreEntry>(mWindow, package, hasImages);
+		auto grid = std::make_shared<GuiBatoceraStoreEntry>(mWindow, package, hasImages, mEmulators);
 		row.addElement(grid, true);
 
 		if (!grid->isInstallPending())
@@ -259,7 +262,7 @@ void GuiBatoceraStore::loadList(bool updatePackageList, bool restoreIndex)
 std::vector<PacmanPackage> GuiBatoceraStore::queryPackages()
 {
 	auto systemNames = SystemData::getKnownSystemNames();
-	auto packages = ApiSystem::getInstance()->getBatoceraStorePackages();
+	auto packages = ApiSystem::getInstance()->getBatoceraStorePackages(mTool);
 
 	std::vector<PacmanPackage> copy;
 	for (auto& package : packages)
@@ -298,9 +301,9 @@ void GuiBatoceraStore::loadPackagesAsync(bool updatePackageList, bool refreshOnl
 			if (updatePackageList)
 			{
 				if (refreshOnly)
-					ApiSystem::getInstance()->refreshBatoceraStorePackageList();
+					ApiSystem::getInstance()->refreshBatoceraStorePackageList(mTool);
 				else
-					ApiSystem::getInstance()->updateBatoceraStorePackageList();
+					ApiSystem::getInstance()->updateBatoceraStorePackageList(mTool);
 			}
 
 			return queryPackages();
@@ -330,7 +333,7 @@ void GuiBatoceraStore::processPackage(PacmanPackage package)
 			snprintf(trstring, 1024, _("'%s' ADDED TO DOWNLOAD QUEUE").c_str(), package.name.c_str());
 			mWindow->displayNotificationMessage(_U("\uF019 ") + std::string(trstring));
 
-			ContentInstaller::Enqueue(mWindow, ContentInstaller::CONTENT_STORE_INSTALL, package.name);
+			ContentInstaller::Enqueue(mWindow, mInstallType, package.name);
 			mReloadList = 2;
 
 			msgBox->close();
@@ -340,7 +343,7 @@ void GuiBatoceraStore::processPackage(PacmanPackage package)
 		{
 			mWindow->displayNotificationMessage(_U("\uF014 ") + _("UNINSTALLATION ADDED TO QUEUE"));
 
-			ContentInstaller::Enqueue(mWindow, ContentInstaller::CONTENT_STORE_UNINSTALL, package.name);			
+			ContentInstaller::Enqueue(mWindow, mUninstallType, package.name);			
 			mReloadList = 2;
 
 			msgBox->close();
@@ -354,7 +357,7 @@ void GuiBatoceraStore::processPackage(PacmanPackage package)
 			snprintf(trstring, 1024, _("'%s' ADDED TO DOWNLOAD QUEUE").c_str(), package.name.c_str());
 			mWindow->displayNotificationMessage(_U("\uF019 ") + std::string(trstring));
 
-			ContentInstaller::Enqueue(mWindow, ContentInstaller::CONTENT_STORE_INSTALL, package.name);
+			ContentInstaller::Enqueue(mWindow, mInstallType, package.name);
 			mReloadList = 2;
 
 			msgBox->close();
@@ -423,7 +426,7 @@ std::vector<HelpPrompt> GuiBatoceraStore::getHelpPrompts()
 // GuiBatoceraStoreEntry
 //////////////////////////////////////////////////////////////
 
-GuiBatoceraStoreEntry::GuiBatoceraStoreEntry(Window* window, PacmanPackage& entry, bool withPreviewImage) :
+GuiBatoceraStoreEntry::GuiBatoceraStoreEntry(Window* window, PacmanPackage& entry, bool withPreviewImage, bool emulators) :
 	ComponentGrid(window, Vector2i(5, 4))
 {
 	mEntry = entry;
@@ -432,7 +435,9 @@ GuiBatoceraStoreEntry::GuiBatoceraStoreEntry(Window* window, PacmanPackage& entr
 
 	bool isInstalled = entry.isInstalled();
 
-	mIsPending = ContentInstaller::IsInQueue(ContentInstaller::CONTENT_STORE_INSTALL, entry.name) || ContentInstaller::IsInQueue(ContentInstaller::CONTENT_STORE_UNINSTALL, entry.name);
+	mIsPending = emulators ?
+		ContentInstaller::IsInQueue(ContentInstaller::CONTENT_EMULATOR_INSTALL, entry.name) || ContentInstaller::IsInQueue(ContentInstaller::CONTENT_EMULATOR_UNINSTALL, entry.name) :
+		ContentInstaller::IsInQueue(ContentInstaller::CONTENT_STORE_INSTALL, entry.name) || ContentInstaller::IsInQueue(ContentInstaller::CONTENT_STORE_UNINSTALL, entry.name);
 
 	mImage = std::make_shared<TextComponent>(mWindow);
 	mImage->setColor(theme->Text.color);
