@@ -2,9 +2,11 @@
 #if ESNE
 #include "LinuxApiSystem.h"
 
+#include "LocaleES.h"
 #include "Log.h"
 #include "Paths.h"
 #include "utils/FileSystemUtil.h"
+#include "utils/Platform.h"
 #include "utils/StringUtil.h"
 
 #include <cstdlib>
@@ -148,6 +150,10 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 		return esctlHas("store"); // CONTENT DOWNLOADER: ports of the port-esne catalog
 	case ApiSystem::WIFI:
 		return esctlHas("wifi"); // NETWORK SETTINGS: NetworkManager or the distribution's helper
+	case ApiSystem::BLUETOOTH:
+		return esctlHas("bluetooth"); // CONTROLLER SETTINGS > BLUETOOTH: BlueZ (bluetoothctl)
+	case ApiSystem::SERVICES:
+		return esctlHas("services"); // SYSTEM SETTINGS > SERVICES: only through the distribution's helper
 
 	// Standard Linux tools
 	case ApiSystem::KODI:
@@ -165,8 +171,7 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::SHADERS:
 		return Utils::FileSystem::exists(Paths::getUserShadersPath()) || Utils::FileSystem::exists(Paths::getShadersPath());
 
-	// Batocera OS only, or handled by the distribution (BlueZ, systemd, pacman...)
-	case ApiSystem::BLUETOOTH:
+	// Batocera OS only, or handled by the distribution (systemd, pacman...)
 	case ApiSystem::DISKFORMAT:
 	case ApiSystem::OVERCLOCK:
 	case ApiSystem::EVMAPY:
@@ -177,7 +182,6 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::UPGRADEVIATORRENT:
 	case ApiSystem::READPLANEMODE:
 	case ApiSystem::WRITEPLANEMODE:
-	case ApiSystem::SERVICES:
 	case ApiSystem::BACKGLASS:
 	case ApiSystem::NFC:
 		return false;
@@ -259,6 +263,54 @@ bool LinuxApiSystem::canArchitectureUpdate(std::string& architecture)
 std::pair<std::string, int> LinuxApiSystem::updateSystem(const std::function<void(const std::string)>& func, bool fromlocalmedia)
 {
 	return std::pair<std::string, int>("Updates are handled by the system package manager", 1);
+}
+
+// ---------------------------------------------------------------------------------------------
+// Setup tool of the distribution (esctl setup)
+// ---------------------------------------------------------------------------------------------
+
+std::string LinuxApiSystem::getSetupToolTitle()
+{
+	if (!esctlHas("setup"))
+		return std::string();
+
+	if (!mSetupToolTitleRead)
+	{
+		auto lines = executeEnumerationScript("esctl setup title");
+		mSetupToolTitle = lines.empty() ? std::string() : Utils::String::trim(lines[0]);
+		if (mSetupToolTitle.empty())
+			mSetupToolTitle = _("SYSTEM TOOLS");
+		mSetupToolTitleRead = true;
+	}
+
+	return mSetupToolTitle;
+}
+
+void LinuxApiSystem::runSetupTool(Window* window)
+{
+	LOG(LogInfo) << "LinuxApiSystem::runSetupTool";
+
+	launchExternalWindow_before(window);
+
+	int rc = system("esctl setup run");
+	rc = (rc != -1 && WIFEXITED(rc)) ? WEXITSTATUS(rc) : 1;
+
+	launchExternalWindow_after(window);
+
+	LOG(LogInfo) << "LinuxApiSystem::runSetupTool: exit code " << rc;
+
+	switch (rc)
+	{
+	case 10:
+		Utils::Platform::quitES(Utils::Platform::QuitMode::REBOOT);
+		break;
+	case 11:
+		Utils::Platform::quitES(Utils::Platform::QuitMode::SHUTDOWN);
+		break;
+	case 12:
+		Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART);
+		break;
+	}
 }
 
 // ---------------------------------------------------------------------------------------------

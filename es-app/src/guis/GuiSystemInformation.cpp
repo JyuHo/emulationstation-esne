@@ -5,6 +5,12 @@
 #include "ApiSystem.h"
 #include "views/UIModeController.h"
 
+// ES-NE: labels written by "esctl info --full", listed here so that they are kept in the translations
+#define fake_gettext_esne_cpu_model		_("CPU MODEL")
+#define fake_gettext_esne_cpu_cores		_("CPU CORES")
+#define fake_gettext_esne_memory		_("MEMORY")
+#define fake_gettext_esne_kernel		_("KERNEL")
+#define fake_gettext_esne_temperature	_("TEMPERATURE")
 
 GuiSystemInformation::GuiSystemInformation(Window* window) : GuiSettings(window, _("INFORMATION").c_str())
 {

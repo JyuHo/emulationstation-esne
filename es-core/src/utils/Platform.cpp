@@ -274,6 +274,12 @@ namespace Utils
 			}
 			exe[len] = 0;
 
+			// the binary was replaced while running (update): the kernel adds " (deleted)", start the new one
+			std::string path(exe);
+			const std::string deleted = " (deleted)";
+			if (path.size() > deleted.size() && path.compare(path.size() - deleted.size(), deleted.size(), deleted) == 0)
+				path.resize(path.size() - deleted.size());
+
 			std::vector<char*> argv;
 			for (auto& a : args)
 				argv.push_back(const_cast<char*>(a.c_str()));
@@ -281,7 +287,7 @@ namespace Utils
 
 			LOG(LogInfo) << "EmulationStation cleanly shutting down (restart).";
 			Log::flush();
-			execv(exe, argv.data());
+			execv(path.c_str(), argv.data());
 
 			LOG(LogError) << "Unable to restart EmulationStation: execv failed";
 		}

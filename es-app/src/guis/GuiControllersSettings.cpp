@@ -152,7 +152,7 @@ GuiControllersSettings::GuiControllersSettings(Window* wnd, int autoSel) : GuiSe
 		// PAIR A BLUETOOTH CONTROLLER
 		addEntry(_("PAIR BLUETOOTH PADS AUTOMATICALLY"), false, [window] { ThreadedBluetooth::start(window); });
 
-#if defined(BATOCERA) || defined(WIN32)
+#if defined(BATOCERA) || defined(WIN32) || ESNE
 		// PAIR A BLUETOOTH CONTROLLER OR BT AUDIO DEVICE
 		addEntry(_("PAIR A BLUETOOTH DEVICE MANUALLY"), false, [window]
 		{
