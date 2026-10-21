@@ -146,6 +146,8 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 		return esctlHas("windows");
 	case ApiSystem::BATOCERASTORE:
 		return esctlHas("store"); // CONTENT DOWNLOADER: ports of the port-esne catalog
+	case ApiSystem::WIFI:
+		return esctlHas("wifi"); // NETWORK SETTINGS: NetworkManager or the distribution's helper
 
 	// Standard Linux tools
 	case ApiSystem::KODI:
@@ -163,8 +165,7 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::SHADERS:
 		return Utils::FileSystem::exists(Paths::getUserShadersPath()) || Utils::FileSystem::exists(Paths::getShadersPath());
 
-	// Batocera OS only, or handled by the distribution (NetworkManager, BlueZ, systemd, pacman...)
-	case ApiSystem::WIFI:
+	// Batocera OS only, or handled by the distribution (BlueZ, systemd, pacman...)
 	case ApiSystem::BLUETOOTH:
 	case ApiSystem::DISKFORMAT:
 	case ApiSystem::OVERCLOCK:
