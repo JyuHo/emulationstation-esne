@@ -11,7 +11,7 @@
 //
 // The base ApiSystem drives the system through "batocera-xxx" scripts. Here:
 //  - "batocera-xxx args" is translated to "esctl xxx args" (see translateCommand)
-//  - menus that only make sense on the Batocera OS (upgrade, install, format, bluetooth...) are hidden
+//  - menus that only make sense on the Batocera OS (upgrade, install, format, plane mode...) are hidden
 //  - menus backed by esctl are shown only if "esctl has <command>" succeeds
 class LinuxApiSystem : public ApiSystem
 {
@@ -46,6 +46,14 @@ public:
 	// The answer is cached: menus can ask every time they open without starting a process.
 	bool esctlHas(const std::string& command);
 
+	// Setup tool of the distribution ("esctl setup", e.g. rpi4deck-install): label of its main menu entry, or an
+	// empty string when there is none. Cached like esctlHas.
+	std::string getSetupToolTitle();
+
+	// Gives the screen, sound and pads to the setup tool and takes them back when it ends; then reboots, shuts down or
+	// restarts EmulationStation if the tool asks for it (exit codes 10, 11 and 12)
+	void runSetupTool(Window* window);
+
 protected:
 	bool executeScript(const std::string command) override;
 	std::pair<std::string, int> executeScript(const std::string command, const std::function<void(const std::string)>& func) override;
@@ -54,6 +62,8 @@ protected:
 private:
 	std::mutex mEsctlMutex;
 	std::map<std::string, bool> mEsctlSupport;
+	bool mSetupToolTitleRead = false;
+	std::string mSetupToolTitle;
 };
 
 #endif

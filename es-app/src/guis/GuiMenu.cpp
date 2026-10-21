@@ -238,6 +238,18 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 			addEntry(_("UPDATES & DOWNLOADS"), true, [this] { openUpdatesSettings(); }, "iconUpdates");
 
 		addEntry(_("SYSTEM SETTINGS").c_str(), true, [this] { openSystemSettings(); }, "iconSystem");
+
+#if ESNE
+		// setup tool of the distribution (esctl setup, e.g. rpi4deck-install): ES gives it the screen and the pads
+		std::string setupTool = static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->getSetupToolTitle();
+		if (!setupTool.empty())
+			addEntry(setupTool, false, [window]
+			{
+				window->pushGui(new GuiMsgBox(window, _("EMULATIONSTATION WILL BE CLOSED WHILE THE TOOL IS RUNNING. CONTINUE?"),
+					_("YES"), [window] { static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->runSetupTool(window); },
+					_("NO"), nullptr));
+			}, "iconUpdates");
+#endif
 	}
 	else
 	{

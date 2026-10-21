@@ -2400,6 +2400,9 @@ msgstr "MISES À JOUR & TÉLÉCHARGEMENTS"
 msgid "SYSTEM SETTINGS"
 msgstr "PARAMÈTRES SYSTÈME"
 
+msgid "EMULATIONSTATION WILL BE CLOSED WHILE THE TOOL IS RUNNING. CONTINUE?"
+msgstr "EMULATIONSTATION SERA FERMÉ LE TEMPS DE L'OUTIL. CONTINUER ?"
+
 msgid "INFORMATION"
 msgstr "INFORMATIONS"
 
@@ -3555,6 +3558,21 @@ msgstr "AUCUN DISQUE SÉLECTIONNÉ"
 msgid "Ejecting..."
 msgstr "Éjection…"
 
+msgid "CPU MODEL"
+msgstr "PROCESSEUR"
+
+msgid "CPU CORES"
+msgstr "CŒURS"
+
+msgid "MEMORY"
+msgstr "MÉMOIRE"
+
+msgid "KERNEL"
+msgstr "NOYAU"
+
+msgid "TEMPERATURE"
+msgstr "TEMPÉRATURE"
+
 msgid "USER DISK USAGE"
 msgstr "UTILISATION DU DISQUE UTILISATEUR"
 
@@ -3741,6 +3759,9 @@ msgstr "rafraîchir"
 
 msgid "NO MISSING BIOS"
 msgstr "AUCUN BIOS MANQUANT"
+
+msgid "SYSTEM TOOLS"
+msgstr "OUTILS DU SYSTÈME"
 
 msgid "SLOW"
 msgstr "LENT"
