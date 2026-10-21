@@ -207,6 +207,11 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 		addEntry(_("SOUND SETTINGS").c_str(), true, [this] { openSoundSettings(); }, "iconSound");
 		addEntry(_("GAME COLLECTION SETTINGS").c_str(), true, [this] { openCollectionSystemSettings(); }, "iconAdvanced");
 
+#if ESNE
+		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::WIFI))
+			addEntry(_("NETWORK SETTINGS").c_str(), true, [this] { openNetworkSettings(); }, "iconNetwork");
+#endif
+
 		if (!ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))
 		{
 			for (auto system : SystemData::sSystemVector)
@@ -4649,8 +4654,8 @@ void GuiMenu::openNetworkSettings(bool selectWifiEnable)
 
 	s->addGroup(_("SETTINGS"));
 
-#if !WIN32
-	// Hostname
+#if !WIN32 && !ESNE
+	// Hostname (ES-NE: set by the distribution, system.hostname is not applied)
 	s->addInputTextConfigRow(_("HOSTNAME"), "system.hostname", false);
 #endif
 

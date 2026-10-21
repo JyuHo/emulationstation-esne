@@ -2208,7 +2208,7 @@ msgstr "OUBLIER"
 
 #, c-format
 msgid "ARE YOU SURE YOU WANT TO FORGET '%s' ?"
-msgstr "ÊTES VOUS SÛR DE VOULOIR OUBLIER '%s' ?"
+msgstr "VOULEZ-VOUS VRAIMENT OUBLIER « %s » ?"
 
 #, c-format
 msgid "ARE YOU SURE YOU WANT TO CONNECT TO '%s' ?"
@@ -3415,7 +3415,7 @@ msgid "ENABLE WI-FI"
 msgstr "ACTIVER LE WI-FI"
 
 msgid "WI-FI COUNTRY"
-msgstr "WI-FI PAYS"
+msgstr "PAYS DU WI-FI"
 
 msgid "N/A"
 msgstr "N/D"

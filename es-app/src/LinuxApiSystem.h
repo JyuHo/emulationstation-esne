@@ -11,7 +11,7 @@
 //
 // The base ApiSystem drives the system through "batocera-xxx" scripts. Here:
 //  - "batocera-xxx args" is translated to "esctl xxx args" (see translateCommand)
-//  - menus that only make sense on the Batocera OS (upgrade, install, format, wifi...) are hidden
+//  - menus that only make sense on the Batocera OS (upgrade, install, format, bluetooth...) are hidden
 //  - menus backed by esctl are shown only if "esctl has <command>" succeeds
 class LinuxApiSystem : public ApiSystem
 {
