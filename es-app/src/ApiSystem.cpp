@@ -2435,13 +2435,13 @@ std::vector<std::string> ApiSystem::extractPdfImages(const std::string& fileName
 }
 
 
-std::vector<PacmanPackage> ApiSystem::getBatoceraStorePackages()
+std::vector<PacmanPackage> ApiSystem::getBatoceraStorePackages(const std::string& tool)
 {
 	std::vector<PacmanPackage> packages;
 
 	LOG(LogDebug) << "ApiSystem::getBatoceraStorePackages";
 
-	auto res = executeEnumerationScript("batocera-store list");
+	auto res = executeEnumerationScript(tool + " list");
 	std::string data = Utils::String::join(res, "\n");
 	if (data.empty())
 	{
@@ -2508,20 +2508,20 @@ std::vector<PacmanPackage> ApiSystem::getBatoceraStorePackages()
 	return packages;
 }
 
-std::pair<std::string, int> ApiSystem::installBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func)
+std::pair<std::string, int> ApiSystem::installBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func, const std::string& tool)
 {
-	return executeScript("batocera-store install \"" + name + "\"", func);
+	return executeScript(tool + " install \"" + name + "\"", func);
 }
 
-std::pair<std::string, int> ApiSystem::uninstallBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func)
+std::pair<std::string, int> ApiSystem::uninstallBatoceraStorePackage(std::string name, const std::function<void(const std::string)>& func, const std::string& tool)
 {
-	return executeScript("batocera-store remove \"" + name + "\"", func);
+	return executeScript(tool + " remove \"" + name + "\"", func);
 }
 
-void ApiSystem::refreshBatoceraStorePackageList()
+void ApiSystem::refreshBatoceraStorePackageList(const std::string& tool)
 {
-	executeScript("batocera-store refresh");
-	executeScript("batocera-store clean-all");
+	executeScript(tool + " refresh");
+	executeScript(tool + " clean-all");
 }
 
 void ApiSystem::callBatoceraPreGameListsHook()
@@ -2529,9 +2529,9 @@ void ApiSystem::callBatoceraPreGameListsHook()
 	executeScript("batocera-preupdate-gamelists-hook");
 }
 
-void ApiSystem::updateBatoceraStorePackageList()
+void ApiSystem::updateBatoceraStorePackageList(const std::string& tool)
 {
-	executeScript("batocera-store update");
+	executeScript(tool + " update");
 }
 
 std::vector<std::string> ApiSystem::getShaderList(const std::string& systemName, const std::string& emulator, const std::string& core)

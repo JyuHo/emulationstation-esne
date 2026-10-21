@@ -1234,6 +1234,20 @@ void GuiMenu::openUpdatesSettings(bool selectTorrentService)
 		});
 	}
 
+#if ESNE
+	// emulators and libretro cores (esctl emulators: helper of the distribution, or Arch/Flathub packages on x86_64)
+	if (static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->esctlHas("emulators"))
+	{
+		updateGui->addEntry(_("INSTALL EMULATORS"), true, [this]
+		{
+			if (!checkNetwork())
+				return;
+
+			mWindow->pushGui(new GuiBatoceraStore(mWindow, true));
+		});
+	}
+#endif
+
 	// Themes installer/browser
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::THEMESDOWNLOADER))
 	{

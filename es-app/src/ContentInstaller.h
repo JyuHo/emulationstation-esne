@@ -26,6 +26,8 @@ public:
 		CONTENT_BEZEL_UNINSTALL = 3,
 		CONTENT_STORE_INSTALL = 4,
 		CONTENT_STORE_UNINSTALL = 5,
+		CONTENT_EMULATOR_INSTALL = 6,   // ES-NE: INSTALL EMULATORS (batocera-emulators, same commands as the store)
+		CONTENT_EMULATOR_UNINSTALL = 7,
 	};
 
 	static void Enqueue(Window* window, ContentType type, const std::string contentName);

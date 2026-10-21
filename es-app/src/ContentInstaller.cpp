@@ -208,12 +208,12 @@ void ContentInstaller::threadUpdate()
 				mWindow->displayNotificationMessage(ICONINDEX + error);
 			}
 		}
-		else if (data.first == ContentType::CONTENT_STORE_INSTALL)
+		else if (data.first == ContentType::CONTENT_STORE_INSTALL || data.first == ContentType::CONTENT_EMULATOR_INSTALL)
 		{
 			updateStatus = ApiSystem::getInstance()->installBatoceraStorePackage(data.second, [this](const std::string info)
 			{
 				updateNotificationComponentContent(info);
-			});
+			}, data.first == ContentType::CONTENT_EMULATOR_INSTALL ? "batocera-emulators" : "batocera-store");
 
 			if (updateStatus.second == 0)
 			{
@@ -226,12 +226,12 @@ void ContentInstaller::threadUpdate()
 				mWindow->displayNotificationMessage(ICONINDEX + error);
 			}
 		}
-		else if (data.first == ContentType::CONTENT_STORE_UNINSTALL)
+		else if (data.first == ContentType::CONTENT_STORE_UNINSTALL || data.first == ContentType::CONTENT_EMULATOR_UNINSTALL)
 		{
 			updateStatus = ApiSystem::getInstance()->uninstallBatoceraStorePackage(data.second, [this](const std::string info)
 			{
 				updateNotificationComponentContent(info);
-			});
+			}, data.first == ContentType::CONTENT_EMULATOR_UNINSTALL ? "batocera-emulators" : "batocera-store");
 
 			if (updateStatus.second == 0)
 			{
@@ -250,7 +250,9 @@ void ContentInstaller::threadUpdate()
 		lock.lock();
 		mProcessingQueue.remove(data);
 #if ESNE
-		if (success && (data.first == ContentType::CONTENT_STORE_INSTALL || data.first == ContentType::CONTENT_STORE_UNINSTALL))
+		// emulators: esctl rewrote es_systems.cfg, reloaded with the game lists
+		if (success && (data.first == ContentType::CONTENT_STORE_INSTALL || data.first == ContentType::CONTENT_STORE_UNINSTALL ||
+			data.first == ContentType::CONTENT_EMULATOR_INSTALL || data.first == ContentType::CONTENT_EMULATOR_UNINSTALL))
 			mStoreChanged = true;
 #endif
 	}
