@@ -7,6 +7,9 @@
 #include "ApiSystem.h"
 #include "utils/Platform.h"
 #include "LocaleES.h"
+#if ESNE
+#include "LinuxApiSystem.h"
+#endif
 
 GuiUpdateState::State GuiUpdate::state = GuiUpdateState::State::NO_UPDATE;
 
@@ -86,13 +89,20 @@ void GuiUpdate::update(int deltaTime)
 
 			std::string message = _("REALLY UPDATE?");
 
-			if (!mUpdateVersion.empty()) 
+			if (!mUpdateVersion.empty())
 			{
+#if ESNE
+				// version of the distribution given by its update helper (esctl upgrade check), not the ES-NE one
+				std::string installed = static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->getUpdateInstalledVersion();
+				if (!installed.empty())
+					message = Utils::String::format(_("YOU ARE CURRENTLY USING VERSION %s\nDO YOU WANT TO UPDATE TO VERSION %s?").c_str(), installed.c_str(), mUpdateVersion.c_str());
+#else
 				std::string versionExtra = ApiSystem::getInstance()->getVersion(true);
 				if (versionExtra == "none")
 					message = Utils::String::format(_("YOU ARE CURRENTLY USING VERSION %s\nDO YOU WANT TO UPDATE TO VERSION %s?").c_str(), ApiSystem::getInstance()->getVersion().c_str(), mUpdateVersion.c_str());
 				else
 					message = Utils::String::format(_("UNOFFICIAL SYSTEM MODIFICATIONS DETECTED.\nUPGRADING COULD BREAK YOUR SYSTEM.\nDO YOU WANT TO UPDATE TO VERSION %s?").c_str(), mUpdateVersion.c_str());
+#endif
 
 				window->pushGui(new GuiMsgBox(window, message, _("YES"), [this]
 				{
@@ -231,7 +241,20 @@ void ThreadedUpdater::threadUpdate(const std::string source) {
 		GuiUpdate::state = GuiUpdateState::State::UPDATE_READY;
 
 		mWndNotification->updateTitle(_U("\uF019 ") + _("UPDATE IS READY"));
+#if ESNE
+		// the helper installed a new EmulationStation: restarting ES is enough (APPLY UPDATE does it later)
+		mWndNotification->updateText(_("RESTART EMULATIONSTATION TO APPLY"));
+
+		Window* window = mWindow;
+		mWindow->postToUiThread([window]()
+		{
+			window->pushGui(new GuiMsgBox(window, _("EMULATIONSTATION MUST RESTART TO FINISH THE UPDATE. RESTART NOW?"),
+				_("YES"), [] { Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART); },
+				_("NO"), nullptr));
+		});
+#else
 		mWndNotification->updateText(_("REBOOT TO APPLY"));
+#endif
 
 		std::this_thread::yield();
 		std::this_thread::sleep_for(std::chrono::hours(12));

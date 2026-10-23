@@ -37,6 +37,10 @@
 #include "RetroAchievements.h"
 #include "TextToSpeech.h"
 #include "Paths.h"
+#if ESNE
+#include "guis/GuiChangePassword.h"
+#include "views/UIModeController.h"
+#endif
 #include "resources/TextureData.h"
 #include "Scripting.h"
 #include "watchers/WatchersManager.h"
@@ -678,6 +682,12 @@ int main(int argc, char* argv[])
 
 	// Create a flag in  temporary directory to signal READY state
 	ApiSystem::getInstance()->setReadyFlag();
+
+#if ESNE
+	// distribution's published default password still in use (esctl password state): offer to change it
+	if (errorMsg == NULL && UIModeController::getInstance()->isUIModeFull())
+		GuiChangePassword::checkAtStartup(&window);
+#endif
 
 	// Play music
 	AudioManager::getInstance()->init();

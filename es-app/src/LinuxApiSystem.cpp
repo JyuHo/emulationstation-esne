@@ -9,6 +9,9 @@
 #include "utils/Platform.h"
 #include "utils/StringUtil.h"
 
+#include <algorithm>
+#include <csignal>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <sys/stat.h>
@@ -154,6 +157,8 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 		return esctlHas("bluetooth"); // CONTROLLER SETTINGS > BLUETOOTH: BlueZ (bluetoothctl)
 	case ApiSystem::SERVICES:
 		return esctlHas("services"); // SYSTEM SETTINGS > SERVICES: only through the distribution's helper
+	case ApiSystem::UPGRADE:
+		return esctlHas("upgrade"); // UPDATES & DOWNLOADS > SOFTWARE UPDATES: only through the distribution's helper
 
 	// Standard Linux tools
 	case ApiSystem::KODI:
@@ -178,7 +183,6 @@ bool LinuxApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::BACKUP:
 	case ApiSystem::INSTALL:
 	case ApiSystem::SUPPORTFILE:
-	case ApiSystem::UPGRADE:
 	case ApiSystem::UPGRADEVIATORRENT:
 	case ApiSystem::READPLANEMODE:
 	case ApiSystem::WRITEPLANEMODE:
@@ -242,12 +246,64 @@ std::string LinuxApiSystem::getSevenZipCommand()
 }
 
 // ---------------------------------------------------------------------------------------------
-// Updates: handled by the distribution's package manager
+// Updates: helper of the distribution (esctl upgrade), otherwise the distribution's package manager
 // ---------------------------------------------------------------------------------------------
 
 bool LinuxApiSystem::canUpdate(std::vector<std::string>& output)
 {
-	return false;
+	if (!esctlHas("upgrade"))
+		return false;
+
+	// line 1: offered version, line 2: installed version; exit code 0 when there is an update
+	std::vector<std::string> lines;
+	FILE* pipe = popen("esctl upgrade check 2>/dev/null", "r");
+	if (pipe == nullptr)
+		return false;
+
+	char line[1024];
+	while (fgets(line, sizeof(line), pipe))
+	{
+		std::string text = Utils::String::trim(Utils::String::replace(line, "\n", ""));
+		if (!text.empty())
+			lines.push_back(text);
+	}
+
+	int rc = pclose(pipe);
+	rc = (rc != -1 && WIFEXITED(rc)) ? WEXITSTATUS(rc) : 1;
+
+	{
+		std::lock_guard<std::mutex> lock(mEsctlMutex);
+		mUpdateInstalledVersion = lines.size() >= 2 ? lines[1] : std::string();
+	}
+
+	LOG(LogInfo) << "LinuxApiSystem::canUpdate: esctl upgrade check -> " << rc << (lines.empty() ? "" : " " + lines[0]);
+
+	if (rc != 0 || lines.empty())
+		return false;
+
+	output.push_back(lines[0]);
+	return true;
+}
+
+std::string LinuxApiSystem::getUpdateInstalledVersion()
+{
+	std::lock_guard<std::mutex> lock(mEsctlMutex);
+	return mUpdateInstalledVersion;
+}
+
+std::string LinuxApiSystem::getUpdateTitle()
+{
+	if (!esctlHas("upgrade"))
+		return std::string();
+
+	if (!mUpdateTitleRead)
+	{
+		auto lines = executeEnumerationScript("esctl upgrade title");
+		mUpdateTitle = lines.empty() ? std::string() : Utils::String::trim(lines[0]);
+		mUpdateTitleRead = true;
+	}
+
+	return mUpdateTitle;
 }
 
 bool LinuxApiSystem::canLocalUpdate()
@@ -262,7 +318,86 @@ bool LinuxApiSystem::canArchitectureUpdate(std::string& architecture)
 
 std::pair<std::string, int> LinuxApiSystem::updateSystem(const std::function<void(const std::string)>& func, bool fromlocalmedia)
 {
-	return std::pair<std::string, int>("Updates are handled by the system package manager", 1);
+	// never the batocera-upgrade script downloaded by ApiSystem::updateSystem: only the distribution's helper
+	if (fromlocalmedia || !esctlHas("upgrade"))
+		return std::pair<std::string, int>("Updates are handled by the system package manager", 1);
+
+	// progress lines ("text >>> NN%") for the notification, copied to esctl-upgrade.log
+	FILE* pipe = popen("esctl upgrade run 2>&1", "r");
+	if (pipe == nullptr)
+		return std::pair<std::string, int>("Cannot call update command", -1);
+
+	FILE* flog = fopen(Utils::FileSystem::combine(Paths::getLogPath(), "esctl-upgrade.log").c_str(), "w");
+
+	std::string last;
+	char line[1024];
+	while (fgets(line, sizeof(line), pipe))
+	{
+		std::string text = Utils::String::replace(line, "\n", "");
+		if (flog != nullptr)
+			fprintf(flog, "%s\n", text.c_str());
+
+		if (Utils::String::trim(text).empty())
+			continue;
+
+		last = text;
+		if (func != nullptr)
+			func(text);
+	}
+
+	int rc = pclose(pipe);
+	rc = (rc != -1 && WIFEXITED(rc)) ? WEXITSTATUS(rc) : 1;
+
+	if (flog != nullptr)
+	{
+		fprintf(flog, "Exit code : %d\n", rc);
+		fclose(flog);
+	}
+
+	LOG(LogInfo) << "LinuxApiSystem::updateSystem: esctl upgrade run -> " << rc;
+	return std::pair<std::string, int>(last, rc);
+}
+
+// ---------------------------------------------------------------------------------------------
+// Password of the account running ES (esctl password)
+// ---------------------------------------------------------------------------------------------
+
+std::string LinuxApiSystem::getPasswordUser()
+{
+	auto lines = executeEnumerationScript("esctl password user");
+	return lines.empty() ? std::string() : Utils::String::trim(lines[0]);
+}
+
+std::string LinuxApiSystem::getPasswordState()
+{
+	auto lines = executeEnumerationScript("esctl password state 2>/dev/null");
+	std::string state = lines.empty() ? std::string() : Utils::String::trim(lines[0]);
+	return (state == "default" || state == "changed") ? state : std::string();
+}
+
+int LinuxApiSystem::setPassword(const std::string& password)
+{
+	if (password.empty() || password.find('\n') != std::string::npos)
+		return 3;
+
+	// esctl may exit before reading (no helper): no SIGPIPE for ES
+	struct sigaction ignore = {}, previous = {};
+	ignore.sa_handler = SIG_IGN;
+	sigaction(SIGPIPE, &ignore, &previous);
+
+	int rc = 1;
+	FILE* pipe = popen("esctl password set", "w");
+	if (pipe != nullptr)
+	{
+		std::string line = password + "\n";
+		fwrite(line.data(), 1, line.size(), pipe);
+		std::fill(line.begin(), line.end(), '\0');
+		int status = pclose(pipe);
+		rc = (status != -1 && WIFEXITED(status)) ? WEXITSTATUS(status) : 1;
+	}
+
+	sigaction(SIGPIPE, &previous, nullptr);
+	return rc;
 }
 
 // ---------------------------------------------------------------------------------------------

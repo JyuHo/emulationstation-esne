@@ -81,6 +81,7 @@
 #endif
 #if ESNE
 #include "LinuxApiSystem.h"
+#include "guis/GuiChangePassword.h"
 #endif
 
 #if ESNE
@@ -445,10 +446,35 @@ void GuiMenu::openServicesSettings()
 	  auto service_enabled = std::make_shared<SwitchComponent>(mWindow);
 	  service_enabled->setState(services[i].enabled);
 	  s->addWithLabel(services[i].name, service_enabled);
+#if ESNE
+	  // the helper may refuse (e.g. SSH while the default password is in use): the switch goes back and ES says why
+	  auto reverting = std::make_shared<bool>(false);
+	  Window* window = mWindow;
+	  service_enabled->setOnChangedCallback([window, services, i, service_enabled, reverting]()
+	  {
+	    if (*reverting)
+	      return;
+
+	    bool enable = service_enabled->getState();
+	    if (ApiSystem::getInstance()->enableService(services[i].name, enable))
+	      return;
+
+	    *reverting = true;
+	    service_enabled->setState(!enable);
+	    *reverting = false;
+
+	    if (enable && GuiChangePassword::getState() == "default")
+	      window->pushGui(new GuiMsgBox(window, _("THE DEFAULT PASSWORD IS STILL IN USE: CHANGE IT BEFORE ENABLING THIS SERVICE."),
+	        _("CHANGE PASSWORD"), [window] { GuiChangePassword::open(window); }, _("CANCEL"), nullptr, ICON_WARNING));
+	    else
+	      window->pushGui(new GuiMsgBox(window, _("THE SERVICE COULD NOT BE CHANGED."), _("OK"), nullptr, ICON_ERROR));
+	  });
+#else
 	  service_enabled->setOnChangedCallback([services, i, service_enabled]()
 	  {
 	    ApiSystem::getInstance()->enableService(services[i].name, service_enabled->getState());
 	  });
+#endif
 	}
 
 	mWindow->pushGui(s);
@@ -1291,6 +1317,7 @@ void GuiMenu::openUpdatesSettings(bool selectTorrentService)
 		// Enable updates
 		updateGui->addSwitch(_("CHECK FOR UPDATES"), "updates.enabled", false);
 
+#if !ESNE // ES-NE: the distribution's helper (esctl upgrade) offers its published versions only, no beta channel
 		auto updatesTypeList = std::make_shared<OptionListComponent<std::string> >(mWindow, _("UPDATE TYPE"), false);
 
 #if BATOCERA
@@ -1318,6 +1345,7 @@ void GuiMenu::openUpdatesSettings(bool selectTorrentService)
 			if (SystemConf::getInstance()->set("updates.type", name))
 				SystemConf::getInstance()->saveSystemConf();
 		});
+#endif
 
 #if BATOCERA
 		std::string update_architecture;
@@ -1335,7 +1363,14 @@ void GuiMenu::openUpdatesSettings(bool selectTorrentService)
 #endif
 
 		// Start update
-		updateGui->addEntry(GuiUpdate::state == GuiUpdateState::State::UPDATE_READY ? _("APPLY UPDATE") : _("START UPDATE"), true, [this]
+		std::string startUpdate = _("START UPDATE");
+#if ESNE
+		// label given by the distribution's helper, e.g. "METTRE À JOUR RPI4DECK"
+		std::string updateTitle = static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->getUpdateTitle();
+		if (!updateTitle.empty())
+			startUpdate = updateTitle;
+#endif
+		updateGui->addEntry(GuiUpdate::state == GuiUpdateState::State::UPDATE_READY ? _("APPLY UPDATE") : startUpdate, true, [this]
 		{
 			if (GuiUpdate::state == GuiUpdateState::State::UPDATE_READY)
 				Utils::Platform::quitES(Utils::Platform::QuitMode::RESTART);
@@ -2334,6 +2369,23 @@ void GuiMenu::openSystemSettings()
 
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::SERVICES) && ApiSystem::getInstance()->getServices().size())
 			s->addEntry(_("SERVICES"), true, [this] { openServicesSettings(); });
+
+		// Security: password of the account running ES (esctl password), typed on the virtual keyboard
+		if (GuiChangePassword::isSupported())
+		{
+			Window* window = mWindow;
+			s->addEntry(_("SECURITY"), true, [window]
+			{
+				GuiSettings* securityGui = new GuiSettings(window, _("SECURITY").c_str());
+				auto theme = ThemeData::getMenuTheme();
+				std::string user = static_cast<LinuxApiSystem*>(ApiSystem::getInstance())->getPasswordUser();
+				if (!user.empty())
+					securityGui->addWithLabel(_("USER"), std::make_shared<TextComponent>(window, user, theme->Text.font, theme->Text.color));
+
+				securityGui->addEntry(_("CHANGE PASSWORD"), false, [window] { GuiChangePassword::open(window); });
+				window->pushGui(securityGui);
+			});
+		}
 	}
 #endif
 
